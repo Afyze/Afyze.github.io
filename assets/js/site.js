@@ -295,13 +295,12 @@
   $$("[data-filters]").forEach(function (group) {
     var target = $(group.getAttribute("data-filters"));
     if (!target) return;
-    var items = $$("[data-cat]", target);
     $$("button", group).forEach(function (b) {
       b.addEventListener("click", function () {
         $$("button", group).forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
         var f = b.getAttribute("data-filter");
         function apply() {
-          items.forEach(function (it) { it.classList.toggle("is-out", !(f === "all" || it.getAttribute("data-cat").split(" ").indexOf(f) > -1)); });
+          $$("[data-cat]", target).forEach(function (it) { it.classList.toggle("is-out", !(f === "all" || it.getAttribute("data-cat").split(" ").indexOf(f) > -1)); });
           fitFrames();
           if (hasGsap) ScrollTrigger.refresh();
         }
@@ -330,10 +329,11 @@
   });
   $$("[data-copy]").forEach(function (b) {
     b.addEventListener("click", function () {
-      var done = function () { toast("Adresa a fost copiată: " + EMAIL); };
-      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(EMAIL).then(done, function () { toast(EMAIL); });
+      var addr = (window.afyzeApi && window.afyzeApi.content && window.afyzeApi.content.contact.email) || EMAIL;
+      var done = function () { toast("Adresa a fost copiată: " + addr); };
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(addr).then(done, function () { toast(addr); });
       else {
-        var ta = document.createElement("textarea"); ta.value = EMAIL; ta.style.position = "fixed"; ta.style.opacity = "0";
+        var ta = document.createElement("textarea"); ta.value = addr; ta.style.position = "fixed"; ta.style.opacity = "0";
         document.body.appendChild(ta); ta.select();
         try { document.execCommand("copy"); done(); } catch (err) { toast(EMAIL); }
         document.body.removeChild(ta);
@@ -348,9 +348,29 @@
       var name = form.elements.name.value.trim();
       var msg = form.elements.msg.value.trim();
       var phone = form.elements.phone ? form.elements.phone.value.trim() : "";
+      var email = form.elements.email ? form.elements.email.value.trim() : "";
       var type = (form.querySelector("input[name=type]:checked") || {}).value || "";
       var pkg = (form.querySelector("input[name=pkg]:checked") || {}).value || "";
       if (!name || !msg) { toast("Scrie-ți numele și câteva cuvinte despre proiect."); (name ? form.elements.msg : form.elements.name).focus(); return; }
+
+      // cu backend: mesajul se trimite direct, fără să deschidem aplicația de e-mail
+      if (window.afyzeApi && window.afyzeApi.ready && !form.dataset.fallback) {
+        if (!email && !phone) { toast("Lasă un e-mail sau un telefon, ca să te pot contacta."); form.elements.email.focus(); return; }
+        var btn = form.querySelector("button[type=submit]");
+        btn.disabled = true; btn.style.opacity = ".6";
+        window.afyzeApi.submit({ name: name, email: email, phone: phone, type: type, package: pkg, message: msg, website: form.elements.website ? form.elements.website.value : "" })
+          .then(function (r) {
+            btn.disabled = false; btn.style.opacity = "";
+            if (r.ok) { showSent(form, name); return; }
+            toast(r.error);
+            if (r.offline) { form.dataset.fallback = "1"; }
+            var map = { name: "name", email: "email", phone: "phone", message: "msg" };
+            if (r.field && map[r.field] && form.elements[map[r.field]]) form.elements[map[r.field]].focus();
+          });
+        return;
+      }
+
+      if (email) msg += "\n\nE-mail: " + email;
       var body = "Bună ziua,\n\n" + msg + "\n\n" +
         (type ? "Tip proiect: " + type + "\n" : "") +
         (pkg ? "Pachet: " + pkg + "\n" : "") +
@@ -359,6 +379,20 @@
       toast("Se deschide aplicația de e-mail…");
       location.href = mailto("Proiect nou" + (type ? " — " + type : "") + " — " + name, body);
     });
+  }
+
+  function showSent(form, name) {
+    var box = document.createElement("div");
+    box.className = "sent";
+    box.setAttribute("role", "status");
+    var h = document.createElement("h3"); h.textContent = "Mulțumesc, " + name.split(" ")[0] + "!";
+    var p = document.createElement("p"); p.textContent = "Mesajul tău a ajuns. Îți răspund de obicei în aceeași zi lucrătoare, cu un preț și un termen clar.";
+    box.append(h, p);
+    form.replaceChildren(box);
+    if (anim) gsap.fromTo(box, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.2, ease: "expo.out" });
+    if (hasGsap) ScrollTrigger.refresh();
+    if (lenis) lenis.scrollTo(box, { offset: -160, duration: 1.2 });
+    else box.scrollIntoView({ block: "center", behavior: reduce ? "auto" : "smooth" });
   }
 
   /* ---------- An curent ---------- */

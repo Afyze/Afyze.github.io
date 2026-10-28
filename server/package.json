@@ -1,0 +1,21 @@
+{
+  "name": "afyze-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend Afyze: formular de contact, panou de administrare, conținut editabil și statistici fără cookie-uri.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "setup": "node --disable-warning=ExperimentalWarning scripts/setup.js",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "nodemailer": "^10.2.1"
+  }
+}

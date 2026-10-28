@@ -6,6 +6,8 @@
 <title>Lex — Template cabinet de avocat · Afyze</title>
 <meta name="description" content="Template demo Afyze pentru un cabinet de avocat. Datele de pe pagină sunt fictive.">
 <meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -191,7 +193,7 @@ footer .c{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div><dt>PROGRAM</dt><dd>Luni – Vineri, 09:00 – 18:00</dd></div>
       </dl>
     </div>
-    <form class="rv" style="--d:.15s" onsubmit="event.preventDefault();this.querySelector('.note').textContent='Demo: în site-ul real, cererea ajunge direct pe e-mailul cabinetului.'">
+    <form class="rv" style="--d:.15s" id="lexForm">
       <div class="row2"><label>Nume și prenume<input required></label><label>Telefon<input type="tel" required></label></div>
       <label>Domeniul<select><option>Drept civil</option><option>Drept comercial</option><option>Litigii</option><option>Drept imobiliar</option><option>Dreptul familiei</option><option>Altul</option></select></label>
       <label>Descrieți pe scurt situația<textarea></textarea></label>
@@ -202,9 +204,6 @@ footer .c{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <footer><div class="c"><span>© Lex Arcan · Cabinet de avocat · Date fictive, folosite doar pentru demonstrație</span><span>Politica de confidențialitate</span></div></footer>
 <a class="demo-badge" href="../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
-<script>
-(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -5% 0px"});
-document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});})();
-</script>
+<script src="js/lex.js"></script>
 </body>
 </html>

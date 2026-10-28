@@ -9,11 +9,10 @@
 <meta property="og:description" content="Pachete de site: Start 5.000 MDL, Business 7.000 MDL, Pro 10.500 MDL. Fără avans, plata la predare.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0e1d17">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' http://localhost:3000 http://127.0.0.1:3000 https://*.afyze.com; frame-src 'self'; form-action 'self' mailto:; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<script>
-(function(h){h.classList.add("js");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)h.classList.add("js-anim");
-setTimeout(function(){if(!window.__afyze){h.classList.remove("js-anim");h.classList.remove("js");}},2500);})(document.documentElement);
-</script>
+<script src="assets/js/boot.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -51,32 +50,32 @@ setTimeout(function(){if(!window.__afyze){h.classList.remove("js-anim");h.classL
 <section class="sec-tight" style="padding-top:0">
   <div class="container">
     <div class="plans">
-      <article class="plan" data-reveal>
+      <article class="plan" data-reveal data-plan="start">
   <div class="tier"><span>Pentru început</span></div>
-  <h3>Start</h3>
-  <div class="price">5.000<small>MDL</small></div>
-  <p class="term">Gata în aproximativ 1 săptămână</p>
-  <ul><li>Site de o pagină (landing)</li><li>Șablon adaptat la brand</li><li>Formular de contact și hartă</li><li>Versiune mobilă</li><li>1 limbă</li><li>Certificat SSL și instalare</li><li>2 runde de modificări</li></ul>
-  <a class="btn btn-line" href="mailto:hello@afyze.com" data-mail data-subject="Cerere pachet Start" data-body="Bună ziua,&#10;&#10;Mă interesează pachetul Start (5.000 MDL).&#10;&#10;Despre afacerea mea:&#10;&#10;Numele:&#10;Telefon:&#10;" data-magnetic=".2"><span>Alege Start</span><svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 8h12.5M9.5 3.5 14 8l-4.5 4.5"/></svg></a>
+  <h3 class="js-name">Start</h3>
+  <div class="price"><span class="js-price">5.000</span><small>MDL</small></div>
+  <p class="term js-term">Gata în aproximativ 1 săptămână</p>
+  <ul class="js-feats"><li>Site de o pagină (landing)</li><li>Șablon adaptat la brand</li><li>Formular de contact și hartă</li><li>Versiune mobilă</li><li>1 limbă</li><li>Certificat SSL și instalare</li><li>2 runde de modificări</li></ul>
+  <a class="btn btn-line js-mail" href="mailto:hello@afyze.com" data-mail data-subject="Cerere pachet Start" data-body="Bună ziua,&#10;&#10;Mă interesează pachetul Start (5.000 MDL).&#10;&#10;Despre afacerea mea:&#10;&#10;Numele:&#10;Telefon:&#10;" data-magnetic=".2"><span class="js-cta">Alege Start</span><svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 8h12.5M9.5 3.5 14 8l-4.5 4.5"/></svg></a>
 </article>
-      <article class="plan feat" data-reveal>
+      <article class="plan feat" data-reveal data-plan="business">
   <div class="tier"><span>Cel mai ales</span><span class="badge">Recomandat</span></div>
-  <h3>Business</h3>
-  <div class="price">7.000<small>MDL</small></div>
-  <p class="term">Gata în aproximativ 2 săptămâni</p>
-  <ul><li>Până la 5 pagini</li><li>Design personalizat</li><li>Formular de contact și hartă</li><li>Versiune mobilă</li><li>1 limbă</li><li>SEO de bază</li><li>Certificat SSL și instalare</li><li>2 runde de modificări</li></ul>
-  <a class="btn btn-ink" href="mailto:hello@afyze.com" data-mail data-subject="Cerere pachet Business" data-body="Bună ziua,&#10;&#10;Mă interesează pachetul Business (7.000 MDL).&#10;&#10;Despre afacerea mea:&#10;&#10;Numele:&#10;Telefon:&#10;" data-magnetic=".2"><span>Alege Business</span><svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 8h12.5M9.5 3.5 14 8l-4.5 4.5"/></svg></a>
+  <h3 class="js-name">Business</h3>
+  <div class="price"><span class="js-price">7.000</span><small>MDL</small></div>
+  <p class="term js-term">Gata în aproximativ 2 săptămâni</p>
+  <ul class="js-feats"><li>Până la 5 pagini</li><li>Design personalizat</li><li>Formular de contact și hartă</li><li>Versiune mobilă</li><li>1 limbă</li><li>SEO de bază</li><li>Certificat SSL și instalare</li><li>2 runde de modificări</li></ul>
+  <a class="btn btn-ink js-mail" href="mailto:hello@afyze.com" data-mail data-subject="Cerere pachet Business" data-body="Bună ziua,&#10;&#10;Mă interesează pachetul Business (7.000 MDL).&#10;&#10;Despre afacerea mea:&#10;&#10;Numele:&#10;Telefon:&#10;" data-magnetic=".2"><span class="js-cta">Alege Business</span><svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 8h12.5M9.5 3.5 14 8l-4.5 4.5"/></svg></a>
 </article>
-      <article class="plan" data-reveal>
+      <article class="plan" data-reveal data-plan="pro">
   <div class="tier"><span>Pentru mai mult</span></div>
-  <h3>Pro</h3>
-  <div class="price">10.500<small>MDL</small></div>
-  <p class="term">Gata în 3–4 săptămâni</p>
-  <ul><li>Până la 10 pagini</li><li>Design personalizat</li><li>Formular de contact și hartă</li><li>Versiune mobilă</li><li>2 limbi (RO + RU/EN)</li><li>SEO de bază</li><li>Certificat SSL și instalare</li><li>2 runde de modificări</li></ul>
-  <a class="btn btn-line" href="mailto:hello@afyze.com" data-mail data-subject="Cerere pachet Pro" data-body="Bună ziua,&#10;&#10;Mă interesează pachetul Pro (10.500 MDL).&#10;&#10;Despre afacerea mea:&#10;&#10;Numele:&#10;Telefon:&#10;" data-magnetic=".2"><span>Alege Pro</span><svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 8h12.5M9.5 3.5 14 8l-4.5 4.5"/></svg></a>
+  <h3 class="js-name">Pro</h3>
+  <div class="price"><span class="js-price">10.500</span><small>MDL</small></div>
+  <p class="term js-term">Gata în 3–4 săptămâni</p>
+  <ul class="js-feats"><li>Până la 10 pagini</li><li>Design personalizat</li><li>Formular de contact și hartă</li><li>Versiune mobilă</li><li>2 limbi (RO + RU/EN)</li><li>SEO de bază</li><li>Certificat SSL și instalare</li><li>2 runde de modificări</li></ul>
+  <a class="btn btn-line js-mail" href="mailto:hello@afyze.com" data-mail data-subject="Cerere pachet Pro" data-body="Bună ziua,&#10;&#10;Mă interesează pachetul Pro (10.500 MDL).&#10;&#10;Despre afacerea mea:&#10;&#10;Numele:&#10;Telefon:&#10;" data-magnetic=".2"><span class="js-cta">Alege Pro</span><svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 8h12.5M9.5 3.5 14 8l-4.5 4.5"/></svg></a>
 </article>
     </div>
-    <p class="small" style="margin-top:36px;text-align:center" data-reveal>Ai nevoie urgent? Se poate și în câteva zile, discutăm termenul și costul. Toate pachetele includ 14 zile de suport gratuit după lansare; mentenanța lunară, de la 800 MDL/lună.</p>
+    <p class="small" style="margin-top:36px;text-align:center" data-reveal data-c="urgentNote">Ai nevoie urgent? Se poate și în câteva zile, discutăm termenul și costul. Toate pachetele includ 14 zile de suport gratuit după lansare; mentenanța lunară, de la 800 MDL/lună.</p>
   </div>
 </section>
 
@@ -88,7 +87,7 @@ setTimeout(function(){if(!window.__afyze){h.classList.remove("js-anim");h.classL
     </div>
     <div class="table-wrap" data-reveal>
       <table class="compare">
-        <thead><tr><th></th><th>Start</th><th>Business</th><th>Pro</th></tr></thead>
+        <thead><tr><th></th><th data-plan-name="start">Start</th><th data-plan-name="business">Business</th><th data-plan-name="pro">Pro</th></tr></thead>
         <tbody>
           <tr><td>Pagini</td><td>1</td><td>până la 5</td><td>până la 10</td></tr>
           <tr><td>Design</td><td>Șablon adaptat</td><td>Personalizat</td><td>Personalizat</td></tr>
@@ -99,7 +98,7 @@ setTimeout(function(){if(!window.__afyze){h.classList.remove("js-anim");h.classL
           <tr><td>Certificat SSL și instalare</td><td><span class="y">●</span></td><td><span class="y">●</span></td><td><span class="y">●</span></td></tr>
           <tr><td>Runde de modificări</td><td>2</td><td>2</td><td>2</td></tr>
           <tr><td>Suport gratuit</td><td>14 zile</td><td>14 zile</td><td>14 zile</td></tr>
-          <tr><td>Termen</td><td>~1 săptămână</td><td>~2 săptămâni</td><td>3–4 săptămâni</td></tr>
+          <tr><td>Termen</td><td data-plan-term="start">~1 săptămână</td><td data-plan-term="business">~2 săptămâni</td><td data-plan-term="pro">3–4 săptămâni</td></tr>
         </tbody>
       </table>
     </div>
@@ -157,6 +156,8 @@ setTimeout(function(){if(!window.__afyze){h.classList.remove("js-anim");h.classL
 <script src="assets/vendor/gsap.min.js"></script>
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
 <script src="assets/js/site.js"></script>
 </body>
 </html>

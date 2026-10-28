@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'">
+<title>Administrare — Afyze</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index.html"><span class="mark"></span>Afyze <em>Administrare</em></a>
+  <nav class="tabs" id="tabs" hidden>
+    <button type="button" data-tab="leads" aria-current="page">Cereri <span class="badge" id="newCount" hidden></span></button>
+    <button type="button" data-tab="content">Conținut</button>
+    <button type="button" data-tab="stats">Statistici</button>
+    <button type="button" data-tab="account">Cont</button>
+  </nav>
+  <div class="who" id="who" hidden><span id="whoEmail"></span><button type="button" class="link" id="logoutBtn">Ieșire</button></div>
+</header>
+
+<main id="app">
+  <section class="screen center" id="scrLoading"><p class="muted">Se încarcă…</p></section>
+
+  <section class="screen center" id="scrOffline" hidden>
+    <div class="card narrow">
+      <h1>Backend-ul nu rulează aici</h1>
+      <p>Panoul de administrare funcționează doar împreună cu serverul Afyze. Pe GitHub Pages site-ul e static, așa că panoul nu se poate conecta.</p>
+      <ol class="steps">
+        <li>Deschide un terminal în folderul <code>server</code> al proiectului.</li>
+        <li>Rulează <code>npm install</code>, apoi <code>npm run setup</code> (o singură dată).</li>
+        <li>Pornește serverul cu <code>npm start</code>.</li>
+        <li>Deschide <code>http://localhost:3000/admin/</code>.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="screen center" id="scrSetup" hidden>
+    <div class="card narrow">
+      <h1>Creează contul de administrator</h1>
+      <p>Din motive de securitate, contul se creează doar de pe computerul pe care rulează serverul. În folderul <code>server</code>, rulează:</p>
+      <pre>npm run setup</pre>
+      <p class="muted">Apoi reîncarcă această pagină.</p>
+    </div>
+  </section>
+
+  <section class="screen center" id="scrLogin" hidden>
+    <form class="card narrow" id="loginForm" autocomplete="on">
+      <h1>Autentificare</h1>
+      <label>E-mail<input name="email" type="email" autocomplete="username" required></label>
+      <label>Parolă<input name="password" type="password" autocomplete="current-password" required></label>
+      <p class="err" id="loginErr" role="alert"></p>
+      <button class="btn" type="submit">Intră în panou</button>
+    </form>
+  </section>
+
+  <!-- ===== CERERI ===== -->
+  <section class="screen" id="scrLeads" hidden>
+    <div class="bar">
+      <div>
+        <h1>Cereri</h1>
+        <p class="muted">Mesajele trimise din formularul de contact.</p>
+      </div>
+      <a class="btn ghost" href="/api/admin/leads.csv" download>Exportă CSV</a>
+    </div>
+    <div class="filters" id="leadFilters">
+      <button type="button" data-status="" aria-pressed="true">Toate</button>
+      <button type="button" data-status="nou" aria-pressed="false">Noi <span data-count="nou"></span></button>
+      <button type="button" data-status="in_lucru" aria-pressed="false">În lucru <span data-count="in_lucru"></span></button>
+      <button type="button" data-status="castigat" aria-pressed="false">Câștigate <span data-count="castigat"></span></button>
+      <button type="button" data-status="pierdut" aria-pressed="false">Pierdute <span data-count="pierdut"></span></button>
+      <button type="button" data-status="spam" aria-pressed="false">Spam <span data-count="spam"></span></button>
+      <input type="search" id="leadSearch" placeholder="Caută după nume, e-mail, telefon…" aria-label="Caută">
+    </div>
+    <div id="leadList" class="leads"></div>
+    <p class="muted center-text" id="leadEmpty" hidden>Nu există cereri aici încă.</p>
+  </section>
+
+  <!-- ===== CONȚINUT ===== -->
+  <section class="screen" id="scrContent" hidden>
+    <div class="bar">
+      <div>
+        <h1>Conținut</h1>
+        <p class="muted">Modificările apar pe site imediat ce salvezi, oriunde backend-ul e conectat.</p>
+      </div>
+    </div>
+    <form id="contentForm" class="content-form" novalidate>
+      <fieldset class="card">
+        <legend>Date de contact</legend>
+        <div class="grid3">
+          <label>E-mail<input name="contact.email" type="email" required></label>
+          <label>Telefon<input name="contact.phone" placeholder="+373 …"></label>
+          <label>Oraș<input name="contact.city"></label>
+        </div>
+      </fieldset>
+      <fieldset class="card">
+        <legend>Anunț pe site</legend>
+        <label class="check"><input type="checkbox" name="announcement.enabled"> Afișează un anunț pe toate paginile</label>
+        <label>Textul anunțului<input name="announcement.text" maxlength="160" placeholder="ex. Mai am 2 locuri libere în noiembrie"></label>
+      </fieldset>
+      <fieldset class="card">
+        <legend>Pachete</legend>
+        <div class="grid3" id="plansBox"></div>
+        <label>Notă sub pachete<textarea name="urgentNote" rows="2" maxlength="400"></textarea></label>
+      </fieldset>
+      <fieldset class="card">
+        <legend>Proiecte în portofoliu</legend>
+        <div id="projectsBox" class="projects"></div>
+        <button type="button" class="btn ghost" id="addProject">+ Adaugă proiect</button>
+      </fieldset>
+      <div class="savebar">
+        <p class="err" id="contentErr" role="alert"></p>
+        <p class="ok" id="contentOk" role="status"></p>
+        <button class="btn" type="submit">Salvează conținutul</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ===== STATISTICI ===== -->
+  <section class="screen" id="scrStats" hidden>
+    <div class="bar">
+      <div>
+        <h1>Statistici</h1>
+        <p class="muted">Vizite anonime, fără cookie-uri. Vizitatorii care au „Do Not Track” activ nu sunt numărați.</p>
+      </div>
+      <div class="filters compact" id="statDays">
+        <button type="button" data-days="7" aria-pressed="false">7 zile</button>
+        <button type="button" data-days="30" aria-pressed="true">30 de zile</button>
+        <button type="button" data-days="90" aria-pressed="false">90 de zile</button>
+      </div>
+    </div>
+    <div class="kpis">
+      <div class="card kpi"><span>Vizualizări</span><b id="kViews">—</b></div>
+      <div class="card kpi"><span>Vizitatori (pe zi, însumați)</span><b id="kVisitors">—</b></div>
+      <div class="card kpi"><span>Cereri primite</span><b id="kLeads">—</b></div>
+    </div>
+    <div class="card"><h2>Vizualizări pe zi</h2><div id="chart" class="chart"></div></div>
+    <div class="grid3">
+      <div class="card"><h2>Pagini</h2><ol class="toplist" id="tPages"></ol></div>
+      <div class="card"><h2>De unde vin</h2><ol class="toplist" id="tRefs"></ol></div>
+      <div class="card"><h2>Dispozitive</h2><ol class="toplist" id="tDevices"></ol></div>
+    </div>
+  </section>
+
+  <!-- ===== CONT ===== -->
+  <section class="screen" id="scrAccount" hidden>
+    <div class="bar"><div><h1>Cont</h1><p class="muted">Securitatea contului de administrator.</p></div></div>
+    <div class="grid2">
+      <form class="card" id="pwForm">
+        <h2>Schimbă parola</h2>
+        <label>Parola actuală<input name="current" type="password" autocomplete="current-password" required></label>
+        <label>Parola nouă<input name="next" type="password" autocomplete="new-password" minlength="10" required></label>
+        <label>Repetă parola nouă<input name="again" type="password" autocomplete="new-password" required></label>
+        <p class="muted small">Minimum 10 caractere, cu litere și cifre. Celelalte sesiuni deschise se închid automat.</p>
+        <p class="err" id="pwErr" role="alert"></p><p class="ok" id="pwOk" role="status"></p>
+        <button class="btn" type="submit">Schimbă parola</button>
+      </form>
+      <div class="card">
+        <h2>Activitate recentă</h2>
+        <ol class="audit" id="auditList"></ol>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="admin.js"></script>
+</body>
+</html>

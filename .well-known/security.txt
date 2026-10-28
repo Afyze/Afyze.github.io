@@ -1,0 +1,4 @@
+Contact: mailto:hello@afyze.com
+Expires: 2027-10-28T00:00:00.000Z
+Preferred-Languages: ro, en, ru
+Canonical: https://afyze.github.io/.well-known/security.txt

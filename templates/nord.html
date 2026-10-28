@@ -6,6 +6,8 @@
 <title>Nord Dental — Template clinică · Afyze</title>
 <meta name="description" content="Template demo Afyze pentru o clinică stomatologică. Datele de pe pagină sunt fictive.">
 <meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -215,13 +217,6 @@ footer .c{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <footer><div class="c"><span>© Nord Dental · str. Exemplu 3, Chișinău · Date fictive, folosite doar pentru demonstrație</span><span>+373 00 000 000</span></div></footer>
 <a class="demo-badge" href="../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
 
-<script>
-(function(){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-  document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
-  document.querySelectorAll(".faq button").forEach(function(b){b.addEventListener("click",function(){var q=b.closest(".q");var o=q.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")})});
-  document.getElementById("nf").addEventListener("submit",function(e){e.preventDefault();document.getElementById("nok").textContent="Demo: în site-ul real, cererea ajunge imediat la recepția clinicii."});
-})();
-</script>
+<script src="js/nord.js"></script>
 </body>
 </html>

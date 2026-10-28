@@ -9,11 +9,10 @@
 <meta property="og:description" content="Site-uri web, automatizări, aplicații și documente generate. Ce primești concret la fiecare serviciu.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0e1d17">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' http://localhost:3000 http://127.0.0.1:3000 https://*.afyze.com; frame-src 'self'; form-action 'self' mailto:; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<script>
-(function(h){h.classList.add("js");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)h.classList.add("js-anim");
-setTimeout(function(){if(!window.__afyze){h.classList.remove("js-anim");h.classList.remove("js");}},2500);})(document.documentElement);
-</script>
+<script src="assets/js/boot.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -142,6 +141,8 @@ setTimeout(function(){if(!window.__afyze){h.classList.remove("js-anim");h.classL
 <script src="assets/vendor/gsap.min.js"></script>
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
 <script src="assets/js/site.js"></script>
 </body>
 </html>
