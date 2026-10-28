@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nord Dental — Template clinică · Afyze</title>
+<meta name="description" content="Template demo Afyze pentru o clinică stomatologică. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--white:#ffffff;--mist:#f2f6f6;--mist-2:#e6eeee;--teal:#0f5555;--teal-2:#167070;--mint:#8fd6c8;--ink:#0f2a2a;--soft:#5d7373;--line:rgba(15,42,42,.1);
+--sans:"Outfit","Segoe UI",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.c{width:min(1240px,100% - 48px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--teal-2);outline-offset:3px}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .c{display:flex;justify-content:space-between;align-items:center;height:80px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:500;font-size:21px;letter-spacing:-.01em}
+.logo span{width:30px;height:30px;border-radius:10px;background:var(--teal);display:grid;place-items:center}
+.links{display:flex;gap:32px;font-size:15px;color:var(--soft)}
+.links a{transition:color .3s}.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:14px;font:inherit;font-size:15px;font-weight:500;background:var(--teal);color:#fff;border:0;cursor:pointer;transition:background .5s var(--ease),transform .5s var(--ease)}
+.btn:hover{background:var(--teal-2);transform:translateY(-2px)}
+.btn.light{background:var(--mist);color:var(--teal)}
+.btn.light:hover{background:var(--mist-2)}
+/* hero */
+.hero{padding:80px 0 110px;background:linear-gradient(180deg,var(--white),var(--mist))}
+.hero .c{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--teal);background:rgba(143,214,200,.25);padding:8px 14px;border-radius:999px;margin-bottom:26px}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--teal-2);animation:p 2s infinite}
+@keyframes p{50%{opacity:.3}}
+h1{font-weight:500;font-size:clamp(46px,5.6vw,84px);line-height:1.02;letter-spacing:-.035em;margin:0}
+.hero p.lead{color:var(--soft);font-size:19px;max-width:44ch;margin:28px 0 38px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:36px;margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
+.trust b{display:block;font-weight:500;font-size:26px;letter-spacing:-.02em}
+.trust span{font-size:14px;color:var(--soft)}
+.visual{position:relative;aspect-ratio:1;border-radius:40px;background:radial-gradient(circle at 70% 30%,#c8eee6,transparent 55%),linear-gradient(150deg,var(--teal-2),var(--teal));overflow:hidden}
+.visual svg.tooth{position:absolute;left:50%;top:50%;width:46%;transform:translate(-50%,-50%);opacity:.9}
+.float{position:absolute;background:#fff;border-radius:20px;padding:18px 20px;box-shadow:0 30px 60px -20px rgba(15,42,42,.35);font-size:14.5px;animation:fl 7s ease-in-out infinite}
+.float b{display:block;font-weight:500;font-size:16px}
+.float span{color:var(--soft)}
+.f1{left:-4%;bottom:14%;animation-delay:-2s}
+.f2{right:6%;top:9%}
+.f1 .row{display:flex;gap:6px;margin-top:10px}
+.f1 .row i{font-style:normal;font-size:13px;padding:6px 10px;border-radius:10px;background:var(--mist)}
+.f1 .row i.on{background:var(--teal);color:#fff}
+@keyframes fl{50%{transform:translateY(-12px)}}
+/* servicii */
+.pad{padding:120px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+h2{font-weight:500;font-size:clamp(38px,4.2vw,62px);line-height:1.05;letter-spacing:-.03em;margin:0}
+.sh p{color:var(--soft);max-width:42ch;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--mist);border-radius:28px;padding:34px;transition:background .6s var(--ease),transform .8s var(--ease)}
+.svc:hover{background:var(--mist-2);transform:translateY(-6px)}
+.svc .ic{width:54px;height:54px;border-radius:16px;background:#fff;display:grid;place-items:center;color:var(--teal);margin-bottom:28px}
+.svc .ic svg{width:26px;height:26px}
+.svc h3{font-weight:500;font-size:23px;margin:0 0 8px;letter-spacing:-.01em}
+.svc p{margin:0;color:var(--soft);font-size:15.5px}
+/* echipa */
+.team{background:var(--mist)}
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.doc{background:#fff;border-radius:28px;padding:30px;display:flex;gap:18px;align-items:center}
+.av{flex:none;width:68px;height:68px;border-radius:22px;display:grid;place-items:center;font-weight:500;font-size:22px;color:#fff}
+.doc b{display:block;font-weight:500;font-size:18px}
+.doc span{font-size:14.5px;color:var(--soft)}
+/* preturi */
+.prices{width:100%;border-collapse:collapse;font-size:16.5px}
+.prices td{padding:20px 0;border-bottom:1px solid var(--line)}
+.prices td:last-child{text-align:right;font-weight:500;white-space:nowrap}
+.prices small{display:block;color:var(--soft);font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+/* faq */
+.faq .q{border-bottom:1px solid var(--line)}
+.faq button{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;padding:22px 0;font-weight:400;font-size:18.5px;box-sizing:border-box}
+.faq button:focus-visible{outline:2px solid var(--teal-2)}
+.faq .ic2{flex:none;width:32px;height:32px;border-radius:10px;background:var(--mist);position:relative;transition:transform .6s var(--ease),background .4s}
+.faq .ic2::before,.faq .ic2::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.6px;margin:-.8px 0 0 -6px;background:var(--teal);transition:transform .6s var(--ease)}
+.faq .ic2::after{transform:rotate(90deg)}
+.faq .open .ic2{transform:rotate(180deg);background:var(--mint)}
+.faq .open .ic2::after{transform:rotate(0)}
+.faq .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s var(--ease)}
+.faq .open .a{grid-template-rows:1fr}
+.faq .a>div{overflow:hidden}
+.faq .a p{margin:0 0 22px;color:var(--soft)}
+/* programare */
+.cta{background:var(--teal);color:#fff;border-radius:40px;padding:64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.cta h2{color:#fff}
+.cta p{color:rgba(255,255,255,.75);margin:18px 0 0}
+.cta form{display:grid;gap:14px}
+.cta input,.cta select{font:inherit;font-size:16px;padding:15px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff}
+.cta input::placeholder{color:rgba(255,255,255,.6)}
+.cta select option{color:var(--ink)}
+.cta input:focus,.cta select:focus{outline:none;border-color:var(--mint)}
+.cta .btn{background:var(--mint);color:var(--teal)}
+.cta .btn:hover{background:#fff}
+.cta .ok{min-height:22px;margin:0;font-size:14.5px;color:var(--mint)}
+footer{padding:40px 0;font-size:14px;color:var(--soft)}
+footer .c{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.demo-badge{position:fixed;left:18px;bottom:18px;z-index:50;background:var(--ink);color:#fff;font-size:12px;padding:9px 14px;border-radius:999px;letter-spacing:.04em;box-shadow:0 10px 30px rgba(15,42,42,.25)}
+.demo-badge b{color:var(--mint);font-weight:500}
+@media (prefers-reduced-motion:no-preference){
+ .rv{opacity:0;transform:translateY(28px);transition:opacity 1.1s var(--ease),transform 1.3s var(--ease);transition-delay:var(--d,0s)}
+ .rv.in{opacity:1;transform:none}
+ .visual.rv{transform:scale(.94)}
+ .visual.rv.in{transform:none}
+}
+@media (prefers-reduced-motion:reduce){.float,.pill i{animation:none}}
+@media (max-width:960px){
+ .links{display:none}
+ .hero .c,.two,.cta{grid-template-columns:1fr;gap:44px}
+ .grid,.docs{grid-template-columns:1fr}
+ .cta{padding:36px 24px;border-radius:28px}
+ .pad{padding:84px 0}
+ .f1{left:4%}
+ .trust{gap:22px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<nav><div class="c">
+  <a class="logo" href="#"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M12 3c-2-1.4-5.5-1.6-7.3.6C2.6 6.2 4 10.5 5.2 13.5c1 2.6 1.3 7.5 3 7.5 1.6 0 1.6-5 3.8-5s2.2 5 3.8 5c1.7 0 2-4.9 3-7.5C20 10.5 21.4 6.2 19.3 3.6 17.5 1.4 14 1.6 12 3z"/></svg></span>Nord Dental</a>
+  <div class="links"><a href="#servicii">Servicii</a><a href="#echipa">Echipa</a><a href="#preturi">Prețuri</a><a href="#programare">Programare</a></div>
+  <a class="btn" href="#programare">Programează-te</a>
+</div></nav>
+
+<header class="hero">
+  <div class="c">
+    <div>
+      <span class="pill rv"><i></i>Programări disponibile săptămâna aceasta</span>
+      <h1 class="rv" style="--d:.1s">Un zâmbet sănătos, fără emoții inutile.</h1>
+      <p class="lead rv" style="--d:.2s">Stomatologie modernă pentru întreaga familie, cu plan de tratament explicat clar și prețuri cunoscute dinainte.</p>
+      <div class="ctas rv" style="--d:.3s"><a class="btn" href="#programare">Programează o consultație</a><a class="btn light" href="#preturi">Vezi prețurile</a></div>
+      <div class="trust rv" style="--d:.4s">
+        <div><b>Luni–Sâmbătă</b><span>08:00 – 20:00</span></div>
+        <div><b>Plan scris</b><span>înainte de tratament</span></div>
+        <div><b>Copii</b><span>de la 3 ani</span></div>
+      </div>
+    </div>
+    <div class="visual rv" style="--d:.15s" aria-hidden="true">
+      <svg class="tooth" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width=".55"><path d="M12 3c-2-1.4-5.5-1.6-7.3.6C2.6 6.2 4 10.5 5.2 13.5c1 2.6 1.3 7.5 3 7.5 1.6 0 1.6-5 3.8-5s2.2 5 3.8 5c1.7 0 2-4.9 3-7.5C20 10.5 21.4 6.2 19.3 3.6 17.5 1.4 14 1.6 12 3z"/></svg>
+      <div class="float f2"><b>Consultație</b><span>inclusă în planul de tratament</span></div>
+      <div class="float f1"><b>Mâine</b><span>ore libere</span><div class="row"><i>10:00</i><i class="on">12:30</i><i>16:00</i></div></div>
+    </div>
+  </div>
+</header>
+
+<section class="pad" id="servicii">
+  <div class="c">
+    <div class="sh"><h2 class="rv">Servicii</h2><p class="rv" style="--d:.1s">De la igienizare la implanturi, totul într-un singur loc, cu aceeași echipă.</p></div>
+    <div class="grid">
+      <article class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Consultație și diagnostic</h3><p>Examinare completă, radiografie digitală și plan de tratament scris.</p></article>
+      <article class="svc rv" style="--d:.08s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 19 19 5M14 5h5v5"/></svg></div><h3>Igienizare profesională</h3><p>Detartraj, periaj profesional și air-flow pentru dinți curați și gingii sănătoase.</p></article>
+      <article class="svc rv" style="--d:.16s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M7 8h10M8 13h8"/></svg></div><h3>Implantologie</h3><p>Implanturi dentare cu planificare digitală și garanție scrisă.</p></article>
+      <article class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div><h3>Albire dentară</h3><p>Albire în cabinet sau la domiciliu, cu gutiere personalizate.</p></article>
+      <article class="svc rv" style="--d:.08s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h16M4 15h16"/><path d="M8 9v6M12 9v6M16 9v6"/></svg></div><h3>Ortodonție</h3><p>Aparate dentare clasice și alinieri transparente pentru adulți și copii.</p></article>
+      <article class="svc rv" style="--d:.16s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="4"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6"/></svg></div><h3>Stomatologie pediatrică</h3><p>Prima vizită la stomatolog, transformată într-o experiență fără frică.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="pad team" id="echipa">
+  <div class="c">
+    <div class="sh"><h2 class="rv">Echipa medicală</h2><p class="rv" style="--d:.1s">Medici cu specializări diferite, care lucrează împreună la fiecare plan de tratament.</p></div>
+    <div class="docs">
+      <div class="doc rv"><div class="av" style="background:#167070">AM</div><div><b>Dr. Ana Moraru</b><span>Medic stomatolog, implantologie</span></div></div>
+      <div class="doc rv" style="--d:.08s"><div class="av" style="background:#3c8f86">VC</div><div><b>Dr. Victor Ciobanu</b><span>Ortodonție</span></div></div>
+      <div class="doc rv" style="--d:.16s"><div class="av" style="background:#6bb6a8">IR</div><div><b>Dr. Irina Rotaru</b><span>Stomatologie pediatrică</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="preturi">
+  <div class="c two">
+    <div>
+      <h2 class="rv">Prețuri orientative</h2>
+      <p class="rv" style="--d:.1s;color:var(--soft);max-width:40ch">Prețul final îl afli după consultație, în planul de tratament scris. Prețuri în MDL.</p>
+      <table class="prices rv" style="--d:.2s">
+        <tr><td>Consultație și plan de tratament<small>inclusiv radiografie</small></td><td>300</td></tr>
+        <tr><td>Igienizare profesională<small>detartraj și air-flow</small></td><td>700</td></tr>
+        <tr><td>Obturație estetică<small>pe dinte</small></td><td>de la 800</td></tr>
+        <tr><td>Albire în cabinet</td><td>3.500</td></tr>
+        <tr><td>Implant dentar<small>fără coroană</small></td><td>de la 9.000</td></tr>
+      </table>
+    </div>
+    <div class="faq">
+      <h2 class="rv" style="font-size:clamp(30px,3vw,40px);margin-bottom:20px">Întrebări frecvente</h2>
+      <div class="q rv"><button aria-expanded="false">Doare tratamentul?<span class="ic2"></span></button><div class="a"><div><p>Folosim anestezie locală modernă, iar majoritatea pacienților simt doar o ușoară presiune. Îți explicăm fiecare pas înainte.</p></div></div></div>
+      <div class="q rv"><button aria-expanded="false">Pot plăti în rate?<span class="ic2"></span></button><div class="a"><div><p>Da, pentru tratamente mai mari putem stabili un plan de plată în etape, conform planului de tratament.</p></div></div></div>
+      <div class="q rv"><button aria-expanded="false">De la ce vârstă primiți copii?<span class="ic2"></span></button><div class="a"><div><p>De la 3 ani. Prima vizită este una de cunoaștere, fără tratament, ca cel mic să se obișnuiască.</p></div></div></div>
+      <div class="q rv"><button aria-expanded="false">Cât durează o consultație?<span class="ic2"></span></button><div class="a"><div><p>Aproximativ 40 de minute, inclusiv radiografia și discuția despre planul de tratament.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="programare" style="padding-top:0">
+  <div class="c">
+    <div class="cta">
+      <div><h2 class="rv">Programează o consultație.</h2><p class="rv" style="--d:.1s">Lasă-ne datele și te sunăm în cel mult o oră, în timpul programului clinicii.</p></div>
+      <form class="rv" style="--d:.15s" id="nf">
+        <input placeholder="Nume și prenume" required>
+        <input type="tel" placeholder="Telefon" required>
+        <select><option>Consultație</option><option>Igienizare</option><option>Implant</option><option>Ortodonție</option><option>Copii</option></select>
+        <button class="btn" type="submit">Trimite</button>
+        <p class="ok" id="nok"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer><div class="c"><span>© Nord Dental · str. Exemplu 3, Chișinău · Date fictive, folosite doar pentru demonstrație</span><span>+373 00 000 000</span></div></footer>
+<a class="demo-badge" href="../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+  document.querySelectorAll(".faq button").forEach(function(b){b.addEventListener("click",function(){var q=b.closest(".q");var o=q.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")})});
+  document.getElementById("nf").addEventListener("submit",function(e){e.preventDefault();document.getElementById("nok").textContent="Demo: în site-ul real, cererea ajunge imediat la recepția clinicii."});
+})();
+</script>
+</body>
+</html>

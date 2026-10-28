@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember — Template restaurant · Afyze</title>
+<meta name="description" content="Template demo Afyze pentru un restaurant. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--char:#120f0d;--char-2:#1c1714;--char-3:#27201b;--cream:#f1e7da;--muted:#a8998a;--amber:#e8913a;--amber-2:#f3b46b;--line:rgba(241,231,218,.12);
+--serif:"DM Serif Display",Georgia,serif;--sans:"Karla","Segoe UI",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--char);color:var(--cream);font-family:var(--sans);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.c{width:min(1240px,100% - 48px);margin-inline:auto}
+:focus-visible{outline:1.5px solid var(--amber);outline-offset:3px}
+nav{position:absolute;inset:0 0 auto;z-index:10}
+nav .c{display:flex;justify-content:space-between;align-items:center;height:90px}
+.logo{font-family:var(--serif);font-size:28px;letter-spacing:.02em}
+.logo i{font-style:normal;color:var(--amber)}
+.links{display:flex;gap:34px;font-size:14px;letter-spacing:.06em;color:var(--muted)}
+.links a{transition:color .4s}.links a:hover{color:var(--cream)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.04em;background:var(--amber);color:var(--char);border:0;cursor:pointer;transition:background .5s var(--ease),transform .5s var(--ease)}
+.btn:hover{background:var(--amber-2);transform:translateY(-2px)}
+.btn.line{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1px rgba(241,231,218,.35)}
+.btn.line:hover{box-shadow:inset 0 0 0 1px var(--cream)}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 0 70px;overflow:hidden;background:radial-gradient(80% 60% at 70% 75%,rgba(232,145,58,.28),transparent 60%),radial-gradient(50% 40% at 20% 20%,rgba(120,60,30,.25),transparent 70%),var(--char)}
+#sparks{position:absolute;inset:0;width:100%;height:100%}
+.hero .c{position:relative;z-index:2}
+.big{font-family:var(--serif);font-weight:400;font-size:clamp(90px,19vw,300px);line-height:.82;letter-spacing:-.02em;margin:0}
+.hero .row{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
+.hero p{margin:0;max-width:44ch;color:var(--muted);font-size:18px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.strip div{padding:28px 0;font-size:14.5px;color:var(--muted)}
+.strip div+div{padding-left:28px;border-left:1px solid var(--line)}
+.strip b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--cream)}
+/* despre */
+.pad{padding:130px 0}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5vw,76px);line-height:1;margin:0 0 28px}
+h2 em{color:var(--amber-2)}
+.story p{color:var(--muted);margin:0 0 18px;max-width:48ch}
+.fire{position:relative;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 60%,#f6c27c 0%,#e8913a 18%,#a4471d 38%,#3b1b10 60%,transparent 72%);filter:saturate(1.1);animation:breathe 6s ease-in-out infinite}
+.fire::after{content:"";position:absolute;inset:-8%;border-radius:50%;border:1px solid rgba(232,145,58,.25)}
+@keyframes breathe{50%{transform:scale(1.04);filter:saturate(1.3) brightness(1.08)}}
+/* meniu */
+.menu-sec{background:var(--char-2)}
+.tabs{display:flex;gap:8px;margin:0 0 54px;flex-wrap:wrap}
+.tabs button{cursor:pointer;background:none;border:1px solid var(--line);color:var(--muted);padding:11px 22px;border-radius:999px;font:inherit;font-size:14px;letter-spacing:.04em;transition:all .5s var(--ease)}
+.tabs button[aria-selected="true"]{background:var(--cream);color:var(--char);border-color:var(--cream)}
+.dishes{display:grid;grid-template-columns:1fr 1fr;gap:0 80px}
+.dish{display:grid;grid-template-columns:1fr auto;gap:4px 24px;padding:26px 0;border-bottom:1px solid var(--line)}
+.dish h3{font-family:var(--serif);font-weight:400;font-size:26px;margin:0;line-height:1.2}
+.dish .p{font-family:var(--serif);font-size:24px;color:var(--amber-2)}
+.dish p{grid-column:1/-1;margin:0;color:var(--muted);font-size:15px}
+.panel{display:none}.panel.on{display:block;animation:fadeup .9s var(--ease)}
+@keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+/* rezervare */
+.res{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
+.res-card{background:var(--char-3);border-radius:24px;padding:44px;display:grid;gap:22px}
+label{display:grid;gap:8px;font-size:13px;letter-spacing:.06em;color:var(--muted)}
+input,select{font:inherit;font-size:16px;color:var(--cream);background:var(--char);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color-scheme:dark;transition:border-color .4s}
+input:focus,select:focus{outline:none;border-color:var(--amber)}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;background:var(--char)}
+.stepper button{width:46px;height:50px;background:none;border:0;color:var(--cream);font-size:20px;cursor:pointer}
+.stepper output{flex:1;text-align:center;font-size:17px}
+.sum{font-size:14.5px;color:var(--muted);min-height:24px;margin:0}
+.sum b{color:var(--amber-2);font-weight:500}
+.hours{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:0}
+.hours li{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.hours span{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:34px 0;font-size:13.5px;color:var(--muted)}
+footer .c{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.demo-badge{position:fixed;left:18px;bottom:18px;z-index:50;background:var(--cream);color:var(--char);font-size:12px;padding:9px 14px;border-radius:999px;letter-spacing:.04em;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.demo-badge b{color:#b2591b}
+@media (prefers-reduced-motion:no-preference){
+ .rv{opacity:0;transform:translateY(30px);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+ .rv.in{opacity:1;transform:none}
+ .big.rv{transform:translateY(60px)}
+}
+@media (prefers-reduced-motion:reduce){.fire{animation:none}}
+@media (max-width:900px){
+ .links{display:none}
+ .hero .row,.story,.res{grid-template-columns:1fr;gap:40px}
+ .dishes{grid-template-columns:1fr}
+ .strip{grid-template-columns:1fr}.strip div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+ .row3{grid-template-columns:1fr}
+ .pad{padding:90px 0}
+ .res-card{padding:28px}
+}
+</style>
+</head>
+<body>
+<nav><div class="c"><a class="logo" href="#">Ember<i>.</i></a><div class="links"><a href="#poveste">Poveste</a><a href="#meniu">Meniu</a><a href="#rezervari">Rezervări</a></div><a class="btn" href="#rezervari">Rezervă o masă</a></div></nav>
+
+<header class="hero">
+  <canvas id="sparks" aria-hidden="true"></canvas>
+  <div class="c">
+    <h1 class="big rv">Ember</h1>
+    <div class="row">
+      <p class="rv" style="--d:.15s">Bucătărie la foc deschis, în inima Chișinăului. Ingrediente locale, gătite simplu, cu răbdare.</p>
+      <div class="ctas rv" style="--d:.25s"><a class="btn" href="#rezervari">Rezervă o masă</a><a class="btn line" href="#meniu">Vezi meniul</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="c"><div class="strip">
+  <div class="rv"><b>Marți – Duminică</b>de la 12:00 până la 23:00</div>
+  <div class="rv" style="--d:.1s"><b>str. Exemplu 7</b>Centru, Chișinău</div>
+  <div class="rv" style="--d:.2s"><b>+373 00 000 000</b>rezervări și evenimente private</div>
+</div></div>
+
+<section class="pad" id="poveste">
+  <div class="c story">
+    <div>
+      <h2 class="rv">Totul începe <em>cu focul</em>.</h2>
+      <p class="rv" style="--d:.1s">Grătarul nostru pe lemn de stejar arde din prima oră a zilei. Carnea, legumele și pâinea trec prin flacără și primesc acel gust pe care nu-l poți imita.</p>
+      <p class="rv" style="--d:.2s">Lucrăm cu producători din Moldova și schimbăm meniul odată cu sezonul.</p>
+    </div>
+    <div class="fire rv" style="--d:.15s" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="pad menu-sec" id="meniu">
+  <div class="c">
+    <h2 class="rv">Meniu</h2>
+    <div class="tabs rv" role="tablist" aria-label="Categorii meniu">
+      <button role="tab" aria-selected="true" data-t="a">Antreuri</button>
+      <button role="tab" aria-selected="false" data-t="b">De la foc</button>
+      <button role="tab" aria-selected="false" data-t="c">Deserturi</button>
+    </div>
+    <div class="panel on" id="a" role="tabpanel"><div class="dishes">
+      <div class="dish"><h3>Burrata cu roșii coapte</h3><span class="p">185</span><p>Roșii de grădină, ulei de busuioc, pâine din cuptor.</p></div>
+      <div class="dish"><h3>Tartar de vită</h3><span class="p">210</span><p>Gălbenuș marinat, capere, chipsuri de cartof.</p></div>
+      <div class="dish"><h3>Ardei copți pe jar</h3><span class="p">140</span><p>Brânză de oaie, usturoi verde, miere de salcâm.</p></div>
+      <div class="dish"><h3>Supă cremă de dovleac</h3><span class="p">115</span><p>Semințe prăjite, smântână, ulei de dovleac.</p></div>
+    </div></div>
+    <div class="panel" id="b" role="tabpanel"><div class="dishes">
+      <div class="dish"><h3>Antricot maturat</h3><span class="p">520</span><p>300 g, maturat 28 de zile, sos de piper.</p></div>
+      <div class="dish"><h3>Piept de rață</h3><span class="p">390</span><p>Piure de țelină, cireșe, sos de vin roșu.</p></div>
+      <div class="dish"><h3>Păstrăv la jar</h3><span class="p">320</span><p>Lămâie coaptă, ierburi, unt cu capere.</p></div>
+      <div class="dish"><h3>Conopidă întreagă</h3><span class="p">210</span><p>Tahini, rodie, mentă, fistic prăjit.</p></div>
+    </div></div>
+    <div class="panel" id="c" role="tabpanel"><div class="dishes">
+      <div class="dish"><h3>Tartă cu ciocolată</h3><span class="p">145</span><p>Sare de mare, înghețată de vanilie.</p></div>
+      <div class="dish"><h3>Piersici la grătar</h3><span class="p">130</span><p>Mascarpone, miere, migdale caramelizate.</p></div>
+      <div class="dish"><h3>Plăcintă cu brânză</h3><span class="p">110</span><p>Rețeta bunicii, cu smântână și stafide.</p></div>
+      <div class="dish"><h3>Sorbet de sezon</h3><span class="p">95</span><p>Trei arome, din fructe locale.</p></div>
+    </div></div>
+    <p class="rv" style="color:var(--muted);font-size:14px;margin-top:30px">Prețurile sunt în MDL.</p>
+  </div>
+</section>
+
+<section class="pad" id="rezervari">
+  <div class="c res">
+    <div>
+      <h2 class="rv">Rezervă <em>o masă</em>.</h2>
+      <p class="rv" style="--d:.1s;color:var(--muted);max-width:42ch">Confirmăm rezervarea telefonic în cel mult o oră. Pentru grupuri de peste 10 persoane, sună-ne direct.</p>
+      <ul class="hours rv" style="--d:.2s">
+        <li>Marți – Joi<span>12:00 – 23:00</span></li>
+        <li>Vineri – Sâmbătă<span>12:00 – 00:00</span></li>
+        <li>Duminică<span>12:00 – 22:00</span></li>
+        <li>Luni<span>Închis</span></li>
+      </ul>
+    </div>
+    <form class="res-card rv" style="--d:.15s" id="resForm">
+      <div class="row3">
+        <label>Data<input type="date" id="rd" required></label>
+        <label>Ora<select id="rt"><option>18:00</option><option>18:30</option><option selected>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select></label>
+        <label>Persoane<div class="stepper"><button type="button" data-s="-1" aria-label="Mai puține persoane">−</button><output id="rg">2</output><button type="button" data-s="1" aria-label="Mai multe persoane">+</button></div></label>
+      </div>
+      <label>Nume<input id="rn" required></label>
+      <label>Telefon<input type="tel" required></label>
+      <p class="sum" id="rsum"></p>
+      <button class="btn" type="submit" style="justify-self:start">Trimite rezervarea</button>
+    </form>
+  </div>
+</section>
+
+<footer><div class="c"><span>© Ember · Date fictive, folosite doar pentru demonstrație</span><span>Instagram · Facebook</span></div></footer>
+<a class="demo-badge" href="../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+
+<script>
+(function(){
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+
+  // tab-uri meniu
+  var tabs=document.querySelectorAll("[role=tab]");
+  tabs.forEach(function(t){t.addEventListener("click",function(){
+    tabs.forEach(function(x){x.setAttribute("aria-selected",x===t?"true":"false")});
+    document.querySelectorAll(".panel").forEach(function(p){p.classList.toggle("on",p.id===t.dataset.t)});
+  })});
+
+  // rezervare
+  var g=2,out=document.getElementById("rg"),sum=document.getElementById("rsum"),d=document.getElementById("rd"),tm=document.getElementById("rt");
+  var today=new Date();d.min=today.toISOString().slice(0,10);
+  var tmr=new Date(today.getTime()+864e5);d.value=tmr.toISOString().slice(0,10);
+  function upd(){var dt=d.value?new Date(d.value+"T12:00").toLocaleDateString("ro-RO",{weekday:"long",day:"numeric",month:"long"}):"—";
+    sum.innerHTML="Masă pentru <b>"+g+(g===1?" persoană":" persoane")+"</b>, "+dt+", la <b>"+tm.value+"</b>.";}
+  document.querySelectorAll("[data-s]").forEach(function(b){b.addEventListener("click",function(){g=Math.max(1,Math.min(10,g+ +b.dataset.s));out.textContent=g;upd()})});
+  d.addEventListener("change",upd);tm.addEventListener("change",upd);upd();
+  document.getElementById("resForm").addEventListener("submit",function(e){e.preventDefault();sum.innerHTML="Demo: în site-ul real, rezervarea ajunge imediat la restaurant.";});
+
+  // scântei
+  var c=document.getElementById("sparks"),x=c.getContext("2d"),W,H,P=[];
+  function rs(){var r=Math.min(devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;c.width=W*r;c.height=H*r;x.setTransform(r,0,0,r,0,0)}
+  function sp(){return{x:W*(.35+Math.random()*.6),y:H+10,vx:(Math.random()-.5)*.4,vy:-(.4+Math.random()*1.1),r:.6+Math.random()*1.8,l:0,m:220+Math.random()*260}}
+  rs();addEventListener("resize",rs);
+  if(reduce)return;
+  for(var i=0;i<70;i++){var p=sp();p.y=Math.random()*H;p.l=Math.random()*p.m;P.push(p)}
+  (function loop(){x.clearRect(0,0,W,H);
+    P.forEach(function(p,i){p.l++;p.x+=p.vx+Math.sin(p.l*.03)*.3;p.y+=p.vy;var a=1-p.l/p.m;
+      if(a<=0||p.y<-10){P[i]=sp();return}
+      x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fillStyle="rgba(243,"+(150+Math.round(60*a))+",90,"+(a*.85)+")";x.shadowBlur=8;x.shadowColor="rgba(232,145,58,.8)";x.fill();});
+    requestAnimationFrame(loop)})();
+})();
+</script>
+</body>
+</html>

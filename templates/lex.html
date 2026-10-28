@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lex — Template cabinet de avocat · Afyze</title>
+<meta name="description" content="Template demo Afyze pentru un cabinet de avocat. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5f2ec;--paper-2:#ebe6dc;--navy:#18233a;--navy-2:#22304d;--brass:#a8874f;--ink:#18233a;--soft:#5b6478;--line:rgba(24,35,58,.14);
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope","Segoe UI",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.c{width:min(1200px,100% - 48px);margin-inline:auto}
+:focus-visible{outline:1.5px solid var(--brass);outline-offset:3px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:20;background:rgba(245,242,236,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .c{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.02em}
+.brand small{display:block;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.18em;color:var(--brass);margin-top:-2px}
+.menu{display:flex;gap:30px;font-size:14px;color:var(--soft)}
+.menu a{position:relative;transition:color .4s}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:right;transition:transform .6s var(--ease)}
+.menu a:hover{color:var(--ink)}.menu a:hover::after{transform:scaleX(1);transform-origin:left}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;font-size:14px;font-weight:500;letter-spacing:.02em;border:1px solid var(--navy);background:var(--navy);color:var(--paper);transition:background .5s var(--ease),color .5s}
+.btn:hover{background:transparent;color:var(--navy)}
+.btn.ghost{background:transparent;color:var(--navy)}
+.btn.ghost:hover{background:var(--navy);color:var(--paper)}
+/* hero */
+.hero{padding:96px 0 110px}
+.hero .c{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+.eyebrow{font-size:13px;letter-spacing:.14em;color:var(--brass);margin:0 0 26px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(48px,6.4vw,92px);line-height:1;letter-spacing:-.01em;margin:0}
+.hero p.lead{font-size:19px;color:var(--soft);max-width:46ch;margin:32px 0 40px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.plate{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,var(--navy-2),var(--navy));color:var(--paper);padding:44px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.plate::before{content:"";position:absolute;inset:16px;border:1px solid rgba(168,135,79,.5)}
+.plate .emb{width:92px;height:92px;color:var(--brass);position:relative}
+.plate ul{list-style:none;margin:0;padding:0;position:relative;font-family:var(--serif);font-size:26px;line-height:1.5}
+.plate li{border-bottom:1px solid rgba(245,242,236,.14);padding:6px 0}
+.plate .sig{position:relative;font-size:12px;letter-spacing:.16em;color:rgba(245,242,236,.6)}
+/* domenii */
+section.pad{padding:120px 0}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.4vw,62px);line-height:1.05;margin:0}
+.sh p{color:var(--soft);margin:0;max-width:46ch;justify-self:end}
+.areas{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.area{padding:40px 32px 44px 0;border-bottom:1px solid var(--line);transition:background .6s var(--ease)}
+.area:not(:nth-child(3n)){border-right:1px solid var(--line)}
+.area:not(:nth-child(3n+1)){padding-left:32px}
+.area h3{font-family:var(--serif);font-weight:500;font-size:30px;margin:18px 0 10px;line-height:1.1}
+.area p{margin:0;color:var(--soft);font-size:15.5px}
+.area svg{width:30px;height:30px;color:var(--brass)}
+/* despre */
+.about{background:var(--navy);color:var(--paper)}
+.about .c{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.about h2{color:var(--paper)}
+.about p{color:rgba(245,242,236,.75);margin:0 0 20px}
+.about .facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,242,236,.12);margin-top:40px}
+.about .facts div{background:var(--navy);padding:26px 24px 26px 0}
+.about .facts b{display:block;font-family:var(--serif);font-weight:500;font-size:22px;color:var(--brass);line-height:1.2;margin-bottom:6px}
+.about .facts span{font-size:14px;color:rgba(245,242,236,.65)}
+.quote{font-family:var(--serif);font-size:clamp(28px,2.8vw,40px);line-height:1.3;margin:0;padding-left:28px;border-left:1px solid var(--brass)}
+/* abordare */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;counter-reset:s}
+.st{border-top:1px solid var(--navy);padding-top:28px}
+.st b{font-family:var(--serif);font-weight:500;font-size:54px;line-height:1;color:var(--brass)}
+.st h3{font-family:var(--serif);font-weight:500;font-size:28px;margin:18px 0 8px}
+.st p{margin:0;color:var(--soft)}
+/* contact */
+.contact{background:var(--paper-2)}
+.contact .c{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
+.info dl{margin:36px 0 0;display:grid;gap:22px}
+.info dt{font-size:12px;letter-spacing:.14em;color:var(--brass)}
+.info dd{margin:4px 0 0;font-family:var(--serif);font-size:24px}
+form{display:grid;gap:22px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+label{display:grid;gap:8px;font-size:13px;letter-spacing:.04em;color:var(--soft)}
+input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:14px 16px;border-radius:0;transition:border-color .4s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy)}
+textarea{min-height:130px;resize:vertical}
+.note{font-size:13px;color:var(--soft);margin:0}
+footer{background:var(--navy);color:rgba(245,242,236,.6);font-size:13.5px;padding:36px 0}
+footer .c{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.demo-badge{position:fixed;left:18px;bottom:18px;z-index:50;background:var(--navy);color:var(--paper);font-size:12px;padding:9px 14px;border-radius:999px;letter-spacing:.04em;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.demo-badge b{color:var(--brass);font-weight:600}
+/* reveal */
+@media (prefers-reduced-motion:no-preference){
+ .rv{opacity:0;transform:translateY(28px);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+ .rv.in{opacity:1;transform:none}
+ .plate.rv{transform:translateY(40px) scale(.98)}
+ .plate.rv.in{transform:none}
+}
+@media (max-width:900px){
+ .menu{display:none}
+ .hero .c,.about .c,.contact .c,.sh{grid-template-columns:1fr;gap:40px}
+ .sh p{justify-self:start}
+ .areas{grid-template-columns:1fr}
+ .area,.area:not(:nth-child(3n+1)){padding:32px 0;border-right:0!important}
+ .steps{grid-template-columns:1fr}
+ .row2{grid-template-columns:1fr}
+ .plate{aspect-ratio:auto;min-height:420px}
+ section.pad{padding:80px 0}
+}
+</style>
+</head>
+<body>
+<nav class="top">
+  <div class="c">
+    <a class="brand" href="#">
+      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#a8874f" stroke-width="1.2" aria-hidden="true"><path d="M20 5v30M10 35h20M8 13h24M20 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M8 13 3 24a5 5 0 0 0 10 0L8 13zM32 13l-5 11a5 5 0 0 0 10 0l-5-11z"/></svg>
+      <span>Lex Arcan<small>CABINET DE AVOCAT</small></span>
+    </a>
+    <div class="menu"><a href="#domenii">Domenii de practică</a><a href="#despre">Despre</a><a href="#abordare">Abordare</a><a href="#contact">Contact</a></div>
+    <a class="btn" href="#contact">Programează o consultație</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="c">
+    <div>
+      <p class="eyebrow rv">CHIȘINĂU · DIN 2012</p>
+      <h1 class="rv" style="--d:.1s">Claritate juridică pentru deciziile care contează.</h1>
+      <p class="lead rv" style="--d:.2s">Asistență juridică pentru persoane fizice și companii, cu explicații pe înțeles și o strategie clară de la prima consultație.</p>
+      <div class="ctas rv" style="--d:.3s"><a class="btn" href="#contact">Programează o consultație</a><a class="btn ghost" href="#domenii">Domenii de practică</a></div>
+    </div>
+    <div class="plate rv" style="--d:.2s">
+      <svg class="emb" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width=".9" aria-hidden="true"><path d="M20 5v30M10 35h20M8 13h24M20 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M8 13 3 24a5 5 0 0 0 10 0L8 13zM32 13l-5 11a5 5 0 0 0 10 0l-5-11z"/></svg>
+      <ul><li>Drept civil</li><li>Drept comercial</li><li>Litigii</li><li>Drept imobiliar</li><li>Dreptul familiei</li></ul>
+      <span class="sig">AVOCAT LICENȚIAT ÎN REPUBLICA MOLDOVA</span>
+    </div>
+  </div>
+</header>
+
+<section class="pad" id="domenii">
+  <div class="c">
+    <div class="sh"><h2 class="rv">Domenii de practică</h2><p class="rv" style="--d:.1s">Fiecare dosar începe cu o analiză atentă a situației tale și a opțiunilor reale pe care le ai.</p></div>
+    <div class="areas">
+      <article class="area rv"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 25V9l9-5 9 5v16M11 25v-7h8v7"/></svg><h3>Drept civil</h3><p>Contracte, obligații, despăgubiri și recuperarea creanțelor.</p></article>
+      <article class="area rv" style="--d:.08s"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="5" y="9" width="20" height="15"/><path d="M11 9V6h8v3M5 15h20"/></svg><h3>Drept comercial</h3><p>Înființarea companiilor, contracte comerciale și relația cu partenerii.</p></article>
+      <article class="area rv" style="--d:.16s"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15 4v22M8 26h14M6 10h18M6 10l-3 7a3 3 0 0 0 6 0l-3-7zM24 10l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg><h3>Litigii</h3><p>Reprezentare în instanțele de judecată și în procedurile de mediere.</p></article>
+      <article class="area rv"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 14 15 5l11 9M7 12v13h16V12"/><path d="M13 25v-6h4v6"/></svg><h3>Drept imobiliar</h3><p>Verificarea și redactarea actelor la cumpărarea sau vânzarea unui bun.</p></article>
+      <article class="area rv" style="--d:.08s"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="10" r="4"/><circle cx="20" cy="12" r="3"/><path d="M4 25c0-4 3-7 7-7s7 3 7 7M17 19c4 0 8 2 8 6"/></svg><h3>Dreptul familiei</h3><p>Divorț, partajul bunurilor, pensie de întreținere și custodie.</p></article>
+      <article class="area rv" style="--d:.16s"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 4h11l5 5v17H8z"/><path d="M19 4v5h5M12 15h8M12 19h8"/></svg><h3>Consultanță juridică</h3><p>Opinii juridice și verificarea documentelor înainte de a semna.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="pad about" id="despre">
+  <div class="c">
+    <div>
+      <p class="eyebrow rv">DESPRE CABINET</p>
+      <h2 class="rv" style="--d:.1s">Un singur avocat, implicat direct în fiecare dosar.</h2>
+      <div class="facts rv" style="--d:.2s">
+        <div><b>Consultație inițială</b><span>în persoană sau online</span></div>
+        <div><b>Română, rusă, engleză</b><span>limbile în care lucrăm</span></div>
+        <div><b>Onorariu stabilit</b><span>în scris, înainte de start</span></div>
+        <div><b>Confidențialitate</b><span>secret profesional garantat</span></div>
+      </div>
+    </div>
+    <div>
+      <p class="rv">Cabinetul oferă asistență juridică în cauze civile, comerciale și de familie. Lucrăm cu persoane fizice și cu companii mici și mijlocii.</p>
+      <p class="rv" style="--d:.1s">Nu promitem rezultate. Promitem o analiză onestă a situației, o strategie explicată pe înțeles și informații la fiecare etapă a dosarului.</p>
+      <blockquote class="quote rv" style="--d:.2s">„Clientul trebuie să înțeleagă la fiecare pas ce facem și de ce.”</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="abordare">
+  <div class="c">
+    <div class="sh"><h2 class="rv">Cum lucrăm</h2><p class="rv" style="--d:.1s">Un proces simplu și transparent, de la prima întâlnire până la soluționarea cauzei.</p></div>
+    <div class="steps">
+      <div class="st rv"><b>I</b><h3>Consultația</h3><p>Ascultăm situația, analizăm documentele și identificăm opțiunile disponibile.</p></div>
+      <div class="st rv" style="--d:.1s"><b>II</b><h3>Strategia</h3><p>Primești un plan de acțiune scris, cu etapele, termenele estimative și onorariul.</p></div>
+      <div class="st rv" style="--d:.2s"><b>III</b><h3>Reprezentarea</h3><p>Ne ocupăm de dosar și te ținem la curent după fiecare pas important.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad contact" id="contact">
+  <div class="c">
+    <div class="info">
+      <p class="eyebrow rv">CONTACT</p>
+      <h2 class="rv" style="--d:.1s">Programează o consultație.</h2>
+      <dl class="rv" style="--d:.2s">
+        <div><dt>ADRESA</dt><dd>str. Exemplu 12, of. 4, Chișinău</dd></div>
+        <div><dt>TELEFON</dt><dd>+373 00 000 000</dd></div>
+        <div><dt>PROGRAM</dt><dd>Luni – Vineri, 09:00 – 18:00</dd></div>
+      </dl>
+    </div>
+    <form class="rv" style="--d:.15s" onsubmit="event.preventDefault();this.querySelector('.note').textContent='Demo: în site-ul real, cererea ajunge direct pe e-mailul cabinetului.'">
+      <div class="row2"><label>Nume și prenume<input required></label><label>Telefon<input type="tel" required></label></div>
+      <label>Domeniul<select><option>Drept civil</option><option>Drept comercial</option><option>Litigii</option><option>Drept imobiliar</option><option>Dreptul familiei</option><option>Altul</option></select></label>
+      <label>Descrieți pe scurt situația<textarea></textarea></label>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px"><button class="btn" type="submit">Trimite cererea</button><p class="note">Vă contactăm în cel mult o zi lucrătoare.</p></div>
+    </form>
+  </div>
+</section>
+
+<footer><div class="c"><span>© Lex Arcan · Cabinet de avocat · Date fictive, folosite doar pentru demonstrație</span><span>Politica de confidențialitate</span></div></footer>
+<a class="demo-badge" href="../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+<script>
+(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -5% 0px"});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});})();
+</script>
+</body>
+</html>
