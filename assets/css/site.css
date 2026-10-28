@@ -11,9 +11,9 @@
   --ivory-2:#e8e1d3;
   --champagne:#cdb88a;
   --champagne-2:#e6d6ad;
-  --mist:#9fb0a6;
+  --mist:#b6c4bb;
   --ink:#13281f;
-  --ink-soft:#4d6458;
+  --ink-soft:#3c5246;
   --line:rgba(242,237,227,.12);
   --line-dark:rgba(19,40,31,.14);
 
@@ -373,3 +373,21 @@ html.js-anim [data-clip]{clip-path:inset(100% 0 0 0)}
 .announce{position:fixed;left:50%;bottom:24px;z-index:70;display:flex;align-items:center;gap:14px;max-width:calc(100% - 32px);padding:12px 12px 12px 22px;border-radius:999px;background:var(--champagne);color:var(--night);font-size:15px;box-shadow:0 20px 50px rgba(0,0,0,.35);transform:translate(-50%,180%);transition:transform .9s var(--ease)}
 .announce.show{transform:translate(-50%,0)}
 .announce button{flex:none;width:32px;height:32px;border-radius:50%;border:0;background:rgba(14,29,23,.12);color:var(--night);font-size:18px;line-height:1;cursor:pointer}
+
+
+/* ---------- Lizibilitate: grosimi mai mari pentru fontul serif ----------
+   Bodoni Moda are linii foarte subțiri la 400; la titluri mari folosim 500,
+   iar la textele serif mai mici 600, ca să se citească ușor pe orice ecran. */
+html body .display,
+html body .display-xl, html body .display-l, html body .display-m,
+html body .statement, html body .svc-detail h2, html body .plan h3,
+html body .fact b, html body .plan .price, html body .footer .huge,
+html body .mmenu a.big, html body .sent h3, html body .big-mail,
+html body .cta-big .mail, html body .marquee span, html body .logo{font-weight:500}
+html body .display-s, html body .svc-row h3, html body .case h3, html body .tpl h3,
+html body .step h3, html body .faq button, html body .auto-item h3, html body .how h3,
+html body .compare th, html body .contact-side .serif, html body .svc-row .num,
+html body .svc-detail .num, html body .step .d, html body .curtain .count{font-weight:600}
+html body .small{font-size:14.5px}
+html body .tag{color:var(--ivory-2)}
+html body .light .tag{color:var(--ink-soft)}
