@@ -9,184 +9,182 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--char:#120f0d;--char-2:#1c1714;--char-3:#27201b;--cream:#f1e7da;--muted:#a8998a;--amber:#e8913a;--amber-2:#f3b46b;--line:rgba(241,231,218,.12);
---serif:"DM Serif Display",Georgia,serif;--sans:"Karla","Segoe UI",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+:root{--black:#0d0b0a;--coal:#171311;--coal-2:#211b17;--cream:#f3e9dc;--muted:#a3968a;--fire:#ff8a3d;--fire-2:#ffb36b;--line:rgba(243,233,220,.14);
+--disp:"Anton",Impact,"Arial Narrow",sans-serif;--sans:"Karla","Segoe UI",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--char);color:var(--cream);font-family:var(--sans);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--black);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:84px}
 a{color:inherit;text-decoration:none}
-.c{width:min(1240px,100% - 48px);margin-inline:auto}
-:focus-visible{outline:1.5px solid var(--amber);outline-offset:3px}
-nav{position:absolute;inset:0 0 auto;z-index:10}
-nav .c{display:flex;justify-content:space-between;align-items:center;height:90px}
-.logo{font-family:var(--serif);font-size:28px;letter-spacing:.02em}
-.logo i{font-style:normal;color:var(--amber)}
-.links{display:flex;gap:34px;font-size:14px;letter-spacing:.06em;color:var(--muted)}
-.links a{transition:color .4s}.links a:hover{color:var(--cream)}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.04em;background:var(--amber);color:var(--char);border:0;cursor:pointer;transition:background .5s var(--ease),transform .5s var(--ease)}
-.btn:hover{background:var(--amber-2);transform:translateY(-2px)}
-.btn.line{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1px rgba(241,231,218,.35)}
-.btn.line:hover{box-shadow:inset 0 0 0 1px var(--cream)}
-/* hero */
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 0 70px;overflow:hidden;background:radial-gradient(80% 60% at 70% 75%,rgba(232,145,58,.28),transparent 60%),radial-gradient(50% 40% at 20% 20%,rgba(120,60,30,.25),transparent 70%),var(--char)}
+.c{width:min(1320px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--fire);outline-offset:3px}
+.disp{font-family:var(--disp);font-weight:400;text-transform:uppercase;letter-spacing:.005em;line-height:.86}
+nav{position:absolute;inset:0 0 auto;z-index:5}
+nav .c{display:flex;justify-content:space-between;align-items:center;height:80px;font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+nav .links{display:flex;gap:32px;color:var(--muted)}
+nav .links a:hover{color:var(--cream)}
+.hero{position:relative;height:100vh;min-height:620px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:130px;background:radial-gradient(70% 55% at 50% 100%,rgba(255,138,61,.42),transparent 70%),radial-gradient(40% 30% at 80% 20%,rgba(120,40,10,.35),transparent 70%),var(--black)}
 #sparks{position:absolute;inset:0;width:100%;height:100%}
-.hero .c{position:relative;z-index:2}
-.big{font-family:var(--serif);font-weight:400;font-size:clamp(90px,19vw,300px);line-height:.82;letter-spacing:-.02em;margin:0}
-.hero .row{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
-.hero p{margin:0;max-width:44ch;color:var(--muted);font-size:18px}
-.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
-.strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
-.strip div{padding:28px 0;font-size:14.5px;color:var(--muted)}
-.strip div+div{padding-left:28px;border-left:1px solid var(--line)}
-.strip b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--cream)}
-/* despre */
+.hero .word{position:relative;z-index:2;font-size:clamp(120px,27vw,430px);margin:0 0 -.07em;text-align:center;background:linear-gradient(180deg,var(--cream) 30%,var(--fire-2) 78%,var(--fire));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .meta{position:absolute;z-index:2;left:0;right:0;top:44%;display:flex;justify-content:space-between;padding:0 40px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+/* marquee */
+.marq{overflow:hidden;white-space:nowrap;background:var(--fire);color:var(--black);padding:14px 0}
+.marq .t{display:inline-flex;gap:40px;animation:mq 30s linear infinite;padding-right:40px}
+.marq span{font-family:var(--disp);font-size:30px;text-transform:uppercase}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* poveste */
 .pad{padding:130px 0}
-.story{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-h2{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5vw,76px);line-height:1;margin:0 0 28px}
-h2 em{color:var(--amber-2)}
-.story p{color:var(--muted);margin:0 0 18px;max-width:48ch}
-.fire{position:relative;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 60%,#f6c27c 0%,#e8913a 18%,#a4471d 38%,#3b1b10 60%,transparent 72%);filter:saturate(1.1);animation:breathe 6s ease-in-out infinite}
-.fire::after{content:"";position:absolute;inset:-8%;border-radius:50%;border:1px solid rgba(232,145,58,.25)}
-@keyframes breathe{50%{transform:scale(1.04);filter:saturate(1.3) brightness(1.08)}}
-/* meniu */
-.menu-sec{background:var(--char-2)}
-.tabs{display:flex;gap:8px;margin:0 0 54px;flex-wrap:wrap}
-.tabs button{cursor:pointer;background:none;border:1px solid var(--line);color:var(--muted);padding:11px 22px;border-radius:999px;font:inherit;font-size:14px;letter-spacing:.04em;transition:all .5s var(--ease)}
-.tabs button[aria-selected="true"]{background:var(--cream);color:var(--char);border-color:var(--cream)}
-.dishes{display:grid;grid-template-columns:1fr 1fr;gap:0 80px}
-.dish{display:grid;grid-template-columns:1fr auto;gap:4px 24px;padding:26px 0;border-bottom:1px solid var(--line)}
-.dish h3{font-family:var(--serif);font-weight:400;font-size:26px;margin:0;line-height:1.2}
-.dish .p{font-family:var(--serif);font-size:24px;color:var(--amber-2)}
-.dish p{grid-column:1/-1;margin:0;color:var(--muted);font-size:15px}
-.panel{display:none}.panel.on{display:block;animation:fadeup .9s var(--ease)}
-@keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-/* rezervare */
-.res{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
-.res-card{background:var(--char-3);border-radius:24px;padding:44px;display:grid;gap:22px}
-label{display:grid;gap:8px;font-size:13px;letter-spacing:.06em;color:var(--muted)}
-input,select{font:inherit;font-size:16px;color:var(--cream);background:var(--char);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color-scheme:dark;transition:border-color .4s}
-input:focus,select:focus{outline:none;border-color:var(--amber)}
-.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;background:var(--char)}
-.stepper button{width:46px;height:50px;background:none;border:0;color:var(--cream);font-size:20px;cursor:pointer}
-.stepper output{flex:1;text-align:center;font-size:17px}
-.sum{font-size:14.5px;color:var(--muted);min-height:24px;margin:0}
-.sum b{color:var(--amber-2);font-weight:500}
-.hours{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:0}
-.hours li{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font-size:15.5px}
-.hours span{color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:34px 0;font-size:13.5px;color:var(--muted)}
-footer .c{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.demo-badge{position:fixed;left:18px;bottom:18px;z-index:50;background:var(--cream);color:var(--char);font-size:12px;padding:9px 14px;border-radius:999px;letter-spacing:.04em;box-shadow:0 10px 30px rgba(0,0,0,.4)}
-.demo-badge b{color:#b2591b}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+.story h2{font-size:clamp(70px,10vw,170px);margin:0}
+.story h2 span{color:var(--fire)}
+.story p{color:var(--muted);font-size:19px;max-width:42ch;margin:0 0 18px}
+/* meniu cu imagine care urmărește cursorul */
+.menu{background:var(--coal);position:relative}
+.menu .head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:46px;flex-wrap:wrap}
+.menu h2{font-size:clamp(64px,8vw,130px);margin:0}
+.tabs{display:flex;gap:6px;border:1px solid var(--line);border-radius:999px;padding:5px}
+.tabs button{all:unset;cursor:pointer;padding:10px 20px;border-radius:999px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);transition:all .4s}
+.tabs button[aria-selected="true"]{background:var(--cream);color:var(--black)}
+.tabs button:focus-visible{outline:2px solid var(--fire)}
+.list{border-top:1px solid var(--line)}
+.dish{display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .6s var(--ease),color .4s}
+.dish .n{font-size:13px;color:var(--muted);letter-spacing:.1em}
+.dish h3{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(30px,3.6vw,52px);line-height:1;margin:0}
+.dish p{margin:6px 0 0;color:var(--muted);font-size:15.5px}
+.dish .p{font-family:var(--disp);font-size:34px;color:var(--fire-2)}
+.dish:hover{padding-left:18px;color:var(--fire-2)}
+.list.swap{animation:sw .7s var(--ease)}
+@keyframes sw{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.follow{position:fixed;left:0;top:0;width:260px;height:320px;border-radius:200px 200px 16px 16px;pointer-events:none;z-index:4;opacity:0;transform:translate(-50%,-50%) scale(.8);transition:opacity .4s,transform .6s var(--ease);mix-blend-mode:normal}
+.follow.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+/* meniu degustare */
+.tasting{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.tasting h2{font-size:clamp(60px,7vw,112px);margin:0 0 24px}
+.tasting .price{font-family:var(--disp);font-size:56px;color:var(--fire)}
+.courses{counter-reset:c;list-style:none;margin:0;padding:0}
+.courses li{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.courses li::before{counter-increment:c;content:"0" counter(c);font-family:var(--disp);font-size:48px;line-height:1;color:var(--fire)}
+.courses b{display:block;font-weight:600;font-size:19px}
+.courses span{color:var(--muted)}
+/* evenimente */
+.events{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.events .glow{background:radial-gradient(circle at 40% 60%,#ffb36b 0%,#e0641f 25%,#5a200c 55%,#170e0a 80%)}
+.events .txt{padding:80px clamp(24px,5vw,80px);background:var(--coal-2);display:flex;flex-direction:column;justify-content:center}
+.events h2{font-size:clamp(54px,6vw,96px);margin:0 0 20px}
+.events p{color:var(--muted);max-width:40ch;margin:0 0 30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;background:var(--fire);color:var(--black);font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;border:0;cursor:pointer;transition:background .4s,transform .4s var(--ease)}
+.btn:hover{background:var(--fire-2);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1px var(--line)}
+footer{padding:70px 0 40px;border-top:1px solid var(--line)}
+footer .c{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;font-size:15px;color:var(--muted)}
+footer b{display:block;color:var(--cream);font-weight:600;margin-bottom:8px}
+footer .big{font-size:80px;color:var(--cream);margin:0}
+/* bara de rezervare fixă */
+.bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:20;width:min(920px,calc(100% - 24px));display:flex;align-items:center;gap:8px;padding:8px 8px 8px 22px;border-radius:999px;background:rgba(23,19,17,.92);backdrop-filter:blur(8px);box-shadow:0 20px 50px rgba(0,0,0,.6),inset 0 0 0 1px var(--line)}
+.bar strong{font-family:var(--disp);font-weight:400;font-size:22px;text-transform:uppercase;margin-right:auto;white-space:nowrap}
+.bar select,.bar input{font:inherit;font-size:14.5px;color:var(--cream);background:var(--coal-2);border:1px solid var(--line);border-radius:999px;padding:10px 14px;color-scheme:dark}
+.bar .btn{padding:12px 22px}
+.bar .msg{position:absolute;left:24px;bottom:calc(100% + 10px);font-size:14px;background:var(--cream);color:var(--black);padding:8px 14px;border-radius:999px;opacity:0;transform:translateY(8px);transition:all .5s var(--ease);pointer-events:none}
+.bar .msg.show{opacity:1;transform:none}
+.demo-badge{position:fixed;right:18px;top:18px;z-index:50;background:var(--cream);color:var(--black);font-size:12px;padding:9px 14px;border-radius:999px;letter-spacing:.04em}
+.demo-badge b{color:#c04f12}
 @media (prefers-reduced-motion:no-preference){
- .rv{opacity:0;transform:translateY(30px);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+ .rv{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease);transition-delay:var(--d,0s)}
  .rv.in{opacity:1;transform:none}
- .big.rv{transform:translateY(60px)}
 }
-@media (prefers-reduced-motion:reduce){.fire{animation:none}}
+@media (prefers-reduced-motion:reduce){.marq .t{animation:none}}
 @media (max-width:900px){
- .links{display:none}
- .hero .row,.story,.res{grid-template-columns:1fr;gap:40px}
- .dishes{grid-template-columns:1fr}
- .strip{grid-template-columns:1fr}.strip div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
- .row3{grid-template-columns:1fr}
+ nav .links{display:none}
+ .hero .meta{top:30%;padding:0 20px;font-size:11px}
+ .story,.tasting,.events{grid-template-columns:1fr;gap:40px}
+ .events .glow{min-height:260px}
+ footer .c{grid-template-columns:1fr}
+ .dish{grid-template-columns:40px 1fr auto}
+ .bar strong{display:none}
+ .bar{padding:8px;gap:6px;overflow-x:auto}
+ .bar select,.bar input{padding:9px 10px;font-size:13.5px}
+ .follow{display:none}
  .pad{padding:90px 0}
- .res-card{padding:28px}
 }
 </style>
 </head>
 <body>
-<nav><div class="c"><a class="logo" href="#">Ember<i>.</i></a><div class="links"><a href="#poveste">Poveste</a><a href="#meniu">Meniu</a><a href="#rezervari">Rezervări</a></div><a class="btn" href="#rezervari">Rezervă o masă</a></div></nav>
+<nav><div class="c"><span class="disp" style="font-size:26px;letter-spacing:.06em">Ember</span><div class="links"><a href="#poveste">Poveste</a><a href="#meniu">Meniu</a><a href="#degustare">Degustare</a><a href="#evenimente">Evenimente</a></div><span>Marți – Duminică</span></div></nav>
 
 <header class="hero">
   <canvas id="sparks" aria-hidden="true"></canvas>
-  <div class="c">
-    <h1 class="big rv">Ember</h1>
-    <div class="row">
-      <p class="rv" style="--d:.15s">Bucătărie la foc deschis, în inima Chișinăului. Ingrediente locale, gătite simplu, cu răbdare.</p>
-      <div class="ctas rv" style="--d:.25s"><a class="btn" href="#rezervari">Rezervă o masă</a><a class="btn line" href="#meniu">Vezi meniul</a></div>
-    </div>
-  </div>
+  <div class="meta"><span>Bucătărie la foc deschis</span><span>Chișinău · str. Exemplu 7</span></div>
+  <h1 class="word disp">Ember</h1>
 </header>
 
-<div class="c"><div class="strip">
-  <div class="rv"><b>Marți – Duminică</b>de la 12:00 până la 23:00</div>
-  <div class="rv" style="--d:.1s"><b>str. Exemplu 7</b>Centru, Chișinău</div>
-  <div class="rv" style="--d:.2s"><b>+373 00 000 000</b>rezervări și evenimente private</div>
+<div class="marq" aria-hidden="true"><div class="t">
+  <span>Lemn de stejar</span><span>✦</span><span>Carne maturată</span><span>✦</span><span>Legume de sezon</span><span>✦</span><span>Pâine din cuptor</span><span>✦</span><span>Vinuri moldovenești</span><span>✦</span>
+  <span>Lemn de stejar</span><span>✦</span><span>Carne maturată</span><span>✦</span><span>Legume de sezon</span><span>✦</span><span>Pâine din cuptor</span><span>✦</span><span>Vinuri moldovenești</span><span>✦</span>
 </div></div>
 
 <section class="pad" id="poveste">
   <div class="c story">
+    <h2 class="disp rv">Totul începe <span>cu focul.</span></h2>
     <div>
-      <h2 class="rv">Totul începe <em>cu focul</em>.</h2>
       <p class="rv" style="--d:.1s">Grătarul nostru pe lemn de stejar arde din prima oră a zilei. Carnea, legumele și pâinea trec prin flacără și primesc acel gust pe care nu-l poți imita.</p>
       <p class="rv" style="--d:.2s">Lucrăm cu producători din Moldova și schimbăm meniul odată cu sezonul.</p>
     </div>
-    <div class="fire rv" style="--d:.15s" aria-hidden="true"></div>
   </div>
 </section>
 
-<section class="pad menu-sec" id="meniu">
+<section class="pad menu" id="meniu">
   <div class="c">
-    <h2 class="rv">Meniu</h2>
-    <div class="tabs rv" role="tablist" aria-label="Categorii meniu">
-      <button role="tab" aria-selected="true" data-t="a">Antreuri</button>
-      <button role="tab" aria-selected="false" data-t="b">De la foc</button>
-      <button role="tab" aria-selected="false" data-t="c">Deserturi</button>
+    <div class="head">
+      <h2 class="disp rv">Meniu</h2>
+      <div class="tabs rv" role="tablist" aria-label="Categorii"><button role="tab" aria-selected="true" data-t="0">Antreuri</button><button role="tab" aria-selected="false" data-t="1">De la foc</button><button role="tab" aria-selected="false" data-t="2">Deserturi</button></div>
     </div>
-    <div class="panel on" id="a" role="tabpanel"><div class="dishes">
-      <div class="dish"><h3>Burrata cu roșii coapte</h3><span class="p">185</span><p>Roșii de grădină, ulei de busuioc, pâine din cuptor.</p></div>
-      <div class="dish"><h3>Tartar de vită</h3><span class="p">210</span><p>Gălbenuș marinat, capere, chipsuri de cartof.</p></div>
-      <div class="dish"><h3>Ardei copți pe jar</h3><span class="p">140</span><p>Brânză de oaie, usturoi verde, miere de salcâm.</p></div>
-      <div class="dish"><h3>Supă cremă de dovleac</h3><span class="p">115</span><p>Semințe prăjite, smântână, ulei de dovleac.</p></div>
-    </div></div>
-    <div class="panel" id="b" role="tabpanel"><div class="dishes">
-      <div class="dish"><h3>Antricot maturat</h3><span class="p">520</span><p>300 g, maturat 28 de zile, sos de piper.</p></div>
-      <div class="dish"><h3>Piept de rață</h3><span class="p">390</span><p>Piure de țelină, cireșe, sos de vin roșu.</p></div>
-      <div class="dish"><h3>Păstrăv la jar</h3><span class="p">320</span><p>Lămâie coaptă, ierburi, unt cu capere.</p></div>
-      <div class="dish"><h3>Conopidă întreagă</h3><span class="p">210</span><p>Tahini, rodie, mentă, fistic prăjit.</p></div>
-    </div></div>
-    <div class="panel" id="c" role="tabpanel"><div class="dishes">
-      <div class="dish"><h3>Tartă cu ciocolată</h3><span class="p">145</span><p>Sare de mare, înghețată de vanilie.</p></div>
-      <div class="dish"><h3>Piersici la grătar</h3><span class="p">130</span><p>Mascarpone, miere, migdale caramelizate.</p></div>
-      <div class="dish"><h3>Plăcintă cu brânză</h3><span class="p">110</span><p>Rețeta bunicii, cu smântână și stafide.</p></div>
-      <div class="dish"><h3>Sorbet de sezon</h3><span class="p">95</span><p>Trei arome, din fructe locale.</p></div>
-    </div></div>
-    <p class="rv" style="color:var(--muted);font-size:14px;margin-top:30px">Prețurile sunt în MDL.</p>
+    <div class="list" id="dishList"></div>
+    <p style="color:var(--muted);font-size:14px;margin-top:24px">Prețuri în MDL.</p>
   </div>
+  <div class="follow" id="follow" aria-hidden="true"></div>
 </section>
 
-<section class="pad" id="rezervari">
-  <div class="c res">
+<section class="pad" id="degustare">
+  <div class="c tasting">
     <div>
-      <h2 class="rv">Rezervă <em>o masă</em>.</h2>
-      <p class="rv" style="--d:.1s;color:var(--muted);max-width:42ch">Confirmăm rezervarea telefonic în cel mult o oră. Pentru grupuri de peste 10 persoane, sună-ne direct.</p>
-      <ul class="hours rv" style="--d:.2s">
-        <li>Marți – Joi<span>12:00 – 23:00</span></li>
-        <li>Vineri – Sâmbătă<span>12:00 – 00:00</span></li>
-        <li>Duminică<span>12:00 – 22:00</span></li>
-        <li>Luni<span>Închis</span></li>
-      </ul>
+      <h2 class="disp rv">Meniu de degustare</h2>
+      <p class="rv" style="--d:.1s;color:var(--muted);max-width:36ch">Cinci feluri alese de bucătar, servite în ritmul serii. Joi – Sâmbătă, la rezervare.</p>
+      <p class="price rv" style="--d:.2s">890 MDL</p>
     </div>
-    <form class="res-card rv" style="--d:.15s" id="resForm">
-      <div class="row3">
-        <label>Data<input type="date" id="rd" required></label>
-        <label>Ora<select id="rt"><option>18:00</option><option>18:30</option><option selected>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select></label>
-        <label>Persoane<div class="stepper"><button type="button" data-s="-1" aria-label="Mai puține persoane">−</button><output id="rg">2</output><button type="button" data-s="1" aria-label="Mai multe persoane">+</button></div></label>
-      </div>
-      <label>Nume<input id="rn" required></label>
-      <label>Telefon<input type="tel" required></label>
-      <p class="sum" id="rsum"></p>
-      <button class="btn" type="submit" style="justify-self:start">Trimite rezervarea</button>
-    </form>
+    <ol class="courses">
+      <li class="rv"><div><b>Pâine din cuptor și unt afumat</b><span>Sare de mare, ierburi de grădină</span></div></li>
+      <li class="rv"><div><b>Ardei copți pe jar</b><span>Brânză de oaie, miere de salcâm</span></div></li>
+      <li class="rv"><div><b>Păstrăv la jar</b><span>Lămâie coaptă, unt cu capere</span></div></li>
+      <li class="rv"><div><b>Antricot maturat 28 de zile</b><span>Sos de piper, cartofi în cenușă</span></div></li>
+      <li class="rv"><div><b>Piersici la grătar</b><span>Mascarpone, migdale caramelizate</span></div></li>
+    </ol>
   </div>
 </section>
 
-<footer><div class="c"><span>© Ember · Date fictive, folosite doar pentru demonstrație</span><span>Instagram · Facebook</span></div></footer>
-<a class="demo-badge" href="../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+<section class="events" id="evenimente">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="txt">
+    <h2 class="disp rv">Evenimente private</h2>
+    <p class="rv" style="--d:.1s">Sala de la etaj găzduiește până la 40 de invitați. Pregătim un meniu doar pentru voi, de la cine de afaceri la aniversări.</p>
+    <div class="rv" style="--d:.2s"><a class="btn" href="#rezerva">Cere o ofertă</a></div>
+  </div>
+</section>
 
+<footer><div class="c">
+  <p class="big disp">Ember</p>
+  <div><b>Program</b>Marți – Joi 12–23<br>Vineri – Sâmbătă 12–00<br>Duminică 12–22</div>
+  <div><b>Contact</b>str. Exemplu 7, Chișinău<br>+373 00 000 000<br>Date fictive, folosite doar pentru demonstrație</div>
+</div></footer>
+
+<form class="bar" id="rezerva" aria-label="Rezervă o masă">
+  <strong>Rezervă o masă</strong>
+  <input type="date" id="rd" aria-label="Data" required>
+  <select id="rt" aria-label="Ora"><option>18:00</option><option>18:30</option><option selected>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select>
+  <select id="rg" aria-label="Persoane"><option value="1">1 persoană</option><option value="2" selected>2 persoane</option><option value="3">3 persoane</option><option value="4">4 persoane</option><option value="5">5 persoane</option><option value="6">6 persoane</option><option value="8">8 persoane</option></select>
+  <button class="btn" type="submit">Rezervă</button>
+  <span class="msg" id="rmsg" role="status"></span>
+</form>
+<a class="demo-badge" href="../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
 <script src="js/ember.js"></script>
 </body>
 </html>

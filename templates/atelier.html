@@ -9,172 +9,145 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--stone:#f3ece6;--stone-2:#ebe1d8;--blush:#e7cfc6;--rose:#b98b80;--rose-d:#8e6358;--ink:#2c2420;--soft:#7b6d66;--line:rgba(44,36,32,.13);
---display:"Italiana",Georgia,serif;--sans:"Jost","Segoe UI",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+:root{--bg:#fbf7f4;--ink:#2b2340;--soft:#6e6680;--lilac:#e4dcff;--lilac-2:#c9bcff;--peach:#ffd8c2;--butter:#fff1b8;--mint:#d3f2e3;--line:rgba(43,35,64,.1);
+--disp:"Syne","Segoe UI",sans-serif;--sans:"DM Sans","Segoe UI",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.34,1.3,.64,1);--soft-ease:cubic-bezier(.16,1,.3,1)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--stone);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.c{width:min(1240px,100% - 48px);margin-inline:auto}
-:focus-visible{outline:1.5px solid var(--rose-d);outline-offset:3px}
-nav .c{display:flex;justify-content:space-between;align-items:center;height:96px}
-.logo{font-family:var(--display);font-size:30px;letter-spacing:.14em}
-.links{display:flex;gap:36px;font-size:13px;letter-spacing:.2em;color:var(--soft)}
-.links a{transition:color .4s}.links a:hover{color:var(--ink)}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 30px;border-radius:999px;font:inherit;font-size:13px;font-weight:400;letter-spacing:.16em;background:var(--ink);color:var(--stone);border:1px solid var(--ink);cursor:pointer;transition:background .6s var(--ease),color .6s}
-.btn:hover{background:transparent;color:var(--ink)}
-.btn.soft{background:transparent;color:var(--ink)}
-.btn.soft:hover{background:var(--ink);color:var(--stone)}
-/* hero */
-.hero{padding:20px 0 120px}
-.hero .c{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.over{font-size:12.5px;letter-spacing:.3em;color:var(--rose-d);margin:0 0 26px}
-h1{font-family:var(--display);font-weight:400;font-size:clamp(64px,9vw,148px);line-height:.92;margin:0;letter-spacing:.01em}
-.hero p{color:var(--soft);max-width:40ch;margin:34px 0 42px}
-.ctas{display:flex;gap:14px;flex-wrap:wrap}
-.arch{position:relative;aspect-ratio:3/4;border-radius:999px 999px 0 0;overflow:hidden;background:var(--blush)}
-.arch .b{position:absolute;border-radius:50%;will-change:transform}
-.arch .b1{width:70%;height:55%;left:-10%;top:10%;background:radial-gradient(circle,#f4dcd2 0%,transparent 70%);animation:m1 14s ease-in-out infinite}
-.arch .b2{width:60%;height:50%;right:-15%;bottom:5%;background:radial-gradient(circle,#c99a8d 0%,transparent 70%);opacity:.8;animation:m2 18s ease-in-out infinite}
-.arch .b3{width:40%;height:35%;left:30%;top:40%;background:radial-gradient(circle,#fff3ec 0%,transparent 70%);opacity:.9;animation:m3 16s ease-in-out infinite}
-@keyframes m1{50%{transform:translate(20%,15%) scale(1.15)}}
-@keyframes m2{50%{transform:translate(-25%,-10%) scale(.9)}}
-@keyframes m3{50%{transform:translate(-20%,20%) scale(1.2)}}
-.arch .tag{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);background:rgba(243,236,230,.85);backdrop-filter:blur(8px);padding:12px 22px;border-radius:999px;font-size:12.5px;letter-spacing:.18em;white-space:nowrap}
-.arch-wrap{position:relative}
-.arch-wrap::before{content:"";position:absolute;inset:-18px -18px 18px 18px;border:1px solid var(--rose);border-radius:999px 999px 0 0;opacity:.5}
-/* servicii */
-.pad{padding:130px 0}
-.sh{text-align:center;max-width:640px;margin:0 auto 72px}
-h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,5.4vw,84px);line-height:1;margin:0 0 18px}
-.sh p{color:var(--soft);margin:0}
-.svc{display:grid;grid-template-columns:1fr 1fr;gap:0 90px}
-.group h3{font-family:var(--display);font-weight:400;font-size:34px;margin:0 0 10px;padding-bottom:14px;border-bottom:1px solid var(--ink)}
-.item{display:flex;align-items:baseline;gap:14px;padding:16px 0}
-.item span{white-space:nowrap}
-.item i{flex:1;border-bottom:1px dotted rgba(44,36,32,.35);transform:translateY(-5px)}
-.item b{font-weight:400;white-space:nowrap}
-.item small{display:block;font-size:13.5px;color:var(--soft);margin-top:-2px}
-.group + .group{margin-top:0}
-/* programare */
-.book{background:var(--stone-2)}
-.book .c{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
-.card{background:var(--stone);border-radius:28px;padding:44px;display:grid;gap:30px}
-.card h4{font-size:12.5px;letter-spacing:.24em;font-weight:400;color:var(--rose-d);margin:0 0 14px}
-.chips{display:flex;flex-wrap:wrap;gap:10px}
-.chip{cursor:pointer;background:transparent;border:1px solid var(--line);color:var(--ink);font:inherit;font-size:14.5px;padding:10px 18px;border-radius:999px;transition:all .5s var(--ease)}
+.c{width:min(1260px,100% - 32px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:8px}
+h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em;margin:0}
+/* nav plutitor */
+.nav{position:sticky;top:14px;z-index:20;display:flex;justify-content:center;padding-top:14px}
+.nav nav{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-radius:999px;padding:6px 6px 6px 20px;box-shadow:0 10px 30px -12px rgba(43,35,64,.25)}
+.nav .logo{font-family:var(--disp);font-weight:800;font-size:19px;margin-right:14px}
+.nav a.l{padding:9px 14px;border-radius:999px;font-size:14.5px;color:var(--soft);transition:background .3s,color .3s}
+.nav a.l:hover{background:var(--lilac);color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:14.5px;border:0;cursor:pointer;transition:transform .5s var(--ease)}
+.pill:hover{transform:scale(1.04)}
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(120px,auto);gap:14px;margin-top:26px}
+.tile{border-radius:30px;padding:28px;position:relative;overflow:hidden;transition:transform .6s var(--ease)}
+.tile:hover{transform:translateY(-4px) rotate(-.3deg)}
+.t-hero{grid-column:span 7;grid-row:span 3;background:var(--lilac);display:flex;flex-direction:column;justify-content:space-between}
+.t-hero h1{position:relative;z-index:1;font-size:clamp(40px,5.2vw,78px);line-height:.95;font-weight:800;overflow-wrap:anywhere}
+.t-hero p{position:relative;z-index:1;max-width:34ch;color:var(--soft);font-size:18px;margin:20px 0 0}
+.t-hero .blob{position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:42% 58% 63% 37%/45% 41% 59% 55%;background:var(--lilac-2);animation:morph 12s ease-in-out infinite}
+@keyframes morph{50%{border-radius:60% 40% 35% 65%/58% 62% 38% 42%;transform:rotate(30deg)}}
+.t-book{grid-column:span 5;grid-row:span 2;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.t-book h3{font-size:24px;margin-bottom:14px}
+.t-hours{grid-column:span 2;background:var(--butter);display:flex;flex-direction:column;justify-content:space-between}
+.t-hours b{font-family:var(--disp);font-size:34px;line-height:1}
+.t-eco{grid-column:span 3;background:var(--mint)}
+.t-eco b{font-family:var(--disp);font-size:22px;display:block;margin-bottom:6px}
+.t-ig{grid-column:span 5;background:var(--peach);display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px}
+.t-ig i{border-radius:18px;aspect-ratio:1;display:block}
+.t-ig i:nth-child(1){background:linear-gradient(140deg,#ffc0a8,#e2826a)}
+.t-ig i:nth-child(2){background:linear-gradient(140deg,#d9ccff,#8f7ae6)}
+.t-ig i:nth-child(3){background:linear-gradient(140deg,#fff0b0,#f2c14e)}
+.t-ig span{grid-column:1/-1;font-size:14px;font-weight:600;padding:4px 6px 0}
+.t-price{grid-column:span 7;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.t-price h3{font-size:30px}
+.t-price .row{display:flex;gap:10px;flex-wrap:wrap}
+.t-price .row span{background:rgba(255,255,255,.1);padding:10px 16px;border-radius:999px;font-size:14.5px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);font:inherit;font-size:14px;font-weight:500;padding:9px 15px;border-radius:999px;transition:all .4s var(--ease)}
 .chip:hover{border-color:var(--ink)}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--stone);border-color:var(--ink)}
-.chip:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
-.day{display:grid;justify-items:center;gap:0;min-width:64px;padding:10px 12px;border-radius:18px}
-.day b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.1}
-.day small{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
-.summary{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.summary p{margin:0;color:var(--soft);font-size:15.5px}
-.summary p b{color:var(--ink);font-weight:400}
-/* galerie */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.gal .a{aspect-ratio:3/4;border-radius:999px 999px 0 0;position:relative;overflow:hidden}
-.gal .a span{position:absolute;left:0;right:0;bottom:24px;text-align:center;font-size:12.5px;letter-spacing:.22em}
-.g1{background:linear-gradient(170deg,#efd9cf,#c99a8d)}
-.g2{background:linear-gradient(170deg,#e8e2d8,#b8a99a);margin-top:60px}
-.g3{background:linear-gradient(170deg,#f1e1d9,#a8796d)}
-.gal .a::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.55),transparent 45%);transition:transform 1.4s var(--ease)}
-.gal .a:hover::after{transform:translate(10%,10%)}
-footer{padding:56px 0 40px;text-align:center}
-footer .logo{display:block;font-size:44px;margin-bottom:14px}
-footer p{margin:0;color:var(--soft);font-size:14px}
-.demo-badge{position:fixed;left:18px;bottom:18px;z-index:50;background:var(--ink);color:var(--stone);font-size:12px;padding:9px 14px;border-radius:999px;letter-spacing:.06em;box-shadow:0 10px 30px rgba(44,36,32,.25)}
-.demo-badge b{color:var(--blush);font-weight:500}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink);transform:scale(1.04)}
+.chip:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.lbl{font-size:12.5px;font-weight:600;color:var(--soft);margin:16px 0 8px;letter-spacing:.04em}
+.sum{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);flex-wrap:wrap}
+.sum p{margin:0;font-size:14.5px;color:var(--soft)}
+.sum b{color:var(--ink)}
+/* servicii */
+.pad{padding:110px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.sh h2{font-size:clamp(44px,5vw,76px);font-weight:800;line-height:.95}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.cards{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;scrollbar-width:thin}
+.card{flex:0 0 280px;scroll-snap-align:start;border-radius:26px;padding:24px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:10px;min-height:230px;transition:transform .5s var(--ease)}
+.card:hover{transform:translateY(-6px)}
+.card .ic{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-size:22px}
+.card h3{font-size:22px}
+.card p{margin:0;color:var(--soft);font-size:15px;flex:1}
+.card .meta{display:flex;justify-content:space-between;font-weight:600}
+.card .meta span{color:var(--soft);font-weight:500}
+/* echipa */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mem{border-radius:26px;padding:26px;text-align:center;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.av{width:96px;height:96px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:30px}
+.mem b{display:block;font-family:var(--disp);font-size:20px}
+.mem span{color:var(--soft);font-size:14.5px}
+footer{padding:40px 0 60px}
+footer .c{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:end}
+footer .big{font-family:var(--disp);font-weight:800;font-size:clamp(70px,12vw,180px);line-height:.8;letter-spacing:-.04em}
+footer p{color:var(--soft);font-size:14px;margin:0}
+.demo-badge{position:fixed;left:18px;bottom:18px;z-index:50;background:var(--ink);color:#fff;font-size:12px;padding:9px 14px;border-radius:999px}
+.demo-badge b{color:var(--lilac-2)}
 @media (prefers-reduced-motion:no-preference){
- .rv{opacity:0;transform:translateY(30px);transition:opacity 1.4s var(--ease),transform 1.6s var(--ease);transition-delay:var(--d,0s)}
+ .rv{opacity:0;transform:translateY(30px) scale(.97);transition:opacity 1s var(--soft-ease),transform 1.2s var(--ease);transition-delay:var(--d,0s)}
  .rv.in{opacity:1;transform:none}
- .arch-wrap.rv{transform:translateY(50px) scale(.97)}
- .arch-wrap.rv.in{transform:none}
 }
-@media (prefers-reduced-motion:reduce){.arch .b{animation:none}}
-@media (max-width:900px){
- .links{display:none}
- .hero .c,.book .c,.svc{grid-template-columns:1fr;gap:48px}
- .gal{grid-template-columns:1fr 1fr}.g2{margin-top:0}.g3{grid-column:1/-1;aspect-ratio:16/10}
- .pad{padding:90px 0}
- .card{padding:28px}
+@media (prefers-reduced-motion:reduce){.t-hero .blob{animation:none}}
+@media (max-width:980px){
+ .nav a.l{display:none}
+ .bento{grid-template-columns:repeat(6,1fr)}
+ .t-hero,.t-book,.t-price{grid-column:span 6}
+ .t-hours{grid-column:span 3}.t-eco{grid-column:span 3}.t-ig{grid-column:span 6}
+ .team{grid-template-columns:1fr 1fr}
+ .pad{padding:80px 0}
 }
 </style>
 </head>
 <body>
-<nav><div class="c"><a class="logo" href="#">ATELIER</a><div class="links"><a href="#servicii">SERVICII</a><a href="#programare">PROGRAMARE</a><a href="#galerie">GALERIE</a></div><a class="btn" href="#programare">PROGRAMEAZĂ-TE</a></div></nav>
+<header class="nav"><nav aria-label="Meniu"><span class="logo">atelier.</span><a class="l" href="#servicii">Servicii</a><a class="l" href="#echipa">Echipa</a><a class="l" href="#contact">Contact</a><a class="pill" href="#book">Programează-te</a></nav></header>
 
-<header class="hero">
-  <div class="c">
-    <div>
-      <p class="over rv">SALON DE FRUMUSEȚE · CHIȘINĂU</p>
-      <h1 class="rv" style="--d:.1s">Grijă lentă, rezultate frumoase.</h1>
-      <p class="rv" style="--d:.2s">Un spațiu liniștit pentru păr, unghii și ten. Fiecare vizită începe cu o discuție și se termină fără grabă.</p>
-      <div class="ctas rv" style="--d:.3s"><a class="btn" href="#programare">PROGRAMEAZĂ-TE</a><a class="btn soft" href="#servicii">VEZI PREȚURILE</a></div>
+<main class="c">
+  <section class="bento" aria-label="Prezentare">
+    <div class="tile t-hero rv">
+      <span class="blob" aria-hidden="true"></span>
+      <h1>Frumusețe,<br>fără grabă.</h1>
+      <p>Păr, unghii și ten într-un studio luminos din centrul Chișinăului. Fiecare vizită începe cu o discuție.</p>
     </div>
-    <div class="arch-wrap rv" style="--d:.15s"><div class="arch" aria-hidden="true"><div class="b b1"></div><div class="b b2"></div><div class="b b3"></div><span class="tag">PROGRAMĂRI ONLINE 24/7</span></div></div>
-  </div>
-</header>
-
-<section class="pad" id="servicii">
-  <div class="c">
-    <div class="sh"><h2 class="rv">Servicii</h2><p class="rv" style="--d:.1s">Prețuri în MDL. Durata include consultația și finisarea.</p></div>
-    <div class="svc">
-      <div class="group rv">
-        <h3>Păr</h3>
-        <div class="item"><span>Tunsoare și coafat<small>60 min</small></span><i></i><b>450</b></div>
-        <div class="item"><span>Vopsit rădăcini<small>90 min</small></span><i></i><b>850</b></div>
-        <div class="item"><span>Balayage<small>180 min</small></span><i></i><b>2.200</b></div>
-        <div class="item"><span>Tratament de hidratare<small>45 min</small></span><i></i><b>500</b></div>
-      </div>
-      <div class="group rv" style="--d:.1s">
-        <h3>Unghii și ten</h3>
-        <div class="item"><span>Manichiură cu gel<small>75 min</small></span><i></i><b>400</b></div>
-        <div class="item"><span>Pedichiură spa<small>90 min</small></span><i></i><b>550</b></div>
-        <div class="item"><span>Curățare facială<small>60 min</small></span><i></i><b>700</b></div>
-        <div class="item"><span>Laminarea sprâncenelor<small>45 min</small></span><i></i><b>380</b></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pad book" id="programare">
-  <div class="c">
-    <div>
-      <p class="over rv">PROGRAMARE ONLINE</p>
-      <h2 class="rv" style="--d:.1s">Alege-ți momentul.</h2>
-      <p class="rv" style="--d:.2s;color:var(--soft);max-width:36ch">Selectează serviciul, ziua și ora. Îți confirmăm programarea printr-un mesaj.</p>
-    </div>
-    <div class="card rv" style="--d:.15s">
-      <div><h4>SERVICIUL</h4><div class="chips" id="svcChips">
-        <button class="chip" type="button" aria-pressed="true">Tunsoare și coafat</button>
-        <button class="chip" type="button" aria-pressed="false">Manichiură cu gel</button>
-        <button class="chip" type="button" aria-pressed="false">Curățare facială</button>
+    <div class="tile t-book rv" style="--d:.08s" id="book">
+      <h3>Programare rapidă</h3>
+      <div class="lbl">SERVICIUL</div>
+      <div class="chips" id="svcChips">
+        <button class="chip" type="button" aria-pressed="true">Tuns + coafat</button>
+        <button class="chip" type="button" aria-pressed="false">Manichiură</button>
+        <button class="chip" type="button" aria-pressed="false">Facial</button>
         <button class="chip" type="button" aria-pressed="false">Balayage</button>
-      </div></div>
-      <div><h4>ZIUA</h4><div class="chips" id="dayChips"></div></div>
-      <div><h4>ORA</h4><div class="chips" id="timeChips"></div></div>
-      <div class="summary"><p id="bsum"></p><button class="btn" type="button" id="bgo">CONFIRMĂ</button></div>
+      </div>
+      <div class="lbl">ZIUA</div><div class="chips" id="dayChips"></div>
+      <div class="lbl">ORA</div><div class="chips" id="timeChips"></div>
+      <div class="sum"><p id="bsum"></p><button class="pill" type="button" id="bgo">Confirmă</button></div>
     </div>
-  </div>
-</section>
+    <div class="tile t-hours rv" style="--d:.12s"><span>Deschis azi</span><b>09–20</b></div>
+    <div class="tile t-eco rv" style="--d:.16s"><b>Produse vegane</b>Lucrăm doar cu produse fără parabeni, netestate pe animale.</div>
+    <div class="tile t-ig rv" style="--d:.2s"><i></i><i></i><i></i><span>@atelier.studio · lucrările noastre</span></div>
+    <div class="tile t-price rv" style="--d:.24s"><h3>Prețuri clare</h3><div class="row"><span>Tuns de la 350</span><span>Manichiură de la 400</span><span>Facial de la 700</span></div></div>
+  </section>
 
-<section class="pad" id="galerie">
-  <div class="c">
-    <div class="sh"><h2 class="rv">Atmosfera</h2><p class="rv" style="--d:.1s">Lumină naturală, materiale calde și liniște.</p></div>
-    <div class="gal">
-      <div class="a g1 rv"><span>SALONUL</span></div>
-      <div class="a g2 rv" style="--d:.1s"><span>ZONA DE RELAXARE</span></div>
-      <div class="a g3 rv" style="--d:.2s"><span>DETALII</span></div>
+  <section class="pad" id="servicii">
+    <div class="sh"><h2 class="rv">Servicii</h2><div class="tabs" id="cat"><button class="chip" type="button" aria-pressed="true" data-c="par">Păr</button><button class="chip" type="button" aria-pressed="false" data-c="unghii">Unghii</button><button class="chip" type="button" aria-pressed="false" data-c="ten">Ten</button></div></div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section class="pad" id="echipa" style="padding-top:0">
+    <div class="sh"><h2 class="rv">Echipa</h2></div>
+    <div class="team">
+      <div class="mem rv"><div class="av" style="background:var(--lilac)">IM</div><b>Irina M.</b><span>Coafură și culoare</span></div>
+      <div class="mem rv" style="--d:.08s"><div class="av" style="background:var(--peach)">DC</div><b>Diana C.</b><span>Unghii</span></div>
+      <div class="mem rv" style="--d:.16s"><div class="av" style="background:var(--mint)">AL</div><b>Ana L.</b><span>Cosmetică</span></div>
+      <div class="mem rv" style="--d:.24s"><div class="av" style="background:var(--butter)">MV</div><b>Mihai V.</b><span>Tunsori bărbați</span></div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<footer><a class="logo" href="#">ATELIER</a><p>str. Exemplu 21, Chișinău · +373 00 000 000 · Date fictive, folosite doar pentru demonstrație</p></footer>
+<footer id="contact"><div class="c"><span class="big">atelier.</span><p>str. Exemplu 21, Chișinău · +373 00 000 000<br>Date fictive, folosite doar pentru demonstrație</p></div></footer>
 <a class="demo-badge" href="../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
-
 <script src="js/atelier.js"></script>
 </body>
 </html>

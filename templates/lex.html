@@ -9,200 +9,201 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f5f2ec;--paper-2:#ebe6dc;--navy:#18233a;--navy-2:#22304d;--brass:#a8874f;--ink:#18233a;--soft:#5b6478;--line:rgba(24,35,58,.14);
+:root{--paper:#f4efe6;--paper-2:#ebe4d6;--ink:#1d1a16;--soft:#5e5649;--wine:#6b1f2a;--line:rgba(29,26,22,.18);
 --serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope","Segoe UI",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.c{width:min(1200px,100% - 48px);margin-inline:auto}
-:focus-visible{outline:1.5px solid var(--brass);outline-offset:3px}
-/* nav */
-nav.top{position:sticky;top:0;z-index:20;background:rgba(245,242,236,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav.top .c{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.02em}
-.brand small{display:block;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.18em;color:var(--brass);margin-top:-2px}
-.menu{display:flex;gap:30px;font-size:14px;color:var(--soft)}
-.menu a{position:relative;transition:color .4s}
-.menu a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:right;transition:transform .6s var(--ease)}
-.menu a:hover{color:var(--ink)}.menu a:hover::after{transform:scaleX(1);transform-origin:left}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;font-size:14px;font-weight:500;letter-spacing:.02em;border:1px solid var(--navy);background:var(--navy);color:var(--paper);transition:background .5s var(--ease),color .5s}
-.btn:hover{background:transparent;color:var(--navy)}
-.btn.ghost{background:transparent;color:var(--navy)}
-.btn.ghost:hover{background:var(--navy);color:var(--paper)}
-/* hero */
-.hero{padding:96px 0 110px}
-.hero .c{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
-.eyebrow{font-size:13px;letter-spacing:.14em;color:var(--brass);margin:0 0 26px}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(48px,6.4vw,92px);line-height:1;letter-spacing:-.01em;margin:0}
-.hero p.lead{font-size:19px;color:var(--soft);max-width:46ch;margin:32px 0 40px}
-.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
-.plate{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,var(--navy-2),var(--navy));color:var(--paper);padding:44px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
-.plate::before{content:"";position:absolute;inset:16px;border:1px solid rgba(168,135,79,.5)}
-.plate .emb{width:92px;height:92px;color:var(--brass);position:relative}
-.plate ul{list-style:none;margin:0;padding:0;position:relative;font-family:var(--serif);font-size:26px;line-height:1.5}
-.plate li{border-bottom:1px solid rgba(245,242,236,.14);padding:6px 0}
-.plate .sig{position:relative;font-size:12px;letter-spacing:.16em;color:rgba(245,242,236,.6)}
-/* domenii */
-section.pad{padding:120px 0}
-.sh{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.4vw,62px);line-height:1.05;margin:0}
-.sh p{color:var(--soft);margin:0;max-width:46ch;justify-self:end}
-.areas{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-.area{padding:40px 32px 44px 0;border-bottom:1px solid var(--line);transition:background .6s var(--ease)}
-.area:not(:nth-child(3n)){border-right:1px solid var(--line)}
-.area:not(:nth-child(3n+1)){padding-left:32px}
-.area h3{font-family:var(--serif);font-weight:500;font-size:30px;margin:18px 0 10px;line-height:1.1}
-.area p{margin:0;color:var(--soft);font-size:15.5px}
-.area svg{width:30px;height:30px;color:var(--brass)}
-/* despre */
-.about{background:var(--navy);color:var(--paper)}
-.about .c{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.about h2{color:var(--paper)}
-.about p{color:rgba(245,242,236,.75);margin:0 0 20px}
-.about .facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,242,236,.12);margin-top:40px}
-.about .facts div{background:var(--navy);padding:26px 24px 26px 0}
-.about .facts b{display:block;font-family:var(--serif);font-weight:500;font-size:22px;color:var(--brass);line-height:1.2;margin-bottom:6px}
-.about .facts span{font-size:14px;color:rgba(245,242,236,.65)}
-.quote{font-family:var(--serif);font-size:clamp(28px,2.8vw,40px);line-height:1.3;margin:0;padding-left:28px;border-left:1px solid var(--brass)}
+.c{width:min(1120px,100% - 48px);margin-inline:auto}
+:focus-visible{outline:1.5px solid var(--wine);outline-offset:3px}
+.sans{font-family:var(--sans)}
+/* bara de sus */
+.strip{font-family:var(--sans);font-size:12.5px;letter-spacing:.06em;color:var(--soft);border-bottom:1px solid var(--line)}
+.strip .c{display:flex;justify-content:space-between;gap:16px;padding:10px 0;flex-wrap:wrap}
+.strip a{color:var(--wine);font-weight:600}
+/* frontispiciu */
+.mast{text-align:center;padding:46px 0 0}
+.mast .name{font-weight:600;font-size:clamp(48px,7vw,96px);letter-spacing:.18em;line-height:1;margin:0;padding-left:.18em}
+.mast .sub{font-style:italic;font-size:22px;color:var(--soft);margin:12px 0 0}
+.rules{margin-top:30px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);height:6px}
+nav.menu{display:flex;justify-content:center;gap:clamp(18px,4vw,48px);font-family:var(--sans);font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 0;border-bottom:1px solid var(--line)}
+nav.menu a{position:relative;padding:4px 0}
+nav.menu a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--wine);transform:scaleX(0);transition:transform .6s var(--ease)}
+nav.menu a:hover::after{transform:scaleX(1)}
+/* deschidere */
+.open{padding:80px 0 70px;text-align:center}
+.open h1{font-weight:400;font-style:italic;font-size:clamp(50px,7.6vw,110px);line-height:.98;margin:0 auto;max-width:14ch}
+.open .lede{font-size:24px;color:var(--soft);max-width:40ch;margin:30px auto 0}
+.cols{column-count:3;column-gap:48px;column-rule:1px solid var(--line);text-align:justify;hyphens:auto;-webkit-hyphens:auto;font-size:19px;padding:44px 0 0;border-top:1px solid var(--line);margin-top:56px}
+.cols p{margin:0 0 16px}
+.cols p:first-child::first-letter{float:left;font-size:88px;line-height:.78;padding:8px 10px 0 0;color:var(--wine);font-weight:500}
+/* cuprins domenii */
+section.pad{padding:100px 0}
+.kicker{font-family:var(--sans);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--wine);margin:0 0 18px;text-align:center}
+h2{font-weight:400;font-size:clamp(40px,5vw,68px);line-height:1;margin:0 0 54px;text-align:center}
+.index{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
+.toc{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.toc button{all:unset;cursor:pointer;display:flex;align-items:baseline;gap:16px;width:100%;box-sizing:border-box;padding:18px 0;border-bottom:1px solid var(--line);font-size:28px;transition:color .4s,padding .6s var(--ease)}
+.toc button i{font-size:16px;color:var(--soft);min-width:32px}
+.toc button .dots{flex:1;border-bottom:1px dotted var(--soft);transform:translateY(-6px);opacity:.6}
+.toc button small{font-family:var(--sans);font-size:12px;letter-spacing:.12em;color:var(--soft)}
+.toc button[aria-selected="true"],.toc button:hover{color:var(--wine);padding-left:10px}
+.toc button:focus-visible{outline:1.5px solid var(--wine)}
+.leaf{position:sticky;top:30px;background:var(--paper-2);padding:40px;border:1px solid var(--line)}
+.leaf .num{font-style:italic;color:var(--wine);font-size:22px}
+.leaf h3{font-weight:500;font-size:40px;line-height:1.05;margin:10px 0 18px}
+.leaf p{margin:0 0 18px;color:var(--soft)}
+.leaf ul{margin:0;padding:0 0 0 18px;font-size:18px}
+.leaf li{margin:6px 0}
+.leaf .fade{animation:fd .7s var(--ease)}
+@keyframes fd{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+/* citat */
+.quote{background:var(--ink);color:var(--paper);text-align:center;padding:110px 0}
+.quote blockquote{margin:0 auto;max-width:24ch;font-style:italic;font-size:clamp(34px,4.4vw,58px);line-height:1.15}
+.quote cite{display:block;margin-top:28px;font-family:var(--sans);font-style:normal;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:#c9b89a}
 /* abordare */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;counter-reset:s}
-.st{border-top:1px solid var(--navy);padding-top:28px}
-.st b{font-family:var(--serif);font-weight:500;font-size:54px;line-height:1;color:var(--brass)}
-.st h3{font-family:var(--serif);font-weight:500;font-size:28px;margin:18px 0 8px}
-.st p{margin:0;color:var(--soft)}
-/* contact */
-.contact{background:var(--paper-2)}
-.contact .c{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
-.info dl{margin:36px 0 0;display:grid;gap:22px}
-.info dt{font-size:12px;letter-spacing:.14em;color:var(--brass)}
-.info dd{margin:4px 0 0;font-family:var(--serif);font-size:24px}
-form{display:grid;gap:22px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-label{display:grid;gap:8px;font-size:13px;letter-spacing:.04em;color:var(--soft)}
-input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:14px 16px;border-radius:0;transition:border-color .4s}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy)}
-textarea{min-height:130px;resize:vertical}
-.note{font-size:13px;color:var(--soft);margin:0}
-footer{background:var(--navy);color:rgba(245,242,236,.6);font-size:13.5px;padding:36px 0}
-footer .c{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.demo-badge{position:fixed;left:18px;bottom:18px;z-index:50;background:var(--navy);color:var(--paper);font-size:12px;padding:9px 14px;border-radius:999px;letter-spacing:.04em;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-.demo-badge b{color:var(--brass);font-weight:600}
-/* reveal */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.st{padding:28px 24px 0 0}
+.st + .st{padding-left:24px;border-left:1px solid var(--line)}
+.st b{font-weight:500;font-style:italic;font-size:46px;color:var(--wine);line-height:1}
+.st h3{font-weight:500;font-size:28px;margin:14px 0 8px}
+.st p{margin:0;color:var(--soft);font-size:18px}
+/* întrebări */
+.faq{max-width:760px;margin:0 auto;border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;font-size:26px;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--sans);color:var(--wine);transition:transform .5s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{margin:0 0 24px;color:var(--soft)}
+/* scrisoare */
+.letter{background:var(--paper-2)}
+.letter .c{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.addr{font-size:19px}
+.addr dt{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--wine);margin-top:22px}
+.addr dd{margin:4px 0 0}
+form.paper{background:var(--paper);padding:48px;border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(29,26,22,.35)}
+form.paper .salut{font-style:italic;font-size:26px;margin:0 0 22px}
+.ln{display:block;margin:0 0 20px}
+.ln span{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+.ln input,.ln select,.ln textarea{width:100%;font:inherit;font-size:21px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:8px 0;border-radius:0}
+.ln textarea{min-height:120px;resize:vertical;background-image:repeating-linear-gradient(transparent 0 31px,var(--line) 31px 32px);line-height:32px;border:0}
+.ln input:focus,.ln select:focus,.ln textarea:focus{outline:none;border-color:var(--wine)}
+.btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:16px 30px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;transition:background .5s,color .5s}
+.btn:hover{background:transparent;color:var(--ink)}
+.sign{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:10px}
+.sign em{color:var(--soft)}
+.note{font-family:var(--sans);font-size:13px;color:var(--wine);margin:16px 0 0;min-height:18px}
+footer{text-align:center;padding:50px 0;font-family:var(--sans);font-size:12.5px;letter-spacing:.08em;color:var(--soft)}
+footer .name{font-family:var(--serif);font-size:30px;letter-spacing:.18em;color:var(--ink);display:block;margin-bottom:10px}
+.demo-badge{position:fixed;left:18px;bottom:18px;z-index:50;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:12px;padding:9px 14px;border-radius:999px;letter-spacing:.04em}
+.demo-badge b{color:#d7b98a}
 @media (prefers-reduced-motion:no-preference){
- .rv{opacity:0;transform:translateY(28px);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+ .rv{opacity:0;transform:translateY(24px);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease);transition-delay:var(--d,0s)}
  .rv.in{opacity:1;transform:none}
- .plate.rv{transform:translateY(40px) scale(.98)}
- .plate.rv.in{transform:none}
 }
 @media (max-width:900px){
- .menu{display:none}
- .hero .c,.about .c,.contact .c,.sh{grid-template-columns:1fr;gap:40px}
- .sh p{justify-self:start}
- .areas{grid-template-columns:1fr}
- .area,.area:not(:nth-child(3n+1)){padding:32px 0;border-right:0!important}
- .steps{grid-template-columns:1fr}
- .row2{grid-template-columns:1fr}
- .plate{aspect-ratio:auto;min-height:420px}
- section.pad{padding:80px 0}
+ .cols{column-count:1}
+ .index,.letter .c{grid-template-columns:1fr;gap:40px}
+ .leaf{position:static}
+ .steps{grid-template-columns:1fr 1fr;row-gap:30px}
+ .st:nth-child(3){padding-left:0;border-left:0}
+ nav.menu{flex-wrap:wrap;gap:14px 22px}
+ form.paper{padding:28px}
+ section.pad{padding:70px 0}
 }
 </style>
 </head>
 <body>
-<nav class="top">
-  <div class="c">
-    <a class="brand" href="#">
-      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#a8874f" stroke-width="1.2" aria-hidden="true"><path d="M20 5v30M10 35h20M8 13h24M20 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M8 13 3 24a5 5 0 0 0 10 0L8 13zM32 13l-5 11a5 5 0 0 0 10 0l-5-11z"/></svg>
-      <span>Lex Arcan<small>CABINET DE AVOCAT</small></span>
-    </a>
-    <div class="menu"><a href="#domenii">Domenii de practică</a><a href="#despre">Despre</a><a href="#abordare">Abordare</a><a href="#contact">Contact</a></div>
-    <a class="btn" href="#contact">Programează o consultație</a>
-  </div>
-</nav>
+<div class="strip"><div class="c"><span>Chișinău · Luni – Vineri, 09:00 – 18:00 · +373 00 000 000</span><a href="#contact">Programează o consultație →</a></div></div>
 
-<header class="hero">
-  <div class="c">
-    <div>
-      <p class="eyebrow rv">CHIȘINĂU · DIN 2012</p>
-      <h1 class="rv" style="--d:.1s">Claritate juridică pentru deciziile care contează.</h1>
-      <p class="lead rv" style="--d:.2s">Asistență juridică pentru persoane fizice și companii, cu explicații pe înțeles și o strategie clară de la prima consultație.</p>
-      <div class="ctas rv" style="--d:.3s"><a class="btn" href="#contact">Programează o consultație</a><a class="btn ghost" href="#domenii">Domenii de practică</a></div>
-    </div>
-    <div class="plate rv" style="--d:.2s">
-      <svg class="emb" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width=".9" aria-hidden="true"><path d="M20 5v30M10 35h20M8 13h24M20 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M8 13 3 24a5 5 0 0 0 10 0L8 13zM32 13l-5 11a5 5 0 0 0 10 0l-5-11z"/></svg>
-      <ul><li>Drept civil</li><li>Drept comercial</li><li>Litigii</li><li>Drept imobiliar</li><li>Dreptul familiei</li></ul>
-      <span class="sig">AVOCAT LICENȚIAT ÎN REPUBLICA MOLDOVA</span>
-    </div>
-  </div>
+<header class="mast c">
+  <p class="name rv">LEX ARCAN</p>
+  <p class="sub rv" style="--d:.1s">Cabinet de avocat</p>
+  <div class="rules"></div>
+  <nav class="menu" aria-label="Meniu"><a href="#domenii">Domenii</a><a href="#cabinet">Cabinetul</a><a href="#abordare">Abordare</a><a href="#intrebari">Întrebări</a><a href="#contact">Contact</a></nav>
 </header>
+
+<section class="open c">
+  <h1 class="rv">Claritate în fața legii.</h1>
+  <p class="lede rv" style="--d:.1s">Asistență juridică pentru persoane fizice și companii, explicată pe înțeles, de la prima consultație până la soluționarea cauzei.</p>
+  <div class="cols rv" style="--d:.2s">
+    <p>Fiecare dosar începe cu o întrebare simplă: care sunt opțiunile reale pe care le ai? Răspunsul nu e niciodată un șablon. Ascultăm situația, citim documentele și îți spunem deschis ce se poate face, cât durează și ce riscuri există.</p>
+    <p>Lucrăm cu persoane fizice și cu firme mici și mijlocii, în cauze civile, comerciale, imobiliare și de familie. Fiecare client vorbește direct cu avocatul care se ocupă de dosar, nu cu un intermediar.</p>
+    <p>Nu promitem rezultate. Promitem o analiză onestă, o strategie scrisă și informații la fiecare etapă. Onorariul se stabilește în scris, înainte de a începe orice lucru.</p>
+  </div>
+</section>
 
 <section class="pad" id="domenii">
   <div class="c">
-    <div class="sh"><h2 class="rv">Domenii de practică</h2><p class="rv" style="--d:.1s">Fiecare dosar începe cu o analiză atentă a situației tale și a opțiunilor reale pe care le ai.</p></div>
-    <div class="areas">
-      <article class="area rv"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 25V9l9-5 9 5v16M11 25v-7h8v7"/></svg><h3>Drept civil</h3><p>Contracte, obligații, despăgubiri și recuperarea creanțelor.</p></article>
-      <article class="area rv" style="--d:.08s"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="5" y="9" width="20" height="15"/><path d="M11 9V6h8v3M5 15h20"/></svg><h3>Drept comercial</h3><p>Înființarea companiilor, contracte comerciale și relația cu partenerii.</p></article>
-      <article class="area rv" style="--d:.16s"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15 4v22M8 26h14M6 10h18M6 10l-3 7a3 3 0 0 0 6 0l-3-7zM24 10l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg><h3>Litigii</h3><p>Reprezentare în instanțele de judecată și în procedurile de mediere.</p></article>
-      <article class="area rv"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 14 15 5l11 9M7 12v13h16V12"/><path d="M13 25v-6h4v6"/></svg><h3>Drept imobiliar</h3><p>Verificarea și redactarea actelor la cumpărarea sau vânzarea unui bun.</p></article>
-      <article class="area rv" style="--d:.08s"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="10" r="4"/><circle cx="20" cy="12" r="3"/><path d="M4 25c0-4 3-7 7-7s7 3 7 7M17 19c4 0 8 2 8 6"/></svg><h3>Dreptul familiei</h3><p>Divorț, partajul bunurilor, pensie de întreținere și custodie.</p></article>
-      <article class="area rv" style="--d:.16s"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 4h11l5 5v17H8z"/><path d="M19 4v5h5M12 15h8M12 19h8"/></svg><h3>Consultanță juridică</h3><p>Opinii juridice și verificarea documentelor înainte de a semna.</p></article>
+    <p class="kicker">Cuprins</p>
+    <h2>Domenii de practică</h2>
+    <div class="index">
+      <ul class="toc" role="tablist" aria-label="Domenii de practică" id="toc"></ul>
+      <article class="leaf" id="leaf" aria-live="polite"></article>
     </div>
   </div>
 </section>
 
-<section class="pad about" id="despre">
+<section class="quote" id="cabinet">
   <div class="c">
-    <div>
-      <p class="eyebrow rv">DESPRE CABINET</p>
-      <h2 class="rv" style="--d:.1s">Un singur avocat, implicat direct în fiecare dosar.</h2>
-      <div class="facts rv" style="--d:.2s">
-        <div><b>Consultație inițială</b><span>în persoană sau online</span></div>
-        <div><b>Română, rusă, engleză</b><span>limbile în care lucrăm</span></div>
-        <div><b>Onorariu stabilit</b><span>în scris, înainte de start</span></div>
-        <div><b>Confidențialitate</b><span>secret profesional garantat</span></div>
-      </div>
-    </div>
-    <div>
-      <p class="rv">Cabinetul oferă asistență juridică în cauze civile, comerciale și de familie. Lucrăm cu persoane fizice și cu companii mici și mijlocii.</p>
-      <p class="rv" style="--d:.1s">Nu promitem rezultate. Promitem o analiză onestă a situației, o strategie explicată pe înțeles și informații la fiecare etapă a dosarului.</p>
-      <blockquote class="quote rv" style="--d:.2s">„Clientul trebuie să înțeleagă la fiecare pas ce facem și de ce.”</blockquote>
-    </div>
+    <blockquote class="rv">„Clientul trebuie să înțeleagă, la fiecare pas, ce facem și de ce.”</blockquote>
+    <cite class="rv" style="--d:.15s">Principiul cabinetului</cite>
   </div>
 </section>
 
 <section class="pad" id="abordare">
   <div class="c">
-    <div class="sh"><h2 class="rv">Cum lucrăm</h2><p class="rv" style="--d:.1s">Un proces simplu și transparent, de la prima întâlnire până la soluționarea cauzei.</p></div>
+    <p class="kicker">Abordare</p>
+    <h2>De la consultație la soluție</h2>
     <div class="steps">
-      <div class="st rv"><b>I</b><h3>Consultația</h3><p>Ascultăm situația, analizăm documentele și identificăm opțiunile disponibile.</p></div>
-      <div class="st rv" style="--d:.1s"><b>II</b><h3>Strategia</h3><p>Primești un plan de acțiune scris, cu etapele, termenele estimative și onorariul.</p></div>
-      <div class="st rv" style="--d:.2s"><b>III</b><h3>Reprezentarea</h3><p>Ne ocupăm de dosar și te ținem la curent după fiecare pas important.</p></div>
+      <div class="st rv"><b>I</b><h3>Consultația</h3><p>Ascultăm situația și analizăm documentele, în persoană sau online.</p></div>
+      <div class="st rv" style="--d:.08s"><b>II</b><h3>Strategia</h3><p>Primești în scris opțiunile, etapele, termenele estimative și onorariul.</p></div>
+      <div class="st rv" style="--d:.16s"><b>III</b><h3>Reprezentarea</h3><p>Ne ocupăm de acte, negocieri și ședințe de judecată.</p></div>
+      <div class="st rv" style="--d:.24s"><b>IV</b><h3>Raportul</h3><p>După fiecare etapă importantă afli ce s-a întâmplat și ce urmează.</p></div>
     </div>
   </div>
 </section>
 
-<section class="pad contact" id="contact">
+<section class="pad" id="intrebari" style="padding-top:0">
   <div class="c">
-    <div class="info">
-      <p class="eyebrow rv">CONTACT</p>
-      <h2 class="rv" style="--d:.1s">Programează o consultație.</h2>
-      <dl class="rv" style="--d:.2s">
-        <div><dt>ADRESA</dt><dd>str. Exemplu 12, of. 4, Chișinău</dd></div>
-        <div><dt>TELEFON</dt><dd>+373 00 000 000</dd></div>
-        <div><dt>PROGRAM</dt><dd>Luni – Vineri, 09:00 – 18:00</dd></div>
+    <p class="kicker">Întrebări frecvente</p>
+    <h2>Bine de știut</h2>
+    <div class="faq">
+      <details class="rv"><summary>Cât costă o consultație?</summary><p>Costul consultației inițiale se comunică la programare. Dacă continuăm colaborarea, onorariul pentru dosar se stabilește printr-un contract scris.</p></details>
+      <details class="rv"><summary>Pot avea consultația online?</summary><p>Da, prin apel video. Documentele le poți trimite înainte, pe e-mail.</p></details>
+      <details class="rv"><summary>Ce documente să aduc?</summary><p>Tot ce ține de situația ta: contracte, corespondență, hotărâri anterioare, acte de identitate. Le verificăm împreună.</p></details>
+      <details class="rv"><summary>Informațiile mele rămân confidențiale?</summary><p>Da. Tot ce discutăm este protejat de secretul profesional al avocatului.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="pad letter" id="contact">
+  <div class="c">
+    <div class="addr">
+      <p class="kicker" style="text-align:left">Contact</p>
+      <h2 style="text-align:left;margin-bottom:24px">Scrieți-ne.</h2>
+      <dl>
+        <dt>Adresa</dt><dd>str. Exemplu 12, of. 4, Chișinău</dd>
+        <dt>Telefon</dt><dd>+373 00 000 000</dd>
+        <dt>Program</dt><dd>Luni – Vineri, 09:00 – 18:00</dd>
       </dl>
     </div>
-    <form class="rv" style="--d:.15s" id="lexForm">
-      <div class="row2"><label>Nume și prenume<input required></label><label>Telefon<input type="tel" required></label></div>
-      <label>Domeniul<select><option>Drept civil</option><option>Drept comercial</option><option>Litigii</option><option>Drept imobiliar</option><option>Dreptul familiei</option><option>Altul</option></select></label>
-      <label>Descrieți pe scurt situația<textarea></textarea></label>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px"><button class="btn" type="submit">Trimite cererea</button><p class="note">Vă contactăm în cel mult o zi lucrătoare.</p></div>
+    <form class="paper rv" id="lexForm">
+      <p class="salut">Stimate domnule avocat,</p>
+      <label class="ln"><span>Numele meu este</span><input required autocomplete="name"></label>
+      <label class="ln"><span>Mă puteți contacta la</span><input type="tel" required autocomplete="tel" placeholder="telefon sau e-mail"></label>
+      <label class="ln"><span>Am nevoie de ajutor în</span><select><option>Drept civil</option><option>Drept comercial</option><option>Litigii</option><option>Drept imobiliar</option><option>Dreptul familiei</option><option>Altceva</option></select></label>
+      <label class="ln"><span>Pe scurt, situația este următoarea</span><textarea></textarea></label>
+      <div class="sign"><em>Cu respect,</em><button class="btn" type="submit">Trimite scrisoarea</button></div>
+      <p class="note" id="lexNote"></p>
     </form>
   </div>
 </section>
 
-<footer><div class="c"><span>© Lex Arcan · Cabinet de avocat · Date fictive, folosite doar pentru demonstrație</span><span>Politica de confidențialitate</span></div></footer>
+<footer><span class="name">LEX ARCAN</span>Cabinet de avocat · Chișinău · Date fictive, folosite doar pentru demonstrație</footer>
 <a class="demo-badge" href="../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
 <script src="js/lex.js"></script>
 </body>

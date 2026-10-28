@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Verde — Template imobiliare · Afyze</title>
+<meta name="description" content="Template demo Afyze pentru un ansamblu rezidențial. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--concrete:#e9e7e2;--paper:#f6f5f1;--char:#1c1c1a;--soft:#6b6a64;--olive:#56663a;--olive-2:#7d8f55;--sand:#d8cdb4;--line:rgba(28,28,26,.13);
+--sans:"Space Grotesk","Segoe UI",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--concrete);color:var(--char);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.c{width:min(1300px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--olive);outline-offset:2px}
+nav .c{display:flex;justify-content:space-between;align-items:center;height:76px;border-bottom:1px solid var(--line)}
+.logo{font-weight:700;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:22px;background:var(--olive);clip-path:polygon(50% 0,100% 40%,100% 100%,0 100%,0 40%)}
+nav .links{display:flex;gap:30px;font-size:14.5px;color:var(--soft)}
+nav .links a:hover{color:var(--char)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;background:var(--char);color:var(--paper);font:inherit;font-weight:500;font-size:14.5px;border:0;cursor:pointer;transition:background .3s}
+.btn:hover{background:var(--olive)}
+.btn.line{background:transparent;color:var(--char);box-shadow:inset 0 0 0 1px var(--char)}
+.btn.line:hover{background:var(--char);color:var(--paper)}
+/* hero cu clădire interactivă */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end;padding:60px 0 0}
+.hero .tag{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--olive)}
+.hero h1{font-size:clamp(52px,7vw,112px);line-height:.92;letter-spacing:-.045em;font-weight:600;margin:18px 0 26px}
+.hero p{color:var(--soft);font-size:18px;max-width:42ch;margin:0 0 30px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--char);margin-top:46px}
+.facts div{padding:18px 14px 26px 0}
+.facts b{display:block;font-size:40px;font-weight:600;letter-spacing:-.03em;line-height:1}
+.facts span{font-size:13px;color:var(--soft)}
+.bldg{position:relative;background:var(--paper);padding:30px 30px 0;align-self:stretch;display:flex;flex-direction:column}
+.bldg .hint{font-size:13px;color:var(--soft);margin-bottom:14px;display:flex;justify-content:space-between}
+.bldg svg{width:100%;height:auto;display:block;margin-top:auto}
+.bldg .fl{cursor:pointer;transition:fill .3s}
+.bldg .fl rect.body{fill:#cfcac0;transition:fill .3s}
+.bldg .fl:hover rect.body,.bldg .fl.on rect.body{fill:var(--olive-2)}
+.bldg .fl.on rect.body{fill:var(--olive)}
+.bldg .fl text{font-family:var(--sans);font-size:13px;fill:var(--char);pointer-events:none}
+.bldg .fl.on text,.bldg .fl:hover text{fill:#fff}
+.bldg .fl:focus-visible{outline:none}
+.bldg .fl:focus-visible rect.body{stroke:var(--char);stroke-width:3}
+.tip{position:absolute;right:30px;top:30px;background:var(--char);color:var(--paper);padding:12px 16px;font-size:14px;min-width:170px}
+.tip b{display:block;font-size:22px;font-weight:600}
+/* apartamente */
+.pad{padding:110px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+h2{font-size:clamp(40px,5vw,72px);letter-spacing:-.04em;font-weight:600;line-height:.95;margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:22px;align-items:end;background:var(--paper);padding:20px;margin-bottom:20px}
+.filters .g{display:grid;gap:8px}
+.filters label,.filters .lbl{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.seg{display:flex}
+.seg button{cursor:pointer;font:inherit;font-size:14.5px;padding:9px 14px;background:transparent;border:1px solid var(--line);margin-left:-1px;color:var(--char)}
+.seg button[aria-pressed="true"]{background:var(--char);color:var(--paper);border-color:var(--char)}
+input[type=range]{width:220px;accent-color:var(--olive)}
+.count{margin-left:auto;font-size:14.5px;color:var(--soft)}
+.count b{color:var(--char)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.apt{background:var(--paper);padding:18px;display:flex;flex-direction:column;gap:12px;transition:transform .6s var(--ease),box-shadow .6s}
+.apt:hover{transform:translateY(-4px);box-shadow:0 24px 40px -28px rgba(28,28,26,.4)}
+.apt .top{display:flex;justify-content:space-between;font-size:13px;color:var(--soft)}
+.apt svg{width:100%;height:auto;background:#fff;border:1px solid var(--line)}
+.apt h3{font-size:22px;font-weight:600;letter-spacing:-.02em;margin:0}
+.apt .row{display:flex;justify-content:space-between;align-items:baseline}
+.apt .pr{font-size:20px;font-weight:600}
+.st{font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px}
+.st.free{background:#dfe8cc;color:var(--olive)}
+.st.res{background:#eee1c9;color:#8a6a2c}
+.apt.anim{animation:up .6s var(--ease) both}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.none{grid-column:1/-1;padding:40px;text-align:center;color:var(--soft);background:var(--paper)}
+/* calculator */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--char);color:var(--paper)}
+.calc .in{padding:44px;display:grid;gap:22px}
+.calc .in label{display:grid;gap:8px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#b9b7ae}
+.calc .in output{float:right;color:var(--paper);font-size:16px;letter-spacing:0;text-transform:none}
+.calc input[type=range]{width:100%}
+.calc .out{padding:44px;background:var(--olive);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.calc .out b{display:block;font-size:clamp(48px,6vw,84px);font-weight:600;letter-spacing:-.04em;line-height:1}
+.calc .out small{display:block;color:#e3e8d4;font-size:14px}
+.calc .out dl{display:grid;grid-template-columns:1fr auto;gap:8px 20px;margin:0;font-size:15px}
+.calc .out dt{color:#e3e8d4}.calc .out dd{margin:0;font-weight:600}
+.loc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.loc div{background:var(--paper);padding:22px}
+.loc b{display:block;font-size:30px;font-weight:600;letter-spacing:-.03em}
+.loc span{color:var(--soft);font-size:14.5px}
+footer{border-top:1px solid var(--line);padding:30px 0 50px;font-size:13.5px;color:var(--soft)}
+footer .c{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.demo-badge{position:fixed;left:18px;bottom:18px;z-index:50;background:var(--char);color:var(--paper);font-size:12px;padding:9px 14px}
+.demo-badge b{color:#c7d6a1}
+@media (prefers-reduced-motion:no-preference){
+ .rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1.2s var(--ease);transition-delay:var(--d,0s)}
+ .rv.in{opacity:1;transform:none}
+}
+@media (max-width:980px){
+ nav .links{display:none}
+ .hero,.calc{grid-template-columns:1fr}
+ .grid,.loc{grid-template-columns:1fr 1fr}
+ .count{margin-left:0}
+ .calc .in,.calc .out{padding:28px}
+ .pad{padding:80px 0}
+}
+@media (max-width:560px){.grid,.loc{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="c"><span class="logo"><i></i>Casa Verde</span><div class="links"><a href="#apartamente">Apartamente</a><a href="#calculator">Calculator credit</a><a href="#locatie">Locație</a></div><a class="btn" href="#apartamente">Vezi apartamentele</a></div></nav>
+
+<main>
+  <section class="c hero">
+    <div>
+      <span class="tag rv">Ansamblu rezidențial · Chișinău</span>
+      <h1 class="rv" style="--d:.06s">Acasă, lângă parc.</h1>
+      <p class="rv" style="--d:.12s">Un bloc de 9 etaje cu apartamente de 1–3 camere, curte interioară fără mașini și dare în exploatare în 2027.</p>
+      <div class="rv" style="--d:.18s;display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="#apartamente">Alege apartamentul</a><a class="btn line" href="#calculator">Calculează rata</a></div>
+      <div class="facts rv" style="--d:.24s"><div><b>9</b><span>etaje</span></div><div><b>72</b><span>apartamente</span></div><div><b>2027</b><span>dare în exploatare</span></div></div>
+    </div>
+    <div class="bldg rv" style="--d:.1s">
+      <div class="hint"><span>Alege un etaj</span><span id="floorLabel">Toate etajele</span></div>
+      <div class="tip" id="tip"><span>Disponibile acum</span><b id="tipN">—</b></div>
+      <svg id="bsvg" viewBox="0 0 400 470" role="group" aria-label="Clădirea, pe etaje"></svg>
+    </div>
+  </section>
+
+  <section class="c pad" id="apartamente">
+    <div class="sh"><h2 class="rv">Apartamente</h2></div>
+    <div class="filters rv">
+      <div class="g"><span class="lbl">Camere</span><div class="seg" id="rooms"><button type="button" aria-pressed="true" data-r="0">Toate</button><button type="button" aria-pressed="false" data-r="1">1</button><button type="button" aria-pressed="false" data-r="2">2</button><button type="button" aria-pressed="false" data-r="3">3</button></div></div>
+      <div class="g"><label for="maxp">Preț maxim: <b id="maxpv"></b></label><input type="range" id="maxp" min="45000" max="140000" step="5000" value="140000"></div>
+      <div class="g"><span class="lbl">Doar disponibile</span><div class="seg" id="avail"><button type="button" aria-pressed="false" data-a="1">Da</button><button type="button" aria-pressed="true" data-a="0">Nu</button></div></div>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+  </section>
+
+  <section class="c" id="calculator">
+    <div class="calc rv">
+      <div class="in">
+        <h2 style="color:var(--paper);margin-bottom:4px">Calculator credit</h2>
+        <label>Prețul apartamentului <output id="vP"></output><input type="range" id="cP" min="40000" max="150000" step="1000" value="78000"></label>
+        <label>Avans <output id="vA"></output><input type="range" id="cA" min="10" max="60" step="5" value="30"></label>
+        <label>Perioada <output id="vY"></output><input type="range" id="cY" min="5" max="25" step="1" value="20"></label>
+        <label>Dobânda anuală <output id="vR"></output><input type="range" id="cR" min="4" max="14" step="0.5" value="8"></label>
+      </div>
+      <div class="out" aria-live="polite">
+        <div><small>Rata lunară estimată</small><b id="rate">—</b></div>
+        <dl><dt>Avans</dt><dd id="oA"></dd><dt>Suma creditului</dt><dd id="oL"></dd><dt>Total de plată</dt><dd id="oT"></dd></dl>
+        <small>Calcul orientativ, cu anuitate fixă. Condițiile reale le stabilește banca.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="c pad" id="locatie">
+    <div class="sh"><h2 class="rv">Totul aproape</h2></div>
+    <div class="loc">
+      <div class="rv"><b>3 min</b><span>pe jos până la parc</span></div>
+      <div class="rv" style="--d:.06s"><b>5 min</b><span>până la grădiniță și școală</span></div>
+      <div class="rv" style="--d:.12s"><b>8 min</b><span>până la transport public</span></div>
+      <div class="rv" style="--d:.18s"><b>15 min</b><span>cu mașina până în centru</span></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="c"><span>Casa Verde · Birou de vânzări: str. Exemplu 88, Chișinău · +373 00 000 000</span><span>Date fictive, folosite doar pentru demonstrație</span></div></footer>
+<a class="demo-badge" href="../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+<script src="js/casa.js"></script>
+</body>
+</html>
