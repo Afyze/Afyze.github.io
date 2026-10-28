@@ -37,11 +37,10 @@
   var lenis = null;
   if (anim && window.Lenis) {
     lenis = new Lenis({
-      duration: 1.35,
-      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      lerp: 0.14,
       smoothWheel: true,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.4
+      wheelMultiplier: 1,
+      syncTouch: false
     });
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
@@ -175,7 +174,7 @@
       el.innerHTML = words.map(function (w) { return '<span class="w" style="opacity:.14">' + w + "</span>"; }).join(" ");
       gsap.to(el.querySelectorAll(".w"), {
         opacity: 1, stagger: 0.08, ease: "none",
-        scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 45%", scrub: 0.6 }
+        scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 45%", scrub: true }
       });
     });
 
@@ -187,7 +186,7 @@
       function dist() { return Math.max(0, track.scrollWidth - window.innerWidth); }
       gsap.to(track, {
         x: function () { return -dist(); }, ease: "none",
-        scrollTrigger: { trigger: wrap, start: "top top", end: function () { return "+=" + dist(); }, pin: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1 }
+        scrollTrigger: { trigger: wrap, start: "top top", end: function () { return "+=" + dist(); }, pin: true, scrub: 0.4, invalidateOnRefresh: true, anticipatePin: 1 }
       });
     });
 

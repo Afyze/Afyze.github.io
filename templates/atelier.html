@@ -32,10 +32,10 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(64px,9vw,148px);li
 .hero p{color:var(--soft);max-width:40ch;margin:34px 0 42px}
 .ctas{display:flex;gap:14px;flex-wrap:wrap}
 .arch{position:relative;aspect-ratio:3/4;border-radius:999px 999px 0 0;overflow:hidden;background:var(--blush)}
-.arch .b{position:absolute;border-radius:50%;filter:blur(40px)}
-.arch .b1{width:70%;height:55%;left:-10%;top:10%;background:#f4dcd2;animation:m1 14s ease-in-out infinite}
-.arch .b2{width:60%;height:50%;right:-15%;bottom:5%;background:#c99a8d;opacity:.8;animation:m2 18s ease-in-out infinite}
-.arch .b3{width:40%;height:35%;left:30%;top:40%;background:#fff3ec;opacity:.9;animation:m3 16s ease-in-out infinite}
+.arch .b{position:absolute;border-radius:50%;will-change:transform}
+.arch .b1{width:70%;height:55%;left:-10%;top:10%;background:radial-gradient(circle,#f4dcd2 0%,transparent 70%);animation:m1 14s ease-in-out infinite}
+.arch .b2{width:60%;height:50%;right:-15%;bottom:5%;background:radial-gradient(circle,#c99a8d 0%,transparent 70%);opacity:.8;animation:m2 18s ease-in-out infinite}
+.arch .b3{width:40%;height:35%;left:30%;top:40%;background:radial-gradient(circle,#fff3ec 0%,transparent 70%);opacity:.9;animation:m3 16s ease-in-out infinite}
 @keyframes m1{50%{transform:translate(20%,15%) scale(1.15)}}
 @keyframes m2{50%{transform:translate(-25%,-10%) scale(.9)}}
 @keyframes m3{50%{transform:translate(-20%,20%) scale(1.2)}}
