@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Program — Forja · Template Afyze</title>
+<meta name="description" content="Template demo Afyze pentru o sală de sport. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="index.html"><i></i>FORJA</a>
+    <nav aria-label="Meniu"><a aria-current="page" href="program.html">Program</a><a href="abonamente.html">Abonamente</a><a href="abonamente.html#gratuit">Prima ședință</a></nav>
+    <a class="cta" href="abonamente.html#gratuit">Încearcă gratuit</a>
+  </header>
+  <section class="phead"><span class="n">/01</span><h1 class="up rv">Program</h1></section><section class="sec" id="program">
+    <div class="sec-h"><span></span><p>Alege ziua și nivelul. Rezervă locul cu un click.</p></div>
+    <div class="days" role="tablist" aria-label="Zile" id="days"></div>
+    <div class="lv" id="lv"><button type="button" aria-pressed="true" data-l="0">Toate nivelurile</button><button type="button" aria-pressed="false" data-l="1">Începător</button><button type="button" aria-pressed="false" data-l="2">Mediu</button><button type="button" aria-pressed="false" data-l="3">Avansat</button></div>
+    <div class="sched" id="sched" aria-live="polite"></div>
+  </section>
+  <footer><span>FORJA · str. Exemplu 40, Chișinău · +373 00 000 000</span><span>Date fictive, folosite doar pentru demonstrație</span></footer>
+</div>
+<a class="demo-badge" href="../../templateuri.html" target="_top">TEMPLATE DEMO · AFYZE</a>
+<script src="script.js"></script>
+</body>
+</html>

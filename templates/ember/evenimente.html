@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evenimente — Ember · Template Afyze</title>
+<meta name="description" content="Template demo Afyze pentru un restaurant. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="solid"><div class="c"><a href="index.html" class="disp" style="font-size:26px;letter-spacing:.06em">Ember</a><div class="links"><a href="index.html">Acasă</a><a href="meniu.html">Meniu</a><a href="meniu.html#degustare">Degustare</a><a aria-current="page" href="evenimente.html">Evenimente</a></div><span>Marți – Duminică</span></div></nav>
+<header class="phead"><div class="c"><h1 class="disp rv">Evenimente</h1><p class="rv" style="--d:.1s">Cine de afaceri, aniversări și seri private, cu meniul gândit doar pentru voi.</p></div></header><section class="events" id="evenimente">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="txt">
+    <h2 class="disp rv">Evenimente private</h2>
+    <p class="rv" style="--d:.1s">Sala de la etaj găzduiește până la 40 de invitați. Pregătim un meniu doar pentru voi, de la cine de afaceri la aniversări.</p>
+    <div class="rv" style="--d:.2s"><a class="btn" href="#rezerva">Cere o ofertă</a></div>
+  </div>
+</section><div class="marq" aria-hidden="true"><div class="t">
+  <span>Lemn de stejar</span><span>✦</span><span>Carne maturată</span><span>✦</span><span>Legume de sezon</span><span>✦</span><span>Pâine din cuptor</span><span>✦</span><span>Vinuri moldovenești</span><span>✦</span>
+  <span>Lemn de stejar</span><span>✦</span><span>Carne maturată</span><span>✦</span><span>Legume de sezon</span><span>✦</span><span>Pâine din cuptor</span><span>✦</span><span>Vinuri moldovenești</span><span>✦</span>
+</div></div>
+<footer><div class="c">
+  <p class="big disp">Ember</p>
+  <div><b>Program</b>Marți – Joi 12–23<br>Vineri – Sâmbătă 12–00<br>Duminică 12–22</div>
+  <div><b>Contact</b>str. Exemplu 7, Chișinău<br>+373 00 000 000<br>Date fictive, folosite doar pentru demonstrație</div>
+</div></footer>
+<form class="bar" id="rezerva" aria-label="Rezervă o masă">
+  <strong>Rezervă o masă</strong>
+  <input type="date" id="rd" aria-label="Data" required>
+  <select id="rt" aria-label="Ora"><option>18:00</option><option>18:30</option><option selected>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select>
+  <select id="rg" aria-label="Persoane"><option value="1">1 persoană</option><option value="2" selected>2 persoane</option><option value="3">3 persoane</option><option value="4">4 persoane</option><option value="5">5 persoane</option><option value="6">6 persoane</option><option value="8">8 persoane</option></select>
+  <button class="btn" type="submit">Rezervă</button>
+  <span class="msg" id="rmsg" role="status"></span>
+</form>
+<a class="demo-badge" href="../../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+<script src="script.js"></script>
+</body>
+</html>

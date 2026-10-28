@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Lex Arcan · Template Afyze</title>
+<meta name="description" content="Template demo Afyze pentru un cabinet de avocat. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="strip"><div class="c"><span>Chișinău · Luni – Vineri, 09:00 – 18:00 · +373 00 000 000</span><a href="#contact">Programează o consultație →</a></div></div>
+<header class="mast c">
+  <a href="index.html" class="name rv" style="display:block">LEX ARCAN</a>
+  <p class="sub rv" style="--d:.1s">Cabinet de avocat</p>
+  <div class="rules"></div>
+  <nav class="menu" aria-label="Meniu"><a href="index.html">Acasă</a><a href="domenii.html">Domenii</a><a href="domenii.html#abordare">Abordare</a><a href="contact.html#intrebari">Întrebări</a><a aria-current="page" href="contact.html">Contact</a></nav>
+</header>
+<section class="phead c"><p class="kicker">Contact</p><h1>Scrieți-ne.</h1><p class="lede">Răspundem la întrebările frecvente mai jos, iar pentru orice altceva ne puteți scrie direct.</p></section><section class="pad" id="intrebari" >
+  <div class="c">
+    <p class="kicker">Întrebări frecvente</p>
+    <h2>Bine de știut</h2>
+    <div class="faq">
+      <details class="rv"><summary>Cât costă o consultație?</summary><p>Costul consultației inițiale se comunică la programare. Dacă continuăm colaborarea, onorariul pentru dosar se stabilește printr-un contract scris.</p></details>
+      <details class="rv"><summary>Pot avea consultația online?</summary><p>Da, prin apel video. Documentele le poți trimite înainte, pe e-mail.</p></details>
+      <details class="rv"><summary>Ce documente să aduc?</summary><p>Tot ce ține de situația ta: contracte, corespondență, hotărâri anterioare, acte de identitate. Le verificăm împreună.</p></details>
+      <details class="rv"><summary>Informațiile mele rămân confidențiale?</summary><p>Da. Tot ce discutăm este protejat de secretul profesional al avocatului.</p></details>
+    </div>
+  </div>
+</section><section class="pad letter" id="contact">
+  <div class="c">
+    <div class="addr">
+      <p class="kicker" style="text-align:left">Contact</p>
+      <h2 style="text-align:left;margin-bottom:24px">Scrieți-ne.</h2>
+      <dl>
+        <dt>Adresa</dt><dd>str. Exemplu 12, of. 4, Chișinău</dd>
+        <dt>Telefon</dt><dd>+373 00 000 000</dd>
+        <dt>Program</dt><dd>Luni – Vineri, 09:00 – 18:00</dd>
+      </dl>
+    </div>
+    <form class="paper rv" id="lexForm">
+      <p class="salut">Stimate domnule avocat,</p>
+      <label class="ln"><span>Numele meu este</span><input required autocomplete="name"></label>
+      <label class="ln"><span>Mă puteți contacta la</span><input type="tel" required autocomplete="tel" placeholder="telefon sau e-mail"></label>
+      <label class="ln"><span>Am nevoie de ajutor în</span><select><option>Drept civil</option><option>Drept comercial</option><option>Litigii</option><option>Drept imobiliar</option><option>Dreptul familiei</option><option>Altceva</option></select></label>
+      <label class="ln"><span>Pe scurt, situația este următoarea</span><textarea></textarea></label>
+      <div class="sign"><em>Cu respect,</em><button class="btn" type="submit">Trimite scrisoarea</button></div>
+      <p class="note" id="lexNote"></p>
+    </form>
+  </div>
+</section>
+<footer><span class="name">LEX ARCAN</span>Cabinet de avocat · Chișinău · Date fictive, folosite doar pentru demonstrație</footer>
+<a class="demo-badge" href="../../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+<script src="script.js"></script>
+</body>
+</html>

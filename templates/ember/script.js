@@ -11,6 +11,7 @@
     [["Tartă cu ciocolată", "Sare de mare, înghețată de vanilie", 145, "#5a2e1a,#1e0e07"], ["Piersici la grătar", "Mascarpone, migdale", 130, "#ffb36b,#d5641e"], ["Plăcintă cu brânză", "Rețeta bunicii, cu smântână", 110, "#f3dfb8,#c0904c"], ["Sorbet de sezon", "Trei arome din fructe locale", 95, "#ff9a8a,#b9364a"]]
   ];
   var list = document.getElementById("dishList"), follow = document.getElementById("follow");
+  if (list) {
   function render(k) {
     list.replaceChildren();
     MENU[k].forEach(function (d, i) {
@@ -49,6 +50,7 @@
     list.addEventListener("pointerleave", function () { follow.classList.remove("on"); });
     (function loop() { x += (tx - x) * .14; y += (ty - y) * .14; follow.style.left = x + "px"; follow.style.top = y + "px"; requestAnimationFrame(loop); })();
   }
+  }
 
   // ---------- rezervare ----------
   var d = document.getElementById("rd"), msg = document.getElementById("rmsg");
@@ -61,7 +63,9 @@
   });
 
   // ---------- scântei ----------
-  var c = document.getElementById("sparks"), cx = c.getContext("2d"), W, H, P = [];
+  var c = document.getElementById("sparks");
+  if (!c) return;
+  var cx = c.getContext("2d"), W, H, P = [];
   function rs() { var r = Math.min(devicePixelRatio || 1, 2); W = c.clientWidth; H = c.clientHeight; c.width = W * r; c.height = H * r; cx.setTransform(r, 0, 0, r, 0, 0); }
   function sp() { return { x: W * (.2 + Math.random() * .6), y: H + 10, vx: (Math.random() - .5) * .5, vy: -(.5 + Math.random() * 1.3), r: .6 + Math.random() * 2, l: 0, m: 220 + Math.random() * 260 }; }
   rs(); addEventListener("resize", rs);

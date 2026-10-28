@@ -19,8 +19,21 @@
   /* ---------- Utilitare ---------- */
   function $(s, c) { return (c || document).querySelector(s); }
   function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
+  // texte afișate de script, în limba paginii
+  var RU = (html.getAttribute("lang") || "").slice(0, 2) === "ru";
+  var L = RU ? {
+    copied: "Адрес скопирован: ", needName: "Напишите имя и пару слов о проекте.", needContact: "Оставьте e-mail или телефон, чтобы я мог с вами связаться.",
+    hello: "Здравствуйте!\n\n", type: "Тип проекта: ", pkg: "Пакет: ", phone: "Телефон: ", opening: "Открывается почтовое приложение…",
+    newProject: "Новый проект", thanks: "Спасибо, ", sent: "Ваше сообщение получено. Обычно я отвечаю в тот же рабочий день — с понятной ценой и сроком.", hi: "Здравствуйте, Afyze"
+  } : {
+    copied: "Adresa a fost copiată: ", needName: "Scrie-ți numele și câteva cuvinte despre proiect.", needContact: "Lasă un e-mail sau un telefon, ca să te pot contacta.",
+    hello: "Bună ziua,\n\n", type: "Tip proiect: ", pkg: "Pachet: ", phone: "Telefon: ", opening: "Se deschide aplicația de e-mail…",
+    newProject: "Proiect nou", thanks: "Mulțumesc, ", sent: "Mesajul tău a ajuns. Îți răspund de obicei în aceeași zi lucrătoare, cu un preț și un termen clar.", hi: "Salut, Afyze"
+  };
+  window.afyzeLang = RU ? "ru" : "ro";
+
   function mailto(subject, body) {
-    var u = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject || "Salut, Afyze");
+    var u = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject || L.hi);
     if (body) u += "&body=" + encodeURIComponent(body);
     return u;
   }
@@ -330,7 +343,7 @@
   $$("[data-copy]").forEach(function (b) {
     b.addEventListener("click", function () {
       var addr = (window.afyzeApi && window.afyzeApi.content && window.afyzeApi.content.contact.email) || EMAIL;
-      var done = function () { toast("Adresa a fost copiată: " + addr); };
+      var done = function () { toast(L.copied + addr); };
       if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(addr).then(done, function () { toast(addr); });
       else {
         var ta = document.createElement("textarea"); ta.value = addr; ta.style.position = "fixed"; ta.style.opacity = "0";
@@ -351,11 +364,11 @@
       var email = form.elements.email ? form.elements.email.value.trim() : "";
       var type = (form.querySelector("input[name=type]:checked") || {}).value || "";
       var pkg = (form.querySelector("input[name=pkg]:checked") || {}).value || "";
-      if (!name || !msg) { toast("Scrie-ți numele și câteva cuvinte despre proiect."); (name ? form.elements.msg : form.elements.name).focus(); return; }
+      if (!name || !msg) { toast(L.needName); (name ? form.elements.msg : form.elements.name).focus(); return; }
 
       // cu backend: mesajul se trimite direct, fără să deschidem aplicația de e-mail
       if (window.afyzeApi && window.afyzeApi.ready && !form.dataset.fallback) {
-        if (!email && !phone) { toast("Lasă un e-mail sau un telefon, ca să te pot contacta."); form.elements.email.focus(); return; }
+        if (!email && !phone) { toast(L.needContact); form.elements.email.focus(); return; }
         var btn = form.querySelector("button[type=submit]");
         btn.disabled = true; btn.style.opacity = ".6";
         window.afyzeApi.submit({ name: name, email: email, phone: phone, type: type, package: pkg, message: msg, website: form.elements.website ? form.elements.website.value : "" })
@@ -371,13 +384,13 @@
       }
 
       if (email) msg += "\n\nE-mail: " + email;
-      var body = "Bună ziua,\n\n" + msg + "\n\n" +
-        (type ? "Tip proiect: " + type + "\n" : "") +
-        (pkg ? "Pachet: " + pkg + "\n" : "") +
-        (phone ? "Telefon: " + phone + "\n" : "") +
+      var body = L.hello + msg + "\n\n" +
+        (type ? L.type + type + "\n" : "") +
+        (pkg ? L.pkg + pkg + "\n" : "") +
+        (phone ? L.phone + phone + "\n" : "") +
         "\n— " + name;
-      toast("Se deschide aplicația de e-mail…");
-      location.href = mailto("Proiect nou" + (type ? " — " + type : "") + " — " + name, body);
+      toast(L.opening);
+      location.href = mailto(L.newProject + (type ? " — " + type : "") + " — " + name, body);
     });
   }
 
@@ -385,8 +398,8 @@
     var box = document.createElement("div");
     box.className = "sent";
     box.setAttribute("role", "status");
-    var h = document.createElement("h3"); h.textContent = "Mulțumesc, " + name.split(" ")[0] + "!";
-    var p = document.createElement("p"); p.textContent = "Mesajul tău a ajuns. Îți răspund de obicei în aceeași zi lucrătoare, cu un preț și un termen clar.";
+    var h = document.createElement("h3"); h.textContent = L.thanks + name.split(" ")[0] + "!";
+    var p = document.createElement("p"); p.textContent = L.sent;
     box.append(h, p);
     form.replaceChildren(box);
     if (anim) gsap.fromTo(box, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.2, ease: "expo.out" });

@@ -1,0 +1,117 @@
+:root{--black:#0d0b0a;--coal:#171311;--coal-2:#211b17;--cream:#f3e9dc;--muted:#a3968a;--fire:#ff8a3d;--fire-2:#ffb36b;--line:rgba(243,233,220,.14);
+--disp:"Anton",Impact,"Arial Narrow",sans-serif;--sans:"Karla","Segoe UI",Helvetica,Arial,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+a{color:inherit;text-decoration:none}
+.c{width:min(1320px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--fire);outline-offset:3px}
+.disp{font-family:var(--disp);font-weight:400;text-transform:uppercase;letter-spacing:.005em;line-height:.86}
+nav{position:absolute;inset:0 0 auto;z-index:5}
+nav .c{display:flex;justify-content:space-between;align-items:center;height:80px;font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+nav .links{display:flex;gap:32px;color:var(--muted)}
+nav .links a:hover{color:var(--cream)}
+.hero{position:relative;height:100vh;min-height:620px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:130px;background:radial-gradient(70% 55% at 50% 100%,rgba(255,138,61,.42),transparent 70%),radial-gradient(40% 30% at 80% 20%,rgba(120,40,10,.35),transparent 70%),var(--black)}
+#sparks{position:absolute;inset:0;width:100%;height:100%}
+.hero .word{position:relative;z-index:2;font-size:clamp(120px,27vw,430px);margin:0 0 -.07em;text-align:center;background:linear-gradient(180deg,var(--cream) 30%,var(--fire-2) 78%,var(--fire));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .meta{position:absolute;z-index:2;left:0;right:0;top:44%;display:flex;justify-content:space-between;padding:0 40px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+/* marquee */
+.marq{overflow:hidden;white-space:nowrap;background:var(--fire);color:var(--black);padding:14px 0}
+.marq .t{display:inline-flex;gap:40px;animation:mq 30s linear infinite;padding-right:40px}
+.marq span{font-family:var(--disp);font-size:30px;text-transform:uppercase}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* poveste */
+.pad{padding:130px 0}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+.story h2{font-size:clamp(70px,10vw,170px);margin:0}
+.story h2 span{color:var(--fire)}
+.story p{color:var(--muted);font-size:19px;max-width:42ch;margin:0 0 18px}
+/* meniu cu imagine care urmărește cursorul */
+.menu{background:var(--coal);position:relative}
+.menu .head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:46px;flex-wrap:wrap}
+.menu h2{font-size:clamp(64px,8vw,130px);margin:0}
+.tabs{display:flex;gap:6px;border:1px solid var(--line);border-radius:999px;padding:5px}
+.tabs button{all:unset;cursor:pointer;padding:10px 20px;border-radius:999px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);transition:all .4s}
+.tabs button[aria-selected="true"]{background:var(--cream);color:var(--black)}
+.tabs button:focus-visible{outline:2px solid var(--fire)}
+.list{border-top:1px solid var(--line)}
+.dish{display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .6s var(--ease),color .4s}
+.dish .n{font-size:13px;color:var(--muted);letter-spacing:.1em}
+.dish h3{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(30px,3.6vw,52px);line-height:1;margin:0}
+.dish p{margin:6px 0 0;color:var(--muted);font-size:15.5px}
+.dish .p{font-family:var(--disp);font-size:34px;color:var(--fire-2)}
+.dish:hover{padding-left:18px;color:var(--fire-2)}
+.list.swap{animation:sw .7s var(--ease)}
+@keyframes sw{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.follow{position:fixed;left:0;top:0;width:260px;height:320px;border-radius:200px 200px 16px 16px;pointer-events:none;z-index:4;opacity:0;transform:translate(-50%,-50%) scale(.8);transition:opacity .4s,transform .6s var(--ease);mix-blend-mode:normal}
+.follow.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+/* meniu degustare */
+.tasting{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.tasting h2{font-size:clamp(60px,7vw,112px);margin:0 0 24px}
+.tasting .price{font-family:var(--disp);font-size:56px;color:var(--fire)}
+.courses{counter-reset:c;list-style:none;margin:0;padding:0}
+.courses li{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.courses li::before{counter-increment:c;content:"0" counter(c);font-family:var(--disp);font-size:48px;line-height:1;color:var(--fire)}
+.courses b{display:block;font-weight:600;font-size:19px}
+.courses span{color:var(--muted)}
+/* evenimente */
+.events{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.events .glow{background:radial-gradient(circle at 40% 60%,#ffb36b 0%,#e0641f 25%,#5a200c 55%,#170e0a 80%)}
+.events .txt{padding:80px clamp(24px,5vw,80px);background:var(--coal-2);display:flex;flex-direction:column;justify-content:center}
+.events h2{font-size:clamp(54px,6vw,96px);margin:0 0 20px}
+.events p{color:var(--muted);max-width:40ch;margin:0 0 30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;background:var(--fire);color:var(--black);font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;border:0;cursor:pointer;transition:background .4s,transform .4s var(--ease)}
+.btn:hover{background:var(--fire-2);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1px var(--line)}
+footer{padding:70px 0 40px;border-top:1px solid var(--line)}
+footer .c{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;font-size:15px;color:var(--muted)}
+footer b{display:block;color:var(--cream);font-weight:600;margin-bottom:8px}
+footer .big{font-size:80px;color:var(--cream);margin:0}
+/* bara de rezervare fixă */
+.bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:20;width:min(920px,calc(100% - 24px));display:flex;align-items:center;gap:8px;padding:8px 8px 8px 22px;border-radius:999px;background:rgba(23,19,17,.92);backdrop-filter:blur(8px);box-shadow:0 20px 50px rgba(0,0,0,.6),inset 0 0 0 1px var(--line)}
+.bar strong{font-family:var(--disp);font-weight:400;font-size:22px;text-transform:uppercase;margin-right:auto;white-space:nowrap}
+.bar select,.bar input{font:inherit;font-size:14.5px;color:var(--cream);background:var(--coal-2);border:1px solid var(--line);border-radius:999px;padding:10px 14px;color-scheme:dark}
+.bar .btn{padding:12px 22px}
+.bar .msg{position:absolute;left:24px;bottom:calc(100% + 10px);font-size:14px;background:var(--cream);color:var(--black);padding:8px 14px;border-radius:999px;opacity:0;transform:translateY(8px);transition:all .5s var(--ease);pointer-events:none}
+.bar .msg.show{opacity:1;transform:none}
+.demo-badge{position:fixed;right:18px;top:18px;z-index:50;background:var(--cream);color:var(--black);font-size:12px;padding:9px 14px;border-radius:999px;letter-spacing:.04em}
+.demo-badge b{color:#c04f12}
+@media (prefers-reduced-motion:no-preference){
+ .rv{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+ .rv.in{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){.marq .t{animation:none}}
+@media (max-width:900px){
+ nav .links{display:none}
+ .hero .meta{top:30%;padding:0 20px;font-size:11px}
+ .story,.tasting,.events{grid-template-columns:1fr;gap:40px}
+ .events .glow{min-height:260px}
+ footer .c{grid-template-columns:1fr}
+ .dish{grid-template-columns:40px 1fr auto}
+ .bar strong{display:none}
+ .bar{padding:8px;gap:6px;overflow-x:auto}
+ .bar select,.bar input{padding:9px 10px;font-size:13.5px}
+ .follow{display:none}
+ .pad{padding:90px 0}
+}
+
+/* ---------- Pagini multiple: tranziție lină între pagini și pagina curentă ---------- */
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.45s}
+[aria-current="page"]{opacity:1}
+
+nav .links a[aria-current="page"]{color:var(--fire-2)}
+nav.solid{position:relative;background:var(--black);border-bottom:1px solid var(--line)}
+.phead{padding:110px 0 40px;background:radial-gradient(60% 80% at 50% 100%,rgba(255,138,61,.22),transparent 70%)}
+.phead h1{font-size:clamp(90px,17vw,260px);margin:0;line-height:.85;background:linear-gradient(180deg,var(--cream) 40%,var(--fire-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.phead p{color:var(--muted);font-size:19px;max-width:44ch;margin:20px 0 0}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{display:block;padding:44px;border-radius:24px;background:var(--coal);box-shadow:inset 0 0 0 1px var(--line);transition:background .5s,transform .6s var(--ease)}
+.card span{font-family:var(--disp);color:var(--fire);font-size:22px}
+.card h2{font-size:clamp(56px,6vw,96px);margin:14px 0 12px}
+.card p{color:var(--muted);margin:0;max-width:36ch}
+.card:hover{background:var(--coal-2);transform:translateY(-6px)}
+@media (max-width:900px){.duo{grid-template-columns:1fr}.card{padding:28px}}
+
+/* fără derulare orizontală de la benzile animate */
+html,body{overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}

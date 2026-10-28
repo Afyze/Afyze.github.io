@@ -3,13 +3,35 @@
 Site-ul Afyze: 6 pagini, 4 template-uri demo și un backend propriu cu panou de administrare.
 
 ```
-index.html, servicii.html, portofoliu.html, templateuri.html, pachete.html, contact.html
-templates/            4 site-uri demo (lex, ember, atelier, nord)
-admin/                panoul de administrare (funcționează doar cu backend-ul pornit)
-assets/js/config.js   adresa backend-ului (gol = același domeniu)
-assets/js/api.js      legătura site ↔ backend
-server/               backend: Node.js + Express + SQLite
+index.html … contact.html   cele 6 pagini în română
+ru/                         aceleași 6 pagini în rusă
+templates/<nume>/           6 site-uri demo cu mai multe pagini (lex, ember, atelier, nord, forja, casa)
+admin/                      panoul de administrare (funcționează doar cu backend-ul pornit)
+assets/js/config.js         adresa backend-ului și butoanele Telegram / Viber
+assets/js/api.js            legătura site ↔ backend
+server/                     backend: Node.js + Express + SQLite
+tools/                      generatorul paginilor (română + rusă)
 ```
+
+## Modificarea textelor
+
+Paginile sunt generate. Ca să schimbi un text în ambele limbi:
+1. modifici textul românesc în `tools/build.py` și traducerea lui în `tools/ru_dict.py`;
+2. rulezi din rădăcina proiectului:
+   ```bash
+   python3 tools/build.py . && python3 tools/build_ru.py .
+   ```
+   Al doilea script îți arată orice text care nu are încă traducere.
+
+Prețurile, proiectele și anunțul se pot schimba și din panou (cu backend-ul pornit); acestea apar pe versiunea în română, iar pe cea în rusă rămân textele din fișiere.
+
+## Butoanele Telegram și Viber
+
+Sunt pregătite, dar ascunse. Le activezi completând în `assets/js/config.js`:
+```js
+window.AFYZE_CONTACT = { telegram: "numele_tau", viber: "+37360000000" };
+```
+sau din panou: Conținut → Date de contact.
 
 ## Cum funcționează
 

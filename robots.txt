@@ -2,5 +2,6 @@ User-agent: *
 Disallow: /admin/
 Disallow: /server/
 Disallow: /templates/
+Disallow: /tools/
 
 Sitemap: https://afyze.github.io/sitemap.xml

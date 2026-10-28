@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculator credit — Casa Verde · Template Afyze</title>
+<meta name="description" content="Template demo Afyze pentru un ansamblu rezidențial. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="c"><a class="logo" href="index.html"><i></i>Casa Verde</a><div class="links"><a href="apartamente.html">Apartamente</a><a aria-current="page" href="credit.html">Calculator credit</a><a href="index.html#locatie">Locație</a></div><a class="btn" href="apartamente.html">Vezi apartamentele</a></div></nav>
+<main>
+<section class="c phead"><span class="tag rv">Credit ipotecar</span><h1 class="rv" style="--d:.06s">Cât ar fi rata?</h1><p class="rv" style="--d:.12s">Mută cursoarele și vezi pe loc rata lunară estimată. Pentru o ofertă exactă, te punem în legătură cu banca parteneră.</p></section><section class="c" id="calculator">
+    <div class="calc rv">
+      <div class="in">
+        <h2 style="color:var(--paper);margin-bottom:4px">Calculator credit</h2>
+        <label>Prețul apartamentului <output id="vP"></output><input type="range" id="cP" min="40000" max="150000" step="1000" value="78000"></label>
+        <label>Avans <output id="vA"></output><input type="range" id="cA" min="10" max="60" step="5" value="30"></label>
+        <label>Perioada <output id="vY"></output><input type="range" id="cY" min="5" max="25" step="1" value="20"></label>
+        <label>Dobânda anuală <output id="vR"></output><input type="range" id="cR" min="4" max="14" step="0.5" value="8"></label>
+      </div>
+      <div class="out" aria-live="polite">
+        <div><small>Rata lunară estimată</small><b id="rate">—</b></div>
+        <dl><dt>Avans</dt><dd id="oA"></dd><dt>Suma creditului</dt><dd id="oL"></dd><dt>Total de plată</dt><dd id="oT"></dd></dl>
+        <small>Calcul orientativ, cu anuitate fixă. Condițiile reale le stabilește banca.</small>
+      </div>
+    </div>
+  </section><div style="height:110px"></div>
+</main>
+<footer><div class="c"><span>Casa Verde · Birou de vânzări: str. Exemplu 88, Chișinău · +373 00 000 000</span><span>Date fictive, folosite doar pentru demonstrație</span></div></footer>
+<a class="demo-badge" href="../../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+<script src="script.js"></script>
+</body>
+</html>

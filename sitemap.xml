@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://afyze.github.io/</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://afyze.github.io/servicii.html</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://afyze.github.io/portofoliu.html</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://afyze.github.io/templateuri.html</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://afyze.github.io/pachete.html</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://afyze.github.io/contact.html</loc><lastmod>2026-10-28</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://afyze.github.io/</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/"/></url>
+  <url><loc>https://afyze.github.io/ru/</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/"/></url>
+  <url><loc>https://afyze.github.io/servicii.html</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/servicii.html"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/servicii.html"/></url>
+  <url><loc>https://afyze.github.io/ru/servicii.html</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/servicii.html"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/servicii.html"/></url>
+  <url><loc>https://afyze.github.io/portofoliu.html</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/portofoliu.html"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/portofoliu.html"/></url>
+  <url><loc>https://afyze.github.io/ru/portofoliu.html</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/portofoliu.html"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/portofoliu.html"/></url>
+  <url><loc>https://afyze.github.io/templateuri.html</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/templateuri.html"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/templateuri.html"/></url>
+  <url><loc>https://afyze.github.io/ru/templateuri.html</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/templateuri.html"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/templateuri.html"/></url>
+  <url><loc>https://afyze.github.io/pachete.html</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/pachete.html"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/pachete.html"/></url>
+  <url><loc>https://afyze.github.io/ru/pachete.html</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/pachete.html"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/pachete.html"/></url>
+  <url><loc>https://afyze.github.io/contact.html</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/contact.html"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/contact.html"/></url>
+  <url><loc>https://afyze.github.io/ru/contact.html</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://afyze.github.io/contact.html"/><xhtml:link rel="alternate" hreflang="ru" href="https://afyze.github.io/ru/contact.html"/></url>
 </urlset>

@@ -13,6 +13,7 @@
     ["Recomandăm", "Prima vizită a copilului", "O vizită de cunoaștere, fără tratament, ca cel mic să se obișnuiască.", ["30 min", "gratuit"]]
   ];
   var reco = document.getElementById("reco");
+  if (reco) {
   function showReco(i) {
     var r = RECO[i], box = el("div", "fade");
     var top = el("div"); top.append(el("small", null, r[0]), el("h3", null, r[1]), el("p", null, r[2]));
@@ -29,6 +30,9 @@
     showReco(+b.dataset.s);
   });
   showReco(0);
+  }
+
+  if (!document.getElementById("o0")) return;
 
   // ---------- asistent de programare în 4 pași ----------
   var SVC = [["Consultație", "40 min · 300 MDL"], ["Igienizare", "60 min · 700 MDL"], ["Tratament carie", "45 min · de la 800"], ["Albire", "90 min · 3.500 MDL"], ["Ortodonție", "consultație · 400 MDL"], ["Copii", "30 min · gratuit"]];

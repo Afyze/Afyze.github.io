@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember — Template Afyze</title>
+<meta name="description" content="Template demo Afyze pentru un restaurant. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="c"><a href="index.html" class="disp" style="font-size:26px;letter-spacing:.06em">Ember</a><div class="links"><a aria-current="page" href="index.html">Acasă</a><a href="meniu.html">Meniu</a><a href="meniu.html#degustare">Degustare</a><a href="evenimente.html">Evenimente</a></div><span>Marți – Duminică</span></div></nav>
+<header class="hero">
+  <canvas id="sparks" aria-hidden="true"></canvas>
+  <div class="meta"><span>Bucătărie la foc deschis</span><span>Chișinău · str. Exemplu 7</span></div>
+  <h1 class="word disp">Ember</h1>
+</header><div class="marq" aria-hidden="true"><div class="t">
+  <span>Lemn de stejar</span><span>✦</span><span>Carne maturată</span><span>✦</span><span>Legume de sezon</span><span>✦</span><span>Pâine din cuptor</span><span>✦</span><span>Vinuri moldovenești</span><span>✦</span>
+  <span>Lemn de stejar</span><span>✦</span><span>Carne maturată</span><span>✦</span><span>Legume de sezon</span><span>✦</span><span>Pâine din cuptor</span><span>✦</span><span>Vinuri moldovenești</span><span>✦</span>
+</div></div><section class="pad" id="poveste">
+  <div class="c story">
+    <h2 class="disp rv">Totul începe <span>cu focul.</span></h2>
+    <div>
+      <p class="rv" style="--d:.1s">Grătarul nostru pe lemn de stejar arde din prima oră a zilei. Carnea, legumele și pâinea trec prin flacără și primesc acel gust pe care nu-l poți imita.</p>
+      <p class="rv" style="--d:.2s">Lucrăm cu producători din Moldova și schimbăm meniul odată cu sezonul.</p>
+    </div>
+  </div>
+</section>
+<section class="pad"><div class="c duo">
+  <a class="card rv" href="meniu.html"><span>01</span><h2 class="disp">Meniul</h2><p>Antreuri, preparate de la foc și deserturi, schimbate odată cu sezonul.</p></a>
+  <a class="card rv" style="--d:.1s" href="evenimente.html"><span>02</span><h2 class="disp">Evenimente</h2><p>Sala de la etaj, până la 40 de invitați, cu meniu doar pentru voi.</p></a>
+</div></section>
+<footer><div class="c">
+  <p class="big disp">Ember</p>
+  <div><b>Program</b>Marți – Joi 12–23<br>Vineri – Sâmbătă 12–00<br>Duminică 12–22</div>
+  <div><b>Contact</b>str. Exemplu 7, Chișinău<br>+373 00 000 000<br>Date fictive, folosite doar pentru demonstrație</div>
+</div></footer>
+<form class="bar" id="rezerva" aria-label="Rezervă o masă">
+  <strong>Rezervă o masă</strong>
+  <input type="date" id="rd" aria-label="Data" required>
+  <select id="rt" aria-label="Ora"><option>18:00</option><option>18:30</option><option selected>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select>
+  <select id="rg" aria-label="Persoane"><option value="1">1 persoană</option><option value="2" selected>2 persoane</option><option value="3">3 persoane</option><option value="4">4 persoane</option><option value="5">5 persoane</option><option value="6">6 persoane</option><option value="8">8 persoane</option></select>
+  <button class="btn" type="submit">Rezervă</button>
+  <span class="msg" id="rmsg" role="status"></span>
+</form>
+<a class="demo-badge" href="../../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+<script src="script.js"></script>
+</body>
+</html>

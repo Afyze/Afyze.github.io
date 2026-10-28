@@ -12,6 +12,7 @@
   ];
   var state = { day: (new Date().getDay() + 6) % 7, lvl: 0 }, booked = {};
   var days = document.getElementById("days"), sched = document.getElementById("sched");
+  if (days && sched) {
 
   DAYS.forEach(function (d, i) {
     var b = el("button", null, d); b.type = "button"; b.setAttribute("role", "tab");
@@ -42,9 +43,11 @@
     });
   }
   render();
+  }
 
   // abonamente: lunar / anual
-  document.getElementById("per").addEventListener("click", function (e) {
+  var per = document.getElementById("per");
+  if (per) per.addEventListener("click", function (e) {
     var b = e.target.closest("button"); if (!b) return;
     this.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
     var p = b.dataset.p;
@@ -60,5 +63,6 @@
     });
   });
 
-  document.getElementById("tf").addEventListener("submit", function (e) { e.preventDefault(); document.getElementById("tok").textContent = "Demo: în site-ul real, te sună un antrenor în aceeași zi."; });
+  var tf = document.getElementById("tf");
+  if (tf) tf.addEventListener("submit", function (e) { e.preventDefault(); document.getElementById("tok").textContent = "Demo: în site-ul real, te sună un antrenor în aceeași zi."; });
 })();

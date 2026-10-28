@@ -187,7 +187,7 @@
     $("#contentErr").textContent = ""; $("#contentOk").textContent = "";
     return api("/admin/content").then(function (b) {
       var c = state.content = b.content;
-      setField("contact.email", c.contact.email); setField("contact.phone", c.contact.phone); setField("contact.city", c.contact.city);
+      setField("contact.email", c.contact.email); setField("contact.phone", c.contact.phone); setField("contact.city", c.contact.city); setField("contact.telegram", c.contact.telegram); setField("contact.viber", c.contact.viber);
       setField("announcement.enabled", c.announcement.enabled); setField("announcement.text", c.announcement.text);
       setField("urgentNote", c.urgentNote);
       renderPlans(c.plans); renderProjects(c.projects);
@@ -269,7 +269,7 @@
       };
     });
     return {
-      contact: { email: v("contact.email"), phone: v("contact.phone"), city: v("contact.city") },
+      contact: { email: v("contact.email"), phone: v("contact.phone"), city: v("contact.city"), telegram: v("contact.telegram"), viber: v("contact.viber") },
       announcement: { enabled: form.elements["announcement.enabled"].checked, text: v("announcement.text") },
       urgentNote: v("urgentNote"), plans: plans, projects: projects
     };

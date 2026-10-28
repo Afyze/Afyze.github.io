@@ -13,6 +13,7 @@
 
   // ---------- programare ----------
   var st = { svc: "Tuns + coafat", day: "", time: "" };
+  if (document.getElementById("dayChips")) {
   var days = document.getElementById("dayChips"), times = document.getElementById("timeChips"), sum = document.getElementById("bsum");
   var wd = ["Dum", "Lun", "Mar", "Mie", "Joi", "Vin", "Sâm"], now = new Date(), first = true;
   for (var i = 1; i <= 5; i++) {
@@ -43,6 +44,7 @@
   single(times, function (b) { st.time = b.textContent; upd(); });
   buildTimes(); upd();
   document.getElementById("bgo").addEventListener("click", function () { sum.textContent = "Demo: în site-ul real, programarea ajunge direct în calendarul salonului."; });
+  }
 
   // ---------- servicii ----------
   var S = {
@@ -51,6 +53,7 @@
     ten: [["✿", "#d3f2e3", "Curățare facială", "Curățare profundă adaptată tenului tău.", "60 min", "700"], ["❀", "#e4dcff", "Laminarea sprâncenelor", "Formă și direcție pentru 6 săptămâni.", "45 min", "380"], ["✧", "#ffd8c2", "Masaj facial", "Relaxare și tonifiere.", "40 min", "450"]]
   };
   var cards = document.getElementById("cards");
+  if (!cards) return;
   function render(k) {
     cards.replaceChildren();
     S[k].forEach(function (s, i) {

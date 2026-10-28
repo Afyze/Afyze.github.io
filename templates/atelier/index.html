@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier — Template Afyze</title>
+<meta name="description" content="Template demo Afyze pentru un salon de frumusețe. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav"><nav aria-label="Meniu"><a class="logo" href="index.html">atelier.</a><a class="l" aria-current="page" href="index.html">Acasă</a><a class="l" href="servicii.html">Servicii</a><a class="l" href="echipa.html">Echipa</a><a class="pill" href="index.html#book">Programează-te</a></nav></header>
+<main class="c">
+<section class="bento" aria-label="Prezentare">
+    <div class="tile t-hero rv">
+      <span class="blob" aria-hidden="true"></span>
+      <h1>Frumusețe,<br>fără grabă.</h1>
+      <p>Păr, unghii și ten într-un studio luminos din centrul Chișinăului. Fiecare vizită începe cu o discuție.</p>
+    </div>
+    <div class="tile t-book rv" style="--d:.08s" id="book">
+      <h3>Programare rapidă</h3>
+      <div class="lbl">SERVICIUL</div>
+      <div class="chips" id="svcChips">
+        <button class="chip" type="button" aria-pressed="true">Tuns + coafat</button>
+        <button class="chip" type="button" aria-pressed="false">Manichiură</button>
+        <button class="chip" type="button" aria-pressed="false">Facial</button>
+        <button class="chip" type="button" aria-pressed="false">Balayage</button>
+      </div>
+      <div class="lbl">ZIUA</div><div class="chips" id="dayChips"></div>
+      <div class="lbl">ORA</div><div class="chips" id="timeChips"></div>
+      <div class="sum"><p id="bsum"></p><button class="pill" type="button" id="bgo">Confirmă</button></div>
+    </div>
+    <div class="tile t-hours rv" style="--d:.12s"><span>Deschis azi</span><b>09–20</b></div>
+    <div class="tile t-eco rv" style="--d:.16s"><b>Produse vegane</b>Lucrăm doar cu produse fără parabeni, netestate pe animale.</div>
+    <div class="tile t-ig rv" style="--d:.2s"><i></i><i></i><i></i><span>@atelier.studio · lucrările noastre</span></div>
+    <div class="tile t-price rv" style="--d:.24s"><h3>Prețuri clare</h3><div class="row"><span>Tuns de la 350</span><span>Manichiură de la 400</span><span>Facial de la 700</span></div></div>
+  </section>
+  <section class="pad"><div class="links3">
+    <a class="tile rv" style="background:var(--peach)" href="servicii.html"><h2>Servicii și prețuri</h2><p>Păr, unghii și ten, cu durata și prețul fiecărui serviciu.</p><b>→</b></a>
+    <a class="tile rv" style="--d:.08s;background:var(--mint)" href="echipa.html"><h2>Cunoaște echipa</h2><p>Patru oameni care fac fiecare vizită să conteze.</p><b>→</b></a>
+  </div></section>
+</main>
+<footer id="contact"><div class="c"><span class="big">atelier.</span><p>str. Exemplu 21, Chișinău · +373 00 000 000<br>Date fictive, folosite doar pentru demonstrație</p></div></footer>
+<a class="demo-badge" href="../../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+<script src="script.js"></script>
+</body>
+</html>

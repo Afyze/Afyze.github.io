@@ -24,6 +24,19 @@
     });
   }
 
+  // mesajele de eroare ale serverului, pentru versiunea rusă
+  var RU_ERR = {
+    "Completează toate câmpurile obligatorii.": "Заполните все обязательные поля.",
+    "Textul e prea scurt.": "Текст слишком короткий.",
+    "Textul e prea lung.": "Текст слишком длинный.",
+    "Textul conține caractere nepermise.": "Текст содержит недопустимые символы.",
+    "Format invalid.": "Неверный формат.",
+    "Date invalide.": "Неверные данные.",
+    "Lasă un e-mail sau un număr de telefon, ca să te pot contacta.": "Оставьте e-mail или номер телефона, чтобы я мог с вами связаться.",
+    "Prea multe mesaje într-un timp scurt. Încearcă din nou peste câteva minute.": "Слишком много сообщений за короткое время. Попробуйте снова через несколько минут.",
+    "Mesajul e prea mare.": "Сообщение слишком большое."
+  };
+
   /* ---------- trimiterea formularului ---------- */
   api.submit = function (data) {
     var body = Object.assign({}, data, { t: Date.now() - shownAt });
@@ -31,10 +44,12 @@
       .then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (b) {
           if (r.ok && b.ok) return { ok: true };
-          return { ok: false, error: b.error || "Mesajul nu a putut fi trimis.", field: b.field };
+          var err = b.error || "Mesajul nu a putut fi trimis.";
+          if (document.documentElement.lang === "ru") err = RU_ERR[err] || "Не удалось отправить сообщение. Проверьте поля и попробуйте ещё раз.";
+          return { ok: false, error: err, field: b.field };
         });
       })
-      .catch(function () { return { ok: false, offline: true, error: "Nu am putut trimite mesajul. Verifică conexiunea la internet." }; });
+      .catch(function () { return { ok: false, offline: true, error: (document.documentElement.lang === "ru" ? "Не удалось отправить сообщение. Проверьте подключение к интернету." : "Nu am putut trimite mesajul. Verifică conexiunea la internet.") }; });
   };
 
   /* ---------- statistici anonime ---------- */
@@ -145,14 +160,37 @@
   function apply(c) {
     api.content = c;
     var email = (c.contact && c.contact.email) || DEFAULT_EMAIL;
+    // textele din panou sunt în română; pe versiunea rusă folosim doar datele de contact
+    var ro = (document.documentElement.getAttribute("lang") || "ro").slice(0, 2) !== "ru";
     try {
-      applyPlans(c.plans || [], email);
-      setText(document.querySelector('[data-c="urgentNote"]'), c.urgentNote);
-      applyProjects(c.projects);
+      if (ro) {
+        applyPlans(c.plans || [], email);
+        setText(document.querySelector('[data-c="urgentNote"]'), c.urgentNote);
+        applyProjects(c.projects);
+      }
       applyEmail(email);
-      applyAnnouncement(c.announcement);
+      if (c.contact && (c.contact.telegram || c.contact.viber)) applyMessengers(c.contact);
+      if (ro) applyAnnouncement(c.announcement);
     } catch (e) { /* conținutul static rămâne afișat */ }
   }
+
+  /* ---------- butoane Telegram / Viber ---------- */
+  function applyMessengers(c) {
+    c = c || {};
+    var tg = String(c.telegram || "").replace(/^@/, "").trim();
+    var vb = String(c.viber || "").replace(/[^\d+]/g, "");
+    if (vb && vb.charAt(0) !== "+") vb = "+" + vb;
+    $$("[data-msg]").forEach(function (a) {
+      var kind = a.getAttribute("data-msg");
+      var ok = kind === "telegram" ? /^[A-Za-z0-9_]{5,32}$/.test(tg) : /^\+\d{8,15}$/.test(vb);
+      if (!ok) { a.hidden = true; return; }
+      a.href = kind === "telegram" ? "https://t.me/" + tg : "viber://chat?number=" + encodeURIComponent(vb);
+      a.hidden = false;
+      var wrap = a.closest("[data-msg-wrap]"); if (wrap) wrap.hidden = false;
+    });
+  }
+  api.applyMessengers = applyMessengers;
+  applyMessengers(window.AFYZE_CONTACT);
 
   /* ---------- pornire ---------- */
   if (location.protocol === "file:") return;

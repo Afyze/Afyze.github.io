@@ -12,6 +12,7 @@
     { n: "VI", t: "Consultanță", d: "Opinii juridice scrise și verificarea documentelor înainte să semnezi ceva important.", l: ["Opinii juridice", "Verificarea documentelor", "Consultanță continuă pentru firme"] }
   ];
   var toc = document.getElementById("toc"), leaf = document.getElementById("leaf");
+  if (toc && leaf) {
 
   function show(i) {
     var a = AREAS[i];
@@ -40,8 +41,10 @@
     li.appendChild(b); toc.appendChild(li);
   });
   show(0);
+  }
 
-  document.getElementById("lexForm").addEventListener("submit", function (e) {
+  var lexForm = document.getElementById("lexForm");
+  if (lexForm) lexForm.addEventListener("submit", function (e) {
     e.preventDefault();
     document.getElementById("lexNote").textContent = "Demo: în site-ul real, scrisoarea ajunge direct pe e-mailul cabinetului.";
   });

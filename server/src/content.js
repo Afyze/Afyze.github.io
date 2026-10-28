@@ -6,7 +6,7 @@ export const FILTERS = ["web", "auto", "app"];
 export const PLAN_IDS = ["start", "business", "pro"];
 
 export const DEFAULT_CONTENT = {
-  contact: { email: "hello@afyze.com", phone: "", city: "Chișinău, Moldova" },
+  contact: { email: "hello@afyze.com", phone: "", city: "Chișinău, Moldova", telegram: "", viber: "" },
   announcement: { enabled: false, text: "" },
   urgentNote: "Ai nevoie urgent? Se poate și în câteva zile, discutăm termenul și costul. Toate pachetele includ 14 zile de suport gratuit după lansare; mentenanța lunară, de la 800 MDL/lună.",
   plans: [
@@ -62,7 +62,11 @@ export function validateContent(input) {
   const email = text(c.email, "contact.email", 120, { required: true });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) throw new Error("contact.email: adresă invalidă");
   const out = {
-    contact: { email, phone: text(c.phone, "contact.phone", 40), city: text(c.city, "contact.city", 80) },
+    contact: {
+      email, phone: text(c.phone, "contact.phone", 40), city: text(c.city, "contact.city", 80),
+      telegram: text(c.telegram, "contact.telegram", 33).replace(/^@/, ""),
+      viber: text(c.viber, "contact.viber", 20).replace(/[^\d+]/g, "")
+    },
     announcement: {
       enabled: Boolean(input.announcement && input.announcement.enabled),
       text: text(input.announcement && input.announcement.text, "announcement.text", 160)
@@ -71,6 +75,8 @@ export function validateContent(input) {
     plans: [],
     projects: []
   };
+  if (out.contact.telegram && !/^[A-Za-z0-9_]{5,32}$/.test(out.contact.telegram)) throw new Error("contact.telegram: doar litere, cifre și _ (5–32 caractere)");
+  if (out.contact.viber && !/^\+?\d{8,15}$/.test(out.contact.viber)) throw new Error("contact.viber: număr de telefon invalid (ex. +37360000000)");
   if (out.announcement.enabled && !out.announcement.text) throw new Error("announcement.text: scrie textul anunțului");
 
   if (!Array.isArray(input.plans) || input.plans.length !== 3) throw new Error("plans: trebuie să fie exact 3 pachete");

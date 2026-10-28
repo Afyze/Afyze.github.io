@@ -20,6 +20,9 @@
 
   // ---------- clădirea ----------
   var svg = document.getElementById("bsvg"), tipN = document.getElementById("tipN"), label = document.getElementById("floorLabel");
+  var etaj = +(new URLSearchParams(location.search).get("etaj") || 0);
+  if (etaj >= 1 && etaj <= 9) st.floor = etaj;
+  if (svg) {
   svg.appendChild(s("rect", { x: 40, y: 450, width: 320, height: 20, fill: "#1c1c1a" }));
   svg.appendChild(s("path", { d: "M60 32 L200 4 L340 32 Z", fill: "#1c1c1a" }));
   for (var i = 9; i >= 1; i--) (function (fl) {
@@ -30,7 +33,7 @@
     var t = s("text", { x: 350, y: y + 27 }); t.textContent = fl; t.setAttribute("x", 30); g.appendChild(t);
     var free = APTS.filter(function (a) { return a.floor === fl && a.free; }).length;
     function hover() { tipN.textContent = free + " ap. la etajul " + fl; }
-    function pick() { st.floor = st.floor === fl ? 0 : fl; svg.querySelectorAll(".fl").forEach(function (x) { x.classList.toggle("on", x === g && st.floor === fl); }); label.textContent = st.floor ? "Etajul " + fl : "Toate etajele"; render(); document.getElementById("apartamente").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); }
+    function pick() { location.href = "apartamente.html?etaj=" + fl; }
     g.addEventListener("mouseenter", hover); g.addEventListener("focus", hover);
     g.addEventListener("mouseleave", setTip);
     g.addEventListener("click", pick);
@@ -39,6 +42,10 @@
   })(i);
   function setTip() { tipN.textContent = APTS.filter(function (a) { return a.free; }).length + " apartamente"; }
   setTip();
+  }
+
+  var grid = document.getElementById("grid");
+  if (grid) {
 
   // ---------- filtre și listă ----------
   function seg(id, key, conv) {
@@ -63,7 +70,7 @@
     return p;
   }
 
-  var grid = document.getElementById("grid"), count = document.getElementById("count");
+  var count = document.getElementById("count");
   function render() {
     maxpv.textContent = eur(st.max);
     var list = APTS.filter(function (a) {
@@ -83,8 +90,11 @@
     });
   }
   render();
+  if (st.floor) { var fb = document.createElement("p"); fb.className = "count"; fb.style.cssText = "width:100%;margin:0"; fb.textContent = "Afișezi etajul " + st.floor + ". "; var all = document.createElement("a"); all.href = "apartamente.html"; all.textContent = "Vezi toate etajele"; all.style.textDecoration = "underline"; fb.appendChild(all); document.querySelector(".filters").appendChild(fb); }
+  }
 
   // ---------- calculator credit ----------
+  if (!document.getElementById("cP")) return;
   var ids = ["cP", "cA", "cY", "cR"], inp = {};
   ids.forEach(function (k) { inp[k] = document.getElementById(k); inp[k].addEventListener("input", calc); });
   function calc() {

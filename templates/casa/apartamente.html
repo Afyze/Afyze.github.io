@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apartamente — Casa Verde · Template Afyze</title>
+<meta name="description" content="Template demo Afyze pentru un ansamblu rezidențial. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="c"><a class="logo" href="index.html"><i></i>Casa Verde</a><div class="links"><a aria-current="page" href="apartamente.html">Apartamente</a><a href="credit.html">Calculator credit</a><a href="index.html#locatie">Locație</a></div><a class="btn" href="apartamente.html">Vezi apartamentele</a></div></nav>
+<main>
+<section class="c phead"><span class="tag rv">72 de apartamente · 1–3 camere</span><h1 class="rv" style="--d:.06s">Apartamente</h1><p class="rv" style="--d:.12s">Filtrează după camere, preț sau etaj. Poți alege etajul și din clădirea de pe prima pagină.</p></section><section class="c" id="apartamente" style="padding-bottom:110px">
+    
+    <div class="filters rv">
+      <div class="g"><span class="lbl">Camere</span><div class="seg" id="rooms"><button type="button" aria-pressed="true" data-r="0">Toate</button><button type="button" aria-pressed="false" data-r="1">1</button><button type="button" aria-pressed="false" data-r="2">2</button><button type="button" aria-pressed="false" data-r="3">3</button></div></div>
+      <div class="g"><label for="maxp">Preț maxim: <b id="maxpv"></b></label><input type="range" id="maxp" min="45000" max="140000" step="5000" value="140000"></div>
+      <div class="g"><span class="lbl">Doar disponibile</span><div class="seg" id="avail"><button type="button" aria-pressed="false" data-a="1">Da</button><button type="button" aria-pressed="true" data-a="0">Nu</button></div></div>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+  </section>
+</main>
+<footer><div class="c"><span>Casa Verde · Birou de vânzări: str. Exemplu 88, Chișinău · +373 00 000 000</span><span>Date fictive, folosite doar pentru demonstrație</span></div></footer>
+<a class="demo-badge" href="../../templateuri.html" target="_top">Template demo · <b>Afyze</b></a>
+<script src="script.js"></script>
+</body>
+</html>

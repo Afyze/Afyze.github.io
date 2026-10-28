@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abonamente — Forja · Template Afyze</title>
+<meta name="description" content="Template demo Afyze pentru o sală de sport. Datele de pe pagină sunt fictive.">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="index.html"><i></i>FORJA</a>
+    <nav aria-label="Meniu"><a href="program.html">Program</a><a aria-current="page" href="abonamente.html">Abonamente</a><a href="abonamente.html#gratuit">Prima ședință</a></nav>
+    <a class="cta" href="abonamente.html#gratuit">Încearcă gratuit</a>
+  </header>
+  <section class="phead"><span class="n">/02</span><h1 class="up rv">Abonamente</h1></section><section class="sec" id="abonamente">
+    <div class="sec-h"><span></span><div class="toggle" id="per"><button type="button" aria-pressed="true" data-p="m">Lunar</button><button type="button" aria-pressed="false" data-p="y">Anual −20%</button></div></div>
+    <div class="plans">
+      <article class="plan"><h3>Sală</h3><div class="pr" data-m="550" data-y="440">550<small> MDL/lună</small></div><ul><li>Acces la sala de forță</li><li>06:00 – 23:00</li><li>Vestiar și dușuri</li></ul><a class="go" href="#gratuit">Alege</a></article>
+      <article class="plan hot"><h3>Sală + clase</h3><div class="pr" data-m="850" data-y="680">850<small> MDL/lună</small></div><ul><li>Tot din „Sală”</li><li>Toate clasele de grup</li><li>Plan de antrenament</li></ul><a class="go" href="#gratuit">Alege</a></article>
+      <article class="plan"><h3>Personal</h3><div class="pr" data-m="2400" data-y="1920">2400<small> MDL/lună</small></div><ul><li>8 ședințe cu antrenorul</li><li>Plan de nutriție</li><li>Evaluare lunară</li></ul><a class="go" href="#gratuit">Alege</a></article>
+    </div>
+  </section><div class="tape" aria-hidden="true"><div class="t"><span>Forță</span><span>★</span><span>Condiție fizică</span><span>★</span><span>Mobilitate</span><span>★</span><span>Box</span><span>★</span><span>Forță</span><span>★</span><span>Condiție fizică</span><span>★</span><span>Mobilitate</span><span>★</span><span>Box</span><span>★</span></div></div><section class="sec trial" id="gratuit">
+    <div class="l"><h2 class="up rv">Prima ședință e gratuită.</h2><p style="color:var(--grey);max-width:40ch">Vii, te antrenezi cu un antrenor, apoi decizi. Fără contract, fără presiune.</p></div>
+    <form id="tf">
+      <input placeholder="Nume" required autocomplete="name">
+      <input type="tel" placeholder="Telefon" required autocomplete="tel">
+      <select aria-label="Ce te interesează"><option>Sală de forță</option><option>Clase de grup</option><option>Antrenor personal</option><option>Box</option></select>
+      <button type="submit">Vreau ședința gratuită</button>
+      <p class="ok" id="tok" role="status"></p>
+    </form>
+  </section>
+  <footer><span>FORJA · str. Exemplu 40, Chișinău · +373 00 000 000</span><span>Date fictive, folosite doar pentru demonstrație</span></footer>
+</div>
+<a class="demo-badge" href="../../templateuri.html" target="_top">TEMPLATE DEMO · AFYZE</a>
+<script src="script.js"></script>
+</body>
+</html>
