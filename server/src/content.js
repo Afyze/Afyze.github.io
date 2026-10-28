@@ -27,12 +27,9 @@ export const DEFAULT_CONTENT = {
     { id: "flowscript", title: "FlowScript DSL", category: "Limbaj de programare · Lead developer", filter: "app", art: "flow", size: "w5", visible: true,
       link: "", tags: ["Python", "LL(1)", "CLI"],
       description: "Un limbaj declarativ care adună date din mai multe surse într-una singură. Am scris lexer-ul, parser-ul, arborele sintactic și interfața în linie de comandă." },
-    { id: "examen", title: "Aplicații de pregătire pentru examen", category: "Aplicație web", filter: "web", art: "exam", size: "w5", visible: true,
+    { id: "examen", title: "Aplicații de pregătire pentru examen", category: "Aplicație web", filter: "web", art: "exam", size: "w12", visible: true,
       link: "", tags: ["HTML / JS", "localStorage"],
       description: "Site-uri de studiu cu sute de întrebări, navigare pe capitole și un mod care repetă întrebările greșite până le înveți. Progresul se salvează în browser." },
-    { id: "vip", title: "Bilete VIP pentru eveniment", category: "Automatizare · Design", filter: "auto", art: "vip", size: "w7", visible: true,
-      link: "", tags: ["Python", "Playwright", "QR"],
-      description: "Bilete cu cod QR unic pentru o prezentare de produs, generate și exportate în PDF gata de tipar dintr-o singură rulare." },
     { id: "afyze", title: "Afyze", category: "Identitate și site", filter: "web", art: "afyze", size: "w12", visible: true,
       link: "", tags: ["HTML / CSS", "GSAP", "Lenis", "Node.js"],
       description: "Acest site: identitate vizuală, template-uri demo, animații fluide, backend propriu și panou de administrare." }
